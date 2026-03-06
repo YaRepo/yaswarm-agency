@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+SCRIPT_PATH="$(readlink -f "${BASH_SOURCE[0]}")"
+ROOT="$(cd "$(dirname "$SCRIPT_PATH")/.." && pwd)"
 MCP_CONFIG="$ROOT/mcp/mcp-config.json"
 
 help() {
@@ -10,11 +11,26 @@ YaMind Swarm CLI
 
 Usage:
   yaswarm help
+  yaswarm onboard
+
   yaswarm skill list
+
   yaswarm mcp list
   yaswarm mcp inspect [server-command...]
   yaswarm mcp health
+
   yaswarm repo init
+  yaswarm repo create-new <project_name> [private|public]
+  yaswarm repo link-existing <project_name> <repo_url>
+  yaswarm repo sync <project_name>
+  yaswarm repo list
+
+  yaswarm swarm init
+  yaswarm swarm status
+  yaswarm swarm dispatch <department> <title>
+  yaswarm swarm complete <task_id>
+
+  yaswarm dashboard refresh
 HELP
 }
 
@@ -24,6 +40,9 @@ sub="${2:-}"
 case "$cmd" in
   help|-h|--help)
     help
+    ;;
+  onboard)
+    "$ROOT/scripts/onboarding.sh"
     ;;
   skill)
     [[ "$sub" == "list" ]] || { echo "Unknown skill subcommand: $sub" >&2; exit 1; }
@@ -51,8 +70,36 @@ case "$cmd" in
     esac
     ;;
   repo)
-    [[ "$sub" == "init" ]] || { echo "Unknown repo subcommand: $sub" >&2; exit 1; }
-    "$ROOT/scripts/repo-catalog-init.sh"
+    case "$sub" in
+      init)
+        "$ROOT/scripts/repo-catalog-init.sh"
+        ;;
+      create-new|link-existing|sync|list)
+        shift 2 || true
+        "$ROOT/scripts/repo-catalog.sh" "$sub" "$@"
+        ;;
+      *)
+        echo "Unknown repo subcommand: $sub" >&2; exit 1
+        ;;
+    esac
+    ;;
+  swarm)
+    case "$sub" in
+      init|status)
+        python3 "$ROOT/swarm/runtime.py" "$sub"
+        ;;
+      dispatch|complete)
+        shift 2 || true
+        python3 "$ROOT/swarm/runtime.py" "$sub" "$@"
+        ;;
+      *)
+        echo "Unknown swarm subcommand: $sub" >&2; exit 1
+        ;;
+    esac
+    ;;
+  dashboard)
+    [[ "$sub" == "refresh" ]] || { echo "Unknown dashboard subcommand: $sub" >&2; exit 1; }
+    python3 "$ROOT/scripts/dashboard-bridge.py"
     ;;
   *)
     echo "Unknown command: $cmd" >&2

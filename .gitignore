@@ -5,3 +5,12 @@ dist/
 build/
 *.log
 .DS_Store
+
+# runtime state
+catalog/*.json
+!catalog/*.example.json
+projects/
+
+# python cache
+__pycache__/
+**/__pycache__/
