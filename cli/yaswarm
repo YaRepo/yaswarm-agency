@@ -23,7 +23,13 @@ Usage:
   yaswarm repo create-new <project_name> [private|public]
   yaswarm repo link-existing <project_name> <repo_url>
   yaswarm repo sync <project_name>
+  yaswarm repo sync-all
   yaswarm repo list
+
+  yaswarm sync start [interval_sec]
+  yaswarm sync stop
+  yaswarm sync status
+  yaswarm sync run-once
 
   yaswarm swarm init
   yaswarm swarm status
@@ -74,7 +80,7 @@ case "$cmd" in
       init)
         "$ROOT/scripts/repo-catalog-init.sh"
         ;;
-      create-new|link-existing|sync|list)
+      create-new|link-existing|sync|sync-all|list)
         shift 2 || true
         "$ROOT/scripts/repo-catalog.sh" "$sub" "$@"
         ;;
@@ -94,6 +100,17 @@ case "$cmd" in
         ;;
       *)
         echo "Unknown swarm subcommand: $sub" >&2; exit 1
+        ;;
+    esac
+    ;;
+  sync)
+    case "$sub" in
+      start|stop|status|run-once)
+        shift 2 || true
+        "$ROOT/scripts/auto-sync.sh" "$sub" "$@"
+        ;;
+      *)
+        echo "Unknown sync subcommand: $sub" >&2; exit 1
         ;;
     esac
     ;;

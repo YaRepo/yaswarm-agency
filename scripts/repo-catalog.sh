@@ -20,7 +20,7 @@ JSON
 
 py_update_catalog() {
   python3 - "$CATALOG" "$@" << 'PY'
-import json,sys,datetime,os
+import json,sys,datetime
 catalog_path=sys.argv[1]
 action=sys.argv[2]
 args=sys.argv[3:]
@@ -52,6 +52,10 @@ elif action=='list':
     for p in d['projects']:
         print(f"{p.get('name','')}\t{p.get('mode','')}\t{p.get('repo_url','')}\t{p.get('local_path','')}")
     sys.exit(0)
+elif action=='names':
+    for p in d['projects']:
+        print(p.get('name',''))
+    sys.exit(0)
 elif action=='get':
     name=args[0]
     for p in d['projects']:
@@ -59,7 +63,6 @@ elif action=='get':
             print(json.dumps(p))
             sys.exit(0)
     sys.exit(1)
-
 
 d['updated_at']=now
 with open(catalog_path,'w',encoding='utf-8') as f:
@@ -137,24 +140,45 @@ sync_project() {
   info="$(py_update_catalog get "$project_name" || true)"
   if [[ -z "$info" ]]; then
     echo "Project not found in catalog: $project_name" >&2
-    exit 1
+    return 1
   fi
+
   local local_path
   local_path="$(python3 - << PY
-import json,sys
+import json
 print(json.loads('''$info''')['local_path'])
 PY
 )"
 
   if [[ ! -d "$local_path/.git" ]]; then
     echo "Not a git repo: $local_path" >&2
-    exit 1
+    return 1
+  fi
+
+  # Ensure branch exists
+  current_branch="$(git -C "$local_path" rev-parse --abbrev-ref HEAD 2>/dev/null || echo detached)"
+  if [[ "$current_branch" == "HEAD" || "$current_branch" == "detached" ]]; then
+    git -C "$local_path" checkout -B main || true
   fi
 
   git -C "$local_path" add .
-  git -C "$local_path" commit -m "YaMind Swarm sync $(date -u +%Y-%m-%dT%H:%M:%SZ)" || true
-  git -C "$local_path" push || true
+  if git -C "$local_path" diff --cached --quiet; then
+    echo "No changes to sync: $project_name"
+    return 0
+  fi
+
+  git -C "$local_path" commit -m "YaMind Swarm sync $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+  git -C "$local_path" push -u origin "$(git -C "$local_path" rev-parse --abbrev-ref HEAD)" || true
   echo "Synced: $project_name"
+}
+
+sync_all() {
+  local rc=0
+  while IFS= read -r n; do
+    [[ -z "$n" ]] && continue
+    sync_project "$n" || rc=1
+  done < <(py_update_catalog names)
+  return $rc
 }
 
 list_projects() {
@@ -167,6 +191,7 @@ repo-catalog commands:
   create-new <project_name> [private|public]
   link-existing <project_name> <repo_url>
   sync <project_name>
+  sync-all
   list
 HELP
 }
@@ -177,6 +202,7 @@ case "$sub" in
   create-new) shift; create_new "$@" ;;
   link-existing) shift; link_existing "$@" ;;
   sync) shift; sync_project "$@" ;;
+  sync-all) sync_all ;;
   list) list_projects ;;
   *) usage; exit 1 ;;
 esac

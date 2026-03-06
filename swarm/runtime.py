@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import argparse
 import json
+import subprocess
 from dataclasses import dataclass, asdict
 from datetime import datetime, UTC
 from pathlib import Path
@@ -37,6 +38,15 @@ def load_json(path: Path, default):
 def save_json(path: Path, data):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, indent=2))
+
+
+def post_event(event: str, task_id: str = ""):
+    hook = ROOT / "scripts" / "swarm-post-event.sh"
+    if hook.exists():
+        try:
+            subprocess.run([str(hook), event, task_id], check=False)
+        except Exception:
+            pass
 
 
 def init_state():
@@ -77,6 +87,7 @@ def init_state():
         save_json(TELEGRAM_MAP_FILE, mapping)
 
     print(f"Initialized swarm state: {STATE_FILE}")
+    post_event("init", "")
 
 
 def dispatch_task(department: str, title: str):
@@ -108,6 +119,7 @@ def dispatch_task(department: str, title: str):
     state["updated_at"] = now_iso()
     save_json(STATE_FILE, state)
     print(json.dumps(asdict(t), indent=2))
+    post_event("dispatch", task_id)
 
 
 def complete_task(task_id: str):
@@ -135,6 +147,7 @@ def complete_task(task_id: str):
     state["updated_at"] = now_iso()
     save_json(STATE_FILE, state)
     print(json.dumps(t, indent=2))
+    post_event("complete", task_id)
 
 
 def status():

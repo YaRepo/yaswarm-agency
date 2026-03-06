@@ -10,7 +10,13 @@ Clean distributable base for YaMind Swarm with no personal data baked in.
   - `yaswarm repo create-new <project_name> [private|public]`
   - `yaswarm repo link-existing <project_name> <repo_url>`
   - `yaswarm repo sync <project_name>`
+  - `yaswarm repo sync-all`
   - `yaswarm repo list`
+- Auto-sync policy engine:
+  - `yaswarm sync start [interval_sec]`
+  - `yaswarm sync stop`
+  - `yaswarm sync status`
+  - `yaswarm sync run-once`
 - Swarm runtime:
   - `yaswarm swarm init`
   - `yaswarm swarm status`
@@ -35,6 +41,12 @@ chmod +x cli/yaswarm scripts/*.sh
 ./cli/yaswarm dashboard refresh
 ```
 
+## Auto-sync Policy
+- Sync daemon interval from `YASWARM_SYNC_INTERVAL_SEC` (default 180 sec).
+- Swarm event hooks can trigger sync:
+  - `SWARM_AUTO_SYNC=1` => sync-all on swarm dispatch/complete/init
+  - `SWARM_AUTO_SYNC_DAEMON=1` => ensure daemon is running
+
 ## MCP Inspector UI
 ```bash
 ./cli/yaswarm mcp inspect
@@ -52,6 +64,8 @@ docker compose up -d --build
 - `catalog/repo-catalog.json`
 - `catalog/swarm-state.json`
 - `catalog/telegram-thread-map.json`
+- `catalog/auto-sync.pid`
+- `catalog/auto-sync.log`
 - `projects/dashboard-agency/data/overview.json`
 
 ## Notes
