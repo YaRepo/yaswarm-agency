@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+MCP_CONFIG="$ROOT/mcp/mcp-config.json"
+
+help() {
+  cat << 'HELP'
+YaMind Swarm CLI
+
+Usage:
+  yaswarm help
+  yaswarm skill list
+  yaswarm mcp list
+  yaswarm mcp inspect [server-command...]
+  yaswarm mcp health
+  yaswarm repo init
+HELP
+}
+
+cmd="${1:-help}"
+sub="${2:-}"
+
+case "$cmd" in
+  help|-h|--help)
+    help
+    ;;
+  skill)
+    [[ "$sub" == "list" ]] || { echo "Unknown skill subcommand: $sub" >&2; exit 1; }
+    ls -1 "$ROOT/skills" 2>/dev/null || echo "No local skills imported yet"
+    ;;
+  mcp)
+    case "$sub" in
+      list)
+        if [[ -f "$MCP_CONFIG" ]]; then cat "$MCP_CONFIG"; else cat "$ROOT/mcp/mcp-config.example.json"; fi
+        ;;
+      inspect)
+        shift 2 || true
+        if [[ "$#" -eq 0 ]]; then
+          CLIENT_PORT="${MCP_INSPECTOR_CLIENT_PORT:-6274}" SERVER_PORT="${MCP_INSPECTOR_SERVER_PORT:-6277}" npx @modelcontextprotocol/inspector
+        else
+          CLIENT_PORT="${MCP_INSPECTOR_CLIENT_PORT:-6274}" SERVER_PORT="${MCP_INSPECTOR_SERVER_PORT:-6277}" npx @modelcontextprotocol/inspector "$@"
+        fi
+        ;;
+      health)
+        "$ROOT/scripts/mcp-health.sh"
+        ;;
+      *)
+        echo "Unknown mcp subcommand: $sub" >&2; exit 1
+        ;;
+    esac
+    ;;
+  repo)
+    [[ "$sub" == "init" ]] || { echo "Unknown repo subcommand: $sub" >&2; exit 1; }
+    "$ROOT/scripts/repo-catalog-init.sh"
+    ;;
+  *)
+    echo "Unknown command: $cmd" >&2
+    help
+    exit 1
+    ;;
+esac

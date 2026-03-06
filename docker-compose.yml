@@ -1,0 +1,16 @@
+services:
+  yamind-swarm:
+    build: .
+    container_name: yamind-swarm
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "6274:6274"
+      - "6277:6277"
+    volumes:
+      - ./catalog:/app/catalog
+      - ./mcp:/app/mcp
+      - ./skills:/app/skills
+      - ./projects:/app/projects
+    command: ["help"]
