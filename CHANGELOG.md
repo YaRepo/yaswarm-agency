@@ -16,6 +16,12 @@ All notable changes to `yaswarm-core` are documented in this file.
 - Proprietary commercial `LICENSE` file.
 - Init/reconfigure/upgrade/doctor command set and supporting scripts for non-destructive bootstrap/migration.
 - Runtime config templates for clean workspace initialization, including model and provider configs.
+- Interactive terminal chat:
+  - new command `yaswarm chat`,
+  - supports guided configuration commands in-chat (`/missing`, `/set`, `/doctor`, `/register`, `/swarm-init`, `/dispatch`).
+- Telegram bridge worker:
+  - new commands `yaswarm telegram bridge-once` and `yaswarm telegram bridge-loop [interval_sec]`,
+  - polls bot updates and routes topic messages through YaSwarm chat orchestration.
 
 ### Changed
 - Model backend strategy updated to:
@@ -27,6 +33,7 @@ All notable changes to `yaswarm-core` are documented in this file.
   - `yaswarm doctor`,
   - `yaswarm pi status|verify|verify-runtime|setup`.
 - Runtime guards now enforce model-provider readiness before `register` and `swarm init`.
+- Agency UI chat backend (`/api/chat/send`) now delegates to shared `scripts/chat-cli.py` logic for consistent behavior across terminal and UI.
 
 ### Fixed
 - Docker runtime dependency gap:

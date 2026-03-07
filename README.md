@@ -42,17 +42,34 @@ YaSwarm CLI solves this by making system initialization, registration, runtime c
 
 ### Agency Runtime
 - `yaswarm onboard`
+- `yaswarm chat [--message "text"]`
 - `yaswarm register`
 - `yaswarm swarm init`
 - `yaswarm swarm status`
 - `yaswarm swarm dispatch <department> <title>`
 - `yaswarm swarm complete <task_id>`
+- `yaswarm telegram bridge-once`
+- `yaswarm telegram bridge-loop [interval_sec]`
 
 ### Model Backend
 - `yaswarm pi status`
 - `yaswarm pi verify`
 - `yaswarm pi verify-runtime`
-- `yaswarm pi setup [--command <binary>] [--llm <id>] [--vlm <id>] [--tts <id>]`
+  - `yaswarm pi setup [--command <binary>] [--llm <id>] [--vlm <id>] [--tts <id>]`
+
+### Chat Surfaces
+- Terminal chat:
+  - `yaswarm chat`
+  - Supports config-help commands: `/missing`, `/set KEY value`, `/doctor`, `/register`, `/swarm-init`, `/dispatch`.
+- Agency UI chat:
+  - UI `/chat` panel uses server relay `/api/chat/*`.
+  - Backend now delegates to `scripts/chat-cli.py` for consistent behavior with terminal chat.
+- Telegram bridge chat:
+  - Configure bot tokens in `agency/.env` (or via UI Telegram panel),
+  - ensure department thread IDs exist in `agency/config/agency-config.json`,
+  - run bridge worker:
+    - `yaswarm telegram bridge-once`
+    - `yaswarm telegram bridge-loop 3`
 
 `verify-runtime` passes when either:
 1. pi-mono CLI backend is configured and binary exists on PATH, or

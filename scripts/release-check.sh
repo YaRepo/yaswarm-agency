@@ -45,6 +45,8 @@ require_file "scripts/reconfigure.sh"
 require_file "scripts/migrate-configs.sh"
 require_file "scripts/doctor.sh"
 require_file "scripts/pi-mono.sh"
+require_file "scripts/chat-cli.py"
+require_file "scripts/telegram-bridge-worker.py"
 
 require_executable "cli/yaswarm"
 require_executable "scripts/init.sh"
@@ -52,6 +54,8 @@ require_executable "scripts/reconfigure.sh"
 require_executable "scripts/migrate-configs.sh"
 require_executable "scripts/doctor.sh"
 require_executable "scripts/pi-mono.sh"
+require_executable "scripts/chat-cli.py"
+require_executable "scripts/telegram-bridge-worker.py"
 
 syntax_check "cli/yaswarm"
 syntax_check "scripts/init.sh"
@@ -59,6 +63,11 @@ syntax_check "scripts/reconfigure.sh"
 syntax_check "scripts/migrate-configs.sh"
 syntax_check "scripts/doctor.sh"
 syntax_check "scripts/pi-mono.sh"
+if python3 -m py_compile scripts/chat-cli.py scripts/telegram-bridge-worker.py >/dev/null 2>&1; then
+  pass "python syntax: chat/telegram bridge scripts"
+else
+  fail_check "python syntax error: chat/telegram bridge scripts"
+fi
 
 if rg -n "## Commercial Packaging Checklist" README.md >/dev/null; then
   pass "README includes Commercial Packaging Checklist"
