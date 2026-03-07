@@ -22,6 +22,12 @@ All notable changes to `yaswarm-core` are documented in this file.
 - Telegram bridge worker:
   - new commands `yaswarm telegram bridge-once` and `yaswarm telegram bridge-loop [interval_sec]`,
   - polls bot updates and routes topic messages through YaSwarm chat orchestration.
+- Agency API CLI bridge:
+  - new `yaswarm agency ...` namespace for backend-governed operations (department backend/model updates, governor, permissions, approvals, terminal exec).
+  - new MCP/skills commands: `skills-list`, `skills-routing`, `skill-get`, `mcp-servers`, `mcp-tools`, `mcp-registry`, `mcp-config`, `mcp-env-list`, `mcp-env-set`.
+- Chat CLI integration commands:
+  - `/skills`, `/skill <name>`, `/skills-routing`,
+  - `/mcp-servers`, `/mcp-tools`, `/mcp-env`, `/mcp-set <KEY> <VALUE>`.
 
 ### Changed
 - Model backend strategy updated to:
@@ -34,6 +40,10 @@ All notable changes to `yaswarm-core` are documented in this file.
   - `yaswarm pi status|verify|verify-runtime|setup`.
 - Runtime guards now enforce model-provider readiness before `register` and `swarm init`.
 - Agency UI chat backend (`/api/chat/send`) now delegates to shared `scripts/chat-cli.py` logic for consistent behavior across terminal and UI.
+- Unified catalog path resolution:
+  - CLI `yaswarm skill list` now prefers the shared skills catalog registry repo.
+  - CLI `yaswarm mcp list` now supports shared MCP catalog fallback.
+  - Agency UI backend skills/mcp routes now resolve from shared catalog repositories with workspace/local fallbacks.
 
 ### Fixed
 - Docker runtime dependency gap:

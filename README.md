@@ -60,7 +60,7 @@ YaSwarm CLI solves this by making system initialization, registration, runtime c
 ### Chat Surfaces
 - Terminal chat:
   - `yaswarm chat`
-  - Supports config-help commands: `/missing`, `/set KEY value`, `/doctor`, `/register`, `/swarm-init`, `/dispatch`.
+  - Supports config/integration commands: `/missing`, `/set KEY value`, `/doctor`, `/register`, `/swarm-init`, `/dispatch`, `/skills`, `/skill <name>`, `/skills-routing`, `/mcp-servers`, `/mcp-tools`, `/mcp-env`, `/mcp-set KEY VALUE`.
 - Agency UI chat:
   - UI `/chat` panel uses server relay `/api/chat/*`.
   - Backend now delegates to `scripts/chat-cli.py` for consistent behavior with terminal chat.
@@ -91,7 +91,21 @@ YaSwarm CLI solves this by making system initialization, registration, runtime c
 - `yaswarm mcp list`
 - `yaswarm mcp inspect [server-command...]`
 - `yaswarm mcp health`
+- `yaswarm agency skills-list`
+- `yaswarm agency skills-routing`
+- `yaswarm agency skill-get <name>`
+- `yaswarm agency mcp-servers`
+- `yaswarm agency mcp-tools`
+- `yaswarm agency mcp-registry`
+- `yaswarm agency mcp-config`
+- `yaswarm agency mcp-env-list`
+- `yaswarm agency mcp-env-set <KEY> <VALUE>`
 - `yaswarm dashboard refresh`
+
+Unified catalog behavior:
+- Skills are read from `projects/yaswarm-skills-cataloge/catalog/skill-system/registry/skills-registry.json` when available.
+- MCP catalog/config is read from `mcp/mcp-config.json` first, then `projects/yaswarm-mcps-cataloge/imports/agency/mcp-catalog.json`.
+- UI, terminal chat, and CLI commands all use the same backend API routes for catalog reads/writes.
 
 ## Quick Start (New User)
 

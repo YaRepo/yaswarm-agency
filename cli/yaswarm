@@ -4,6 +4,8 @@ set -euo pipefail
 SCRIPT_PATH="$(readlink -f "${BASH_SOURCE[0]}")"
 ROOT="$(cd "$(dirname "$SCRIPT_PATH")/.." && pwd)"
 MCP_CONFIG="$ROOT/mcp/mcp-config.json"
+SKILLS_REGISTRY="$ROOT/projects/yaswarm-skills-cataloge/catalog/skill-system/registry/skills-registry.json"
+MCP_CATALOG="$ROOT/projects/yaswarm-mcps-cataloge/imports/agency/mcp-catalog.json"
 WORKSPACE_DEFAULT="${YASWARM_WORKSPACE:-$ROOT/projects/yaswarm-desk-workspace}"
 
 help() {
@@ -54,6 +56,26 @@ Usage:
   yaswarm register
 
   yaswarm dashboard refresh
+
+  yaswarm agency backend-capabilities <backend>
+  yaswarm agency department-update <departmentId> [--backend <name>] [--model <id>] [--modelTier <tier>] [--providerIds <csv>] [--fallbackModels <csv>] [--backendUrl <url>] [--autoInstallBackend]
+  yaswarm agency governor-status
+  yaswarm agency governor-set [--enabled true|false] [--autoDelay true|false]
+  yaswarm agency permissions-get
+  yaswarm agency permissions-set [--subagentHead true|false] [--headCeo true|false] [--ceoUser true|false] [--allowSubagentFull true|false]
+  yaswarm agency approvals-list
+  yaswarm agency approval-approve <approvalId> [--note "..."] [--approvedCommand "..."]
+  yaswarm agency approval-reject <approvalId> [--note "..."]
+  yaswarm agency terminal-exec <sessionId> <command> [--taskName <name>] [--taskWeight light|medium|heavy] [--actorRole subagent|head|ceo|user] [--requestedAccess default|full] [--approvalId <id>] [--force]
+  yaswarm agency skills-list
+  yaswarm agency skills-routing
+  yaswarm agency skill-get <name>
+  yaswarm agency mcp-servers
+  yaswarm agency mcp-tools
+  yaswarm agency mcp-registry
+  yaswarm agency mcp-config
+  yaswarm agency mcp-env-list
+  yaswarm agency mcp-env-set <KEY> <VALUE>
 HELP
 }
 
@@ -91,12 +113,22 @@ case "$cmd" in
     ;;
   skill)
     [[ "$sub" == "list" ]] || { echo "Unknown skill subcommand: $sub" >&2; exit 1; }
-    ls -1 "$ROOT/skills" 2>/dev/null || echo "No local skills imported yet"
+    if [[ -f "$SKILLS_REGISTRY" ]]; then
+      cat "$SKILLS_REGISTRY"
+    else
+      ls -1 "$ROOT/skills" 2>/dev/null || echo "No local skills imported yet"
+    fi
     ;;
   mcp)
     case "$sub" in
       list)
-        if [[ -f "$MCP_CONFIG" ]]; then cat "$MCP_CONFIG"; else cat "$ROOT/mcp/mcp-config.example.json"; fi
+        if [[ -f "$MCP_CONFIG" ]]; then
+          cat "$MCP_CONFIG"
+        elif [[ -f "$MCP_CATALOG" ]]; then
+          cat "$MCP_CATALOG"
+        else
+          cat "$ROOT/mcp/mcp-config.example.json"
+        fi
         ;;
       inspect)
         shift 2 || true
@@ -205,6 +237,14 @@ case "$cmd" in
   dashboard)
     [[ "$sub" == "refresh" ]] || { echo "Unknown dashboard subcommand: $sub" >&2; exit 1; }
     python3 "$ROOT/scripts/dashboard-bridge.py"
+    ;;
+  agency)
+    shift || true
+    if [[ "$#" -eq 0 ]]; then
+      echo "Usage: yaswarm agency <subcommand> [args...]" >&2
+      exit 1
+    fi
+    python3 "$ROOT/scripts/agency-api.py" "$@"
     ;;
   *)
     echo "Unknown command: $cmd" >&2

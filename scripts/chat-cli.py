@@ -174,6 +174,13 @@ def help_text() -> str:
             "  /register                     Run yaswarm register",
             "  /swarm-init                   Run yaswarm swarm init",
             "  /dispatch <dep> <task>        Dispatch directly",
+            "  /skills                       Show skill registry from agency API",
+            "  /skill <name>                 Show one skill from agency API",
+            "  /skills-routing               Show skill routing policy",
+            "  /mcp-servers                 Show MCP servers/registry snapshot",
+            "  /mcp-tools                   Show MCP tools summary",
+            "  /mcp-env                     Show MCP env keys (masked)",
+            "  /mcp-set <KEY> <VALUE>       Set MCP env key via API",
             "",
             "Normal message behavior:",
             "  - Routes to inferred department and dispatches as a task.",
@@ -254,6 +261,32 @@ def handle_command(raw: str) -> Optional[str]:
         task = raw.strip().split(None, 2)[2]
         ok, msg = dispatch_task(dep, task)
         return msg if ok else f"Dispatch failed: {msg}"
+    if cmd == "/skills":
+        rc, out, err = run(["python3", str(ROOT / "scripts" / "agency-api.py"), "skills-list"])
+        return out if rc == 0 else (out + "\n" + err).strip()
+    if cmd == "/skill":
+        if len(parts) < 2:
+            return "Usage: /skill <name>"
+        rc, out, err = run(["python3", str(ROOT / "scripts" / "agency-api.py"), "skill-get", parts[1]])
+        return out if rc == 0 else (out + "\n" + err).strip()
+    if cmd == "/skills-routing":
+        rc, out, err = run(["python3", str(ROOT / "scripts" / "agency-api.py"), "skills-routing"])
+        return out if rc == 0 else (out + "\n" + err).strip()
+    if cmd == "/mcp-servers":
+        rc, out, err = run(["python3", str(ROOT / "scripts" / "agency-api.py"), "mcp-servers"])
+        return out if rc == 0 else (out + "\n" + err).strip()
+    if cmd == "/mcp-tools":
+        rc, out, err = run(["python3", str(ROOT / "scripts" / "agency-api.py"), "mcp-tools"])
+        return out if rc == 0 else (out + "\n" + err).strip()
+    if cmd == "/mcp-env":
+        rc, out, err = run(["python3", str(ROOT / "scripts" / "agency-api.py"), "mcp-env-list"])
+        return out if rc == 0 else (out + "\n" + err).strip()
+    if cmd == "/mcp-set":
+        if len(parts) < 3:
+            return "Usage: /mcp-set <KEY> <VALUE>"
+        value = raw.strip().split(None, 2)[2]
+        rc, out, err = run(["python3", str(ROOT / "scripts" / "agency-api.py"), "mcp-env-set", parts[1], value])
+        return out if rc == 0 else (out + "\n" + err).strip()
 
     return None
 
