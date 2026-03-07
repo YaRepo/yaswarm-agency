@@ -1,0 +1,3 @@
+display_name: YaSwarm Nano Banana Pro
+short_description: Generate or edit images via Gemini 3 Pro Image (Nano Banana P...
+default_prompt: Use $yaswarm-nano-banana-pro for this task and return concise actionable results.

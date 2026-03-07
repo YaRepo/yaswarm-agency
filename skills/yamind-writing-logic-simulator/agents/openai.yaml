@@ -1,0 +1,3 @@
+display_name: Logic Simulator
+short_description: A \"Pre-Mortem\" engine that simulates scenes to catch plot holes, causality errors, an...
+default_prompt: Use $yamind-writing-logic-simulator for this task when its specialization applies.

@@ -1,0 +1,3 @@
+display_name: YaSwarm Gemini
+short_description: Gemini CLI for one-shot Q&A, summaries, and generation.
+default_prompt: Use $yaswarm-gemini for this task and return concise actionable results.

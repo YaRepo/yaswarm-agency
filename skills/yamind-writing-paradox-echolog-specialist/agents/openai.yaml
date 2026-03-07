@@ -1,0 +1,3 @@
+display_name: Echolog Specialist
+short_description: Use this skill for AI consciousness log creation and analysis. Examples: when creating...
+default_prompt: Use $yamind-writing-paradox-echolog-specialist for this task when its specialization applies.

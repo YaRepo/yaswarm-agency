@@ -1,0 +1,3 @@
+display_name: YaSwarm Food Order
+short_description: Reorder Foodora orders + track ETA/status with ordercli. Neve...
+default_prompt: Use $yaswarm-food-order for this task and return concise actionable results.

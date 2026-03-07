@@ -1,0 +1,3 @@
+display_name: YaSwarm GH Issues
+short_description: Issue and PR triage via gh
+default_prompt: Use $yaswarm-gh-issues to triage issues/PR blockers and propose prioritized actions.

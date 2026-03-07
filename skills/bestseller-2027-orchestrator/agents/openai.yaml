@@ -1,0 +1,5 @@
+version: 1
+interface:
+  display_name: Bestseller 2027 Orchestrator
+  short_description: Build an end-to-end novel commercialization and launch system for 2027
+  default_prompt: Build a full commercialization plan to maximize this novel's breakout probability in 2027.

@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "updated_at": "__NOW__",
+  "description": "YaSwarm clean workspace baseline.",
+  "group_chat_id": null,
+  "ceo": {
+    "bot_id": "yaswarm_ceo_bot",
+    "bot_name": "YaSwarm CEO",
+    "token_env": "YASWARM_CEO_BOT_TOKEN",
+    "topic_name": "CEO Office",
+    "topic_thread_id": null,
+    "role": "orchestrator",
+    "system_context": "You are YaSwarm CEO. Coordinate departments and maintain execution quality.",
+    "backend": "opencode",
+    "model_tier": "medium",
+    "can_delegate": true,
+    "departments": []
+  },
+  "departments": {}
+}

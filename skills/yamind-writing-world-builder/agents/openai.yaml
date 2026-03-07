@@ -1,0 +1,3 @@
+display_name: World Builder
+short_description: This skill provides world-building consistency and universe validation. Use when the us...
+default_prompt: Use $yamind-writing-world-builder for this task when its specialization applies.

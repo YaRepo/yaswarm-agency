@@ -1,0 +1,3 @@
+display_name: YaSwarm Tmux
+short_description: Remote-control tmux sessions for interactive CLIs by sending ...
+default_prompt: Use $yaswarm-tmux for this task and return concise actionable results.

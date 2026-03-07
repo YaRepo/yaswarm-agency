@@ -1,0 +1,3 @@
+display_name: YaSwarm Bear Notes
+short_description: Create, search, and manage Bear notes via grizzly CLI.
+default_prompt: Use $yaswarm-bear-notes for this task and return concise actionable results.

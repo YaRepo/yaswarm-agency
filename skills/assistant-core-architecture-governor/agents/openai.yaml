@@ -1,0 +1,3 @@
+display_name: Assistant Core Governor
+short_description: Enforce identity, memory, heartbeat, and adapter quality
+default_prompt: Use $assistant-core-architecture-governor to audit my assistant architecture for SOUL/USER memory, SQLite indexing, heartbeat loops, and adapter reliability.

@@ -1,0 +1,3 @@
+display_name: MAC-Doctor
+short_description: Diagnose, optimize, and tune an aging Mac end-to-end
+default_prompt: Analyze this Mac, diagnose bottlenecks, and apply safe fixes for performance, thermals, storage, and developer workflows.

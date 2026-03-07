@@ -1,0 +1,3 @@
+display_name: Research Digest Builder
+short_description: Turn notes into concise learning digests
+default_prompt: Use $research-digest-builder to summarize these research notes into key insights, actions, and open questions.

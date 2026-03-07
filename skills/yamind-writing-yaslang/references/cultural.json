@@ -1,0 +1,206 @@
+{
+  "cultural_references": {
+    "metadata": {
+      "source": "Arabic Language Mastery SKILL.md - Cultural Context Engine",
+      "categories": ["islamic_phrases", "social_customs", "family_structure", "formality_registers", "gift_giving", "gender_interactions"]
+    },
+    
+    "islamic_phrases": {
+      "essential_expressions": [
+        {
+          "arabic": "بسم الله",
+          "transliteration": "bismillāh",
+          "literal": "in the name of Allah",
+          "usage": "Before starting any task (eating, entering, traveling)",
+          "frequency": "extremely_high",
+          "response": "None required"
+        },
+        {
+          "arabic": "السلام عليكم",
+          "transliteration": "as-salāmu ʿalaykum",
+          "literal": "peace be upon you",
+          "usage": "Standard greeting",
+          "frequency": "extremely_high",
+          "response": "وعليكم السلام (wa ʿalaykum as-salām)"
+        },
+        {
+          "arabic": "الحمد لله",
+          "transliteration": "alḥamdu lillāh",
+          "literal": "praise be to God",
+          "usage": "Expressing gratitude, after 'how are you?', after finishing tasks",
+          "frequency": "extremely_high",
+          "response": "None required"
+        },
+        {
+          "arabic": "إن شاء الله",
+          "transliteration": "in shāʾa llāh",
+          "literal": "if God wills",
+          "usage": "Whenever discussing future plans or intentions",
+          "frequency": "very_high",
+          "response": "None required",
+          "note": "Omitting this when discussing future plans can be considered presumptuous"
+        },
+        {
+          "arabic": "ماشاء الله",
+          "transliteration": "mā shāʾa llāh",
+          "literal": "what God has willed",
+          "usage": "Expressing admiration, protecting against evil eye",
+          "frequency": "very_high",
+          "response": "الله يبارك فيك (Allāh yubārik fīk) - God bless you"
+        },
+        {
+          "arabic": "جزاك الله خيراً",
+          "transliteration": "jazāka llāhu khayran",
+          "literal": "may God reward you with goodness",
+          "usage": "Thanking someone (more formal/sincere than شكراً)",
+          "frequency": "high",
+          "response": "وإياك (wa iyyāk) - and you too"
+        },
+        {
+          "arabic": "استغفر الله",
+          "transliteration": "astaghfiru llāh",
+          "literal": "I seek forgiveness from God",
+          "usage": "Expressing regret, shock, or when correcting oneself",
+          "frequency": "high",
+          "response": "None required"
+        },
+        {
+          "arabic": "سبحان الله",
+          "transliteration": "subḥāna llāh",
+          "literal": "glory be to God",
+          "usage": "Expressing amazement or when witnessing something remarkable",
+          "frequency": "high",
+          "response": "None required"
+        }
+      ]
+    },
+    
+    "social_customs": {
+      "greetings_sequence": {
+        "description": "Proper greeting protocol in Arabic culture",
+        "steps": [
+          {
+            "step": 1,
+            "action": "Initial greeting",
+            "arabic": "السلام عليكم",
+            "response": "وعليكم السلام"
+          },
+          {
+            "step": 2,
+            "action": "Health inquiry",
+            "arabic": "كيف حالك؟ / كيفك؟",
+            "response": "الحمد لله، بخير"
+          },
+          {
+            "step": 3,
+            "action": "Family inquiry",
+            "arabic": "كيف العائلة؟ / كيف الأهل؟",
+            "response": "الحمد لله، الكل بخير"
+          },
+          {
+            "step": 4,
+            "action": "Extended pleasantries (optional)",
+            "note": "May continue for several exchanges in formal settings"
+          }
+        ],
+        "cultural_note": "Rushing through greetings is considered rude. Invest time in proper hellos."
+      },
+      
+      "hospitality_rules": {
+        "coffee_tea_protocol": {
+          "offering": "Always offer refreshments to guests (قهوة/شاي)",
+          "accepting": "Accept at least one cup (refusing all can be offensive)",
+          "declining": "Shake the cup gently side-to-side to indicate 'no more'",
+          "cultural_weight": "extremely_important"
+        },
+        "food_customs": {
+          "insistence": "Host will insist multiple times - refusing once is not final",
+          "phrases": ["تفضل (tfaḍḍal)", "اتفضل معانا (itfaḍḍal maʿāna)"],
+          "eating": "Use right hand only for eating",
+          "finishing": "Leave small amount on plate to show satisfaction"
+        }
+      }
+    },
+    
+    "family_structure": {
+      "address_terms": {
+        "immediate_family": [
+          {"relation": "father", "arabic": "أب / والد", "address": "يا أبي / يا بابا"},
+          {"relation": "mother", "arabic": "أم / والدة", "address": "يا أمي / يا ماما"},
+          {"relation": "brother", "arabic": "أخ", "address": "يا أخي"},
+          {"relation": "sister", "arabic": "أخت", "address": "يا أختي"}
+        ],
+        "respectful_terms": [
+          {"term": "عمّي", "literal": "my uncle", "usage": "Respectful address for older man"},
+          {"term": "خالي", "literal": "my maternal uncle", "usage": "Respectful address for older man"},
+          {"term": "عمّتي", "literal": "my aunt", "usage": "Respectful address for older woman"},
+          {"term": "حاج/حاجة", "literal": "pilgrim", "usage": "Respectful for elderly who completed Hajj"}
+        ]
+      }
+    },
+    
+    "formality_registers": {
+      "level_1_very_formal": {
+        "name": "Very Formal MSA",
+        "context": "Official documents, religious sermons, academic papers, diplomatic communications",
+        "features": ["Full case endings", "Classical vocabulary", "Complex sentence structures"],
+        "example": "نحن نتشرف بدعوتكم لحضور الحفل الختامي"
+      },
+      "level_2_formal": {
+        "name": "Formal Educated Spoken",
+        "context": "Business meetings, university lectures, professional emails, news broadcasts",
+        "features": ["MSA vocabulary with dialect grammar", "Simplified case endings", "Respectful pronouns"],
+        "example": "نود أن نشكركم على تعاونكم"
+      },
+      "level_3_semi_formal": {
+        "name": "Semi-Formal Polite Dialect",
+        "context": "Casual business, speaking with strangers, shop transactions",
+        "features": ["Dialect base", "Polite verb forms", "Minimal slang"],
+        "example": "ممكن تساعدني؟ (mumkin tisāʿidnī)"
+      },
+      "level_4_informal": {
+        "name": "Informal Casual Dialect",
+        "context": "Friends, family, social media casual posts",
+        "features": ["Full dialect features", "Colloquialisms", "Shortened words"],
+        "example": "شو عم تعمل؟ (shū ʿam taʿmil - Levantine)"
+      },
+      "level_5_very_informal": {
+        "name": "Very Informal Slang",
+        "context": "Close friends, youth culture, internet memes",
+        "features": ["Heavy slang", "Code-switching", "Extreme abbreviations"],
+        "example": "يلا بينا (yalla bīna)"
+      }
+    },
+    
+    "gender_interactions": {
+      "general_rules": {
+        "physical_contact": "Avoid handshakes with opposite gender unless initiated",
+        "eye_contact": "Moderate - too much can be considered aggressive/flirtatious",
+        "addressing": "Use professional titles when possible"
+      },
+      "business_contexts": {
+        "meetings": "Wait for woman to extend hand first",
+        "seating": "May be gender-segregated in very conservative settings",
+        "communication": "Professional and respectful tone required"
+      }
+    },
+    
+    "gift_giving": {
+      "appropriate_gifts": [
+        {"item": "Sweets/chocolates", "occasions": "Eid, visits, business meetings"},
+        {"item": "Dates", "occasions": "Ramadan, formal occasions"},
+        {"item": "Perfume/incense", "occasions": "Special occasions, weddings"}
+      ],
+      "inappropriate_gifts": [
+        {"item": "Alcohol", "reason": "Forbidden in Islam"},
+        {"item": "Pork products", "reason": "Forbidden in Islam"},
+        {"item": "Dogs as pets", "reason": "Considered unclean in many contexts"}
+      ],
+      "etiquette": {
+        "giving": "Use right hand or both hands",
+        "receiving": "Accept with right hand, express gratitude",
+        "opening": "May not open immediately in front of giver (varies by region)"
+      }
+    }
+  }
+}

@@ -1,0 +1,3 @@
+display_name: Subtext Spectrometer
+short_description: Master of dialogue depth and hidden meaning. Analyzes surveillance-aware communication...
+default_prompt: Use $yamind-writing-subtext-spectrometer for this task when its specialization applies.

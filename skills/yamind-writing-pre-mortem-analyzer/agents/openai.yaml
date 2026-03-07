@@ -1,0 +1,3 @@
+display_name: Pre Mortem Analyzer
+short_description: Use this skill for pre-mortem narrative stress testing, identifying failure points, log...
+default_prompt: Use $yamind-writing-pre-mortem-analyzer for this task when its specialization applies.

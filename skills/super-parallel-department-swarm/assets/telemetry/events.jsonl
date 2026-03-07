@@ -1,0 +1,11 @@
+{"ts": "2026-02-20T00:39:50.281350+00:00", "type": "restore_drill", "status": "pass", "details": "restored /var/folders/kd/q_xdqfws1hl5fl65bg0q8hcm0000gp/T/yamac-restore-drill-3nnsdw87/memory/memory.sqlite"}
+{"ts": "2026-02-20T00:41:45.757649+00:00", "type": "restore_drill", "status": "pass", "details": "restored /var/folders/kd/q_xdqfws1hl5fl65bg0q8hcm0000gp/T/yamac-restore-drill-z1wan79k/memory/memory.sqlite"}
+{"ts": "2026-02-20T00:44:59.312484+00:00", "type": "restore_drill", "status": "pass", "details": "restored /var/folders/kd/q_xdqfws1hl5fl65bg0q8hcm0000gp/T/yamac-restore-drill-8fhh3ok3/memory/memory.sqlite"}
+{"ts": "2026-02-20T01:16:26.750064+00:00", "type": "restore_drill", "status": "pass", "details": "restored /var/folders/kd/q_xdqfws1hl5fl65bg0q8hcm0000gp/T/yamac-restore-drill-bgikna80/memory/memory.sqlite"}
+{"ts": "2026-02-20T01:17:14.756900+00:00", "type": "restore_drill", "status": "pass", "details": "restored /var/folders/kd/q_xdqfws1hl5fl65bg0q8hcm0000gp/T/yamac-restore-drill-hn4uampf/memory/memory.sqlite"}
+{"ts": "2026-02-20T01:22:07.416163+00:00", "type": "restore_drill", "status": "pass", "details": "restored /var/folders/kd/q_xdqfws1hl5fl65bg0q8hcm0000gp/T/yamac-restore-drill-owzyb6h6/memory/memory.sqlite"}
+{"ts": "2026-02-20T01:24:13.901004+00:00", "type": "restore_drill", "status": "pass", "details": "restored /var/folders/kd/q_xdqfws1hl5fl65bg0q8hcm0000gp/T/yamac-restore-drill-vyohi036/memory/memory.sqlite"}
+{"ts": "2026-02-20T01:24:38.685533+00:00", "type": "restore_drill", "status": "pass", "details": "restored /var/folders/kd/q_xdqfws1hl5fl65bg0q8hcm0000gp/T/yamac-restore-drill-0rd6_xvi/memory/memory.sqlite"}
+{"ts": "2026-02-20T01:29:34.026507+00:00", "type": "restore_drill", "status": "pass", "details": "restored /var/folders/kd/q_xdqfws1hl5fl65bg0q8hcm0000gp/T/yamac-restore-drill-sf075qri/memory/memory.sqlite"}
+{"ts": "2026-02-20T01:30:11.617060+00:00", "type": "restore_drill", "status": "pass", "details": "restored /var/folders/kd/q_xdqfws1hl5fl65bg0q8hcm0000gp/T/yamac-restore-drill-41fo95st/memory/memory.sqlite"}
+{"ts": "2026-02-20T01:30:41.708840+00:00", "type": "restore_drill", "status": "pass", "details": "restored /var/folders/kd/q_xdqfws1hl5fl65bg0q8hcm0000gp/T/yamac-restore-drill-_ap1otzr/memory/memory.sqlite"}

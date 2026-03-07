@@ -1,0 +1,3 @@
+display_name: Character Creator
+short_description: Create a new character profile linked to a universe. Use when adding protagonists, anta...
+default_prompt: Use $yamind-writing-character-creator for this task when its specialization applies.

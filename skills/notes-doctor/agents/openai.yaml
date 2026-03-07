@@ -1,0 +1,3 @@
+display_name: Notes Doctor
+short_description: Organize and enhance Mac notes with safe, indexed workflows
+default_prompt: Scan my notes, categorize them, suggest rewrites, detect duplicates, and update a searchable notes memory index.

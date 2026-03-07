@@ -1,0 +1,3 @@
+display_name: Portfolio Pitch Builder
+short_description: Turn project notes into case studies and pitches
+default_prompt: Use $portfolio-pitch-builder to turn these notes into a portfolio case study and a concise client-facing pitch.

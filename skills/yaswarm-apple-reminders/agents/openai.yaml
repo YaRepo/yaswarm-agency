@@ -1,0 +1,3 @@
+display_name: YaSwarm Apple Reminders
+short_description: Manage Apple Reminders via remindctl CLI (list, add, edit, co...
+default_prompt: Use $yaswarm-apple-reminders for this task and return concise actionable results.

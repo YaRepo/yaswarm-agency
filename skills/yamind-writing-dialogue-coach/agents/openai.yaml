@@ -1,0 +1,3 @@
+display_name: Dialogue Coach
+short_description: Help write dialogue that matches character voices. Use when drafting conversations, dev...
+default_prompt: Use $yamind-writing-dialogue-coach for this task when its specialization applies.

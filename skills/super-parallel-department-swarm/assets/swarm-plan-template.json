@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "orchestrator": "swarm-orchestrator",
+  "max_parallel_departments": 4,
+  "departments": [
+    "art-dev",
+    "backend-coding",
+    "frontend-coding",
+    "writing-fiction",
+    "writing-nonfiction",
+    "film-production",
+    "marketing",
+    "business-opportunities"
+  ],
+  "quality_gates": [
+    "technical_correctness",
+    "ux_accessibility",
+    "content_clarity",
+    "strategy_risk"
+  ]
+}

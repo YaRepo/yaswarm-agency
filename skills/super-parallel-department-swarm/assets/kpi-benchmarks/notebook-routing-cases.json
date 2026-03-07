@@ -1,0 +1,47 @@
+[
+  {
+    "id": "nb-coding",
+    "task": "I need an agentic coding framework with orchestration patterns and tool routing.",
+    "expected_topic": "coding-dev"
+  },
+  {
+    "id": "nb-backend",
+    "task": "Compare backend runtime decisions for APIs, services, and systems reliability.",
+    "expected_topic": "backend"
+  },
+  {
+    "id": "nb-fiction",
+    "task": "Help me improve plot pacing and character arcs in my novel chapters.",
+    "expected_topic": "writing-fiction"
+  },
+  {
+    "id": "nb-nonfiction",
+    "task": "Build a research-based nonfiction article with structured evidence.",
+    "expected_topic": "writing-nonfiction"
+  },
+  {
+    "id": "nb-art",
+    "task": "I need visual concept direction, typography, and design composition references.",
+    "expected_topic": "art-design"
+  },
+  {
+    "id": "nb-books",
+    "task": "Guide me on publishing strategy and launching my new book.",
+    "expected_topic": "books-publishing"
+  },
+  {
+    "id": "nb-film",
+    "task": "Create a film production plan with treatment and shot workflow.",
+    "expected_topic": "film-production"
+  },
+  {
+    "id": "nb-marketing",
+    "task": "Build a channel strategy with messaging experiments and campaign reporting.",
+    "expected_topic": "marketing"
+  },
+  {
+    "id": "nb-business",
+    "task": "Define monetization, pricing, GTM, and KPI operations for this product.",
+    "expected_topic": "business"
+  }
+]

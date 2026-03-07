@@ -1,0 +1,3 @@
+display_name: Book Novel Storylab
+short_description: Plan, draft, and revise books and stories
+default_prompt: Use $book-novel-storylab to turn my story idea into a chapter outline, character arcs, and a revised draft section.

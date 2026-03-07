@@ -1,0 +1,74 @@
+[
+  {
+    "id": "dev-mcp-server",
+    "task": "Build a new MCP server with safe tool boundaries and auth handling.",
+    "expected_skill": "yamind-dev-mcp-builder",
+    "context": "general"
+  },
+  {
+    "id": "frontend-architecture",
+    "task": "Design and implement a frontend dashboard with intentional minimalism and proper UI library use.",
+    "expected_skill": "frontend-intentional-minimalism-architect",
+    "context": "general"
+  },
+  {
+    "id": "frontend-library-compliance",
+    "task": "Audit this UI code to ensure we only use existing component library primitives and no custom duplicate components.",
+    "expected_skill": "frontend-library-compliance-guard",
+    "context": "general"
+  },
+  {
+    "id": "fiction-scene",
+    "task": "Write a high-tension chapter scene and keep character voices distinct.",
+    "expected_skill": "yamind-writing-scene-writer",
+    "context": "general"
+  },
+  {
+    "id": "fiction-architecture",
+    "task": "Do a structural plot analysis and fix escalation and payoff gaps in my manuscript.",
+    "expected_skill": "yamind-writing-plot-architect",
+    "context": "general"
+  },
+  {
+    "id": "nonfiction-research",
+    "task": "Research this topic and produce a well-cited long-form article draft.",
+    "expected_skill": "yamind-writing-content-research-writer",
+    "context": "general"
+  },
+  {
+    "id": "film-package",
+    "task": "Turn this film concept into a treatment, beat sheet, shot list, and production package.",
+    "expected_skill": "filmmaking-producer",
+    "context": "general"
+  },
+  {
+    "id": "business-model",
+    "task": "Turn my current AI project into a business model with pricing, offer ladder, and KPIs.",
+    "expected_skill": "project-to-business-architect",
+    "context": "general"
+  },
+  {
+    "id": "notes-cleanup",
+    "task": "Organize my messy notes, deduplicate entries, and build an indexed memory structure.",
+    "expected_skill": "notes-doctor",
+    "context": "general"
+  },
+  {
+    "id": "calendar-ops",
+    "task": "Plan my week and create reminders with time-bound tasks for deadlines.",
+    "expected_skill": "calendar-reminders-ops",
+    "context": "general"
+  },
+  {
+    "id": "mac-diagnosis",
+    "task": "My Mac is overheating and slow; diagnose and provide an optimization plan.",
+    "expected_skill": "mac-doctor",
+    "context": "general"
+  },
+  {
+    "id": "notebooklm-ops",
+    "task": "List my NotebookLM notebooks and query one for a concise summary.",
+    "expected_skill": "notebooklm-mcp-operator",
+    "context": "general"
+  }
+]

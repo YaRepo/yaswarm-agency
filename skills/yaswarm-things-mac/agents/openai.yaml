@@ -1,0 +1,3 @@
+display_name: YaSwarm Things Mac
+short_description: Manage Things 3 via the `things` CLI on macOS (add/update pro...
+default_prompt: Use $yaswarm-things-mac for this task and return concise actionable results.

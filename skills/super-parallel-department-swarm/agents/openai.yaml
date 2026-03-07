@@ -1,0 +1,3 @@
+display_name: Super Parallel Department Swarm
+short_description: Orchestrate a department-based multi-agent Codex framework with parallel execution, quality gates, and memory continuity.
+default_prompt: Use $super-parallel-department-swarm to design or run a department-based parallel Codex system, route work to specialist agents, and return a concrete execution roadmap.

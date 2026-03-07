@@ -1,0 +1,3 @@
+display_name: Culture Architect
+short_description: Use this agent for anthropological worldbuilding and cultural design. Examples: When cr...
+default_prompt: Use $yamind-writing-culture-architect for this task when its specialization applies.

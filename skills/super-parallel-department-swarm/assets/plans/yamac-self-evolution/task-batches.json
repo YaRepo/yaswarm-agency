@@ -1,0 +1,161 @@
+{
+  "project": "yamac-self-evolution",
+  "mode": "audit-and-upgrade",
+  "waves": [
+    {
+      "wave": 1,
+      "departments": [
+        {
+          "id": "art-dev",
+          "owner": "Art Development",
+          "depends_on": [],
+          "deliverables": [
+            "style_tokens",
+            "asset_plan",
+            "production_notes"
+          ],
+          "primary_skills": [
+            "yamind-design-canvas-design",
+            "yamind-design-image-enhancer",
+            "yamind-design-cover-designer"
+          ]
+        },
+        {
+          "id": "backend-coding",
+          "owner": "Backend Coding",
+          "depends_on": [],
+          "deliverables": [
+            "architecture_plan",
+            "api_contracts",
+            "reliability_checks"
+          ],
+          "primary_skills": [
+            "yamind-dev-mcp-builder",
+            "yamind-dev-langsmith-fetch",
+            "yamind-dev-create-pull-request"
+          ]
+        },
+        {
+          "id": "writing-fiction",
+          "owner": "Writing Fiction",
+          "depends_on": [],
+          "deliverables": [
+            "story_structure",
+            "scene_plan",
+            "revision_notes"
+          ],
+          "primary_skills": [
+            "book-novel-storylab",
+            "yamind-writing-scene-writer",
+            "yamind-writing-plot-architect",
+            "yamind-writing-character-psychologist"
+          ]
+        },
+        {
+          "id": "writing-nonfiction",
+          "owner": "Writing Non-Fiction",
+          "depends_on": [],
+          "deliverables": [
+            "outline",
+            "evidence_grid",
+            "draft_blocks"
+          ],
+          "primary_skills": [
+            "yamind-writing-content-research-writer",
+            "research-digest-builder",
+            "content-publishing-pipeline"
+          ]
+        }
+      ]
+    },
+    {
+      "wave": 2,
+      "departments": [
+        {
+          "id": "frontend-coding",
+          "owner": "Frontend Coding",
+          "depends_on": [
+            "backend-coding",
+            "art-dev"
+          ],
+          "deliverables": [
+            "component_plan",
+            "accessibility_checks",
+            "ui_tasks"
+          ],
+          "primary_skills": [
+            "frontend-intentional-minimalism-architect",
+            "frontend-library-compliance-guard",
+            "yamind-dev-web-design-guidelines"
+          ]
+        },
+        {
+          "id": "film-production",
+          "owner": "Film Production",
+          "depends_on": [
+            "writing-fiction",
+            "art-dev"
+          ],
+          "deliverables": [
+            "treatment",
+            "shot_plan",
+            "production_schedule"
+          ],
+          "primary_skills": [
+            "filmmaking-producer",
+            "yamind-writing-showrunner-expert",
+            "yamind-writing-prose-cinematographer"
+          ]
+        }
+      ]
+    },
+    {
+      "wave": 3,
+      "departments": [
+        {
+          "id": "marketing",
+          "owner": "Marketing",
+          "depends_on": [
+            "frontend-coding",
+            "writing-nonfiction",
+            "art-dev"
+          ],
+          "deliverables": [
+            "messaging_matrix",
+            "experiment_plan",
+            "reporting_cadence"
+          ],
+          "primary_skills": [
+            "content-publishing-pipeline",
+            "yamind-writing-competitive-ads-extractor",
+            "portfolio-pitch-builder"
+          ]
+        }
+      ]
+    },
+    {
+      "wave": 4,
+      "departments": [
+        {
+          "id": "business-opportunities",
+          "owner": "Business Opportunities",
+          "depends_on": [
+            "marketing",
+            "backend-coding",
+            "frontend-coding"
+          ],
+          "deliverables": [
+            "offer_ladder",
+            "pricing_hypothesis",
+            "kpi_board"
+          ],
+          "primary_skills": [
+            "project-to-business-architect",
+            "creator-finance-ops",
+            "legal-admin-tracker"
+          ]
+        }
+      ]
+    }
+  ]
+}

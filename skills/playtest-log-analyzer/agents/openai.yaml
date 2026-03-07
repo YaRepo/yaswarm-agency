@@ -1,0 +1,3 @@
+display_name: Playtest Log Analyzer
+short_description: Analyze playtest logs and suggest balance patches
+default_prompt: Use $playtest-log-analyzer to analyze these playtest logs and produce evidence-based patch suggestions per card ID.

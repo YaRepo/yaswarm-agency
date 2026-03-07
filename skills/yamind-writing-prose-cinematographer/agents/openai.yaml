@@ -1,0 +1,3 @@
+display_name: Prose Cinematographer
+short_description: This skill provides visual storytelling and cinematic prose analysis. Use when the user...
+default_prompt: Use $yamind-writing-prose-cinematographer for this task when its specialization applies.

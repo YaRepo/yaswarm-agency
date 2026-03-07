@@ -1,0 +1,3 @@
+display_name: Shapeshifter Surgical Revision Architect
+short_description: Build chapter-by-chapter surgical revision plans with exact directives
+default_prompt: Use $shapeshifter-surgical-revision-architect to produce a surgical revision plan for Chapters 1-24 with cut/add/rewrite instructions and word deltas.

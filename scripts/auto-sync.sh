@@ -70,6 +70,7 @@ auto-sync commands:
   stop
   status
   run-once
+  run-forever [interval_sec]
 HELP
 }
 
@@ -79,5 +80,6 @@ case "$sub" in
   stop) stop_daemon ;;
   status) status_daemon ;;
   run-once) run_once ; echo "auto-sync run-once complete" ;;
+  run-forever) shift; daemon_loop "${1:-$INTERVAL_DEFAULT}" ;;
   *) usage; exit 1 ;;
 esac

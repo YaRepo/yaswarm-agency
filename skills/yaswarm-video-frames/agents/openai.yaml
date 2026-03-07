@@ -1,0 +1,3 @@
+display_name: YaSwarm Video Frames
+short_description: Extract frames or short clips from videos using ffmpeg.
+default_prompt: Use $yaswarm-video-frames for this task and return concise actionable results.

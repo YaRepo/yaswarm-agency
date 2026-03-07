@@ -1,0 +1,3 @@
+display_name: Relationship Mapper
+short_description: Document and visualize character relationships. Use when mapping connections between ch...
+default_prompt: Use $yamind-writing-relationship-mapper for this task when its specialization applies.

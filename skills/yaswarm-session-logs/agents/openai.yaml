@@ -1,0 +1,3 @@
+display_name: YaSwarm Session Logs
+short_description: Search and analyze your own session logs (older/parent conver...
+default_prompt: Use $yaswarm-session-logs for this task and return concise actionable results.

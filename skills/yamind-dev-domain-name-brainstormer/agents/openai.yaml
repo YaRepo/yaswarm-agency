@@ -1,0 +1,3 @@
+display_name: Domain Name Brainstormer
+short_description: Generates creative domain name ideas for your project and checks availability across mu...
+default_prompt: Use $yamind-dev-domain-name-brainstormer for this task when its specialization applies.

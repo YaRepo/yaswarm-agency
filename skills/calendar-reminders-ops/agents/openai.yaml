@@ -1,0 +1,3 @@
+display_name: Calendar Reminders Ops
+short_description: Schedule tasks via macOS Calendar and Reminders
+default_prompt: Use $calendar-reminders-ops to plan my tasks, create reminders/events safely, and review today and this week agenda.

@@ -1,0 +1,3 @@
+display_name: YaSwarm Apple Notes
+short_description: Manage Apple Notes via the `memo` CLI on macOS (create, view,...
+default_prompt: Use $yaswarm-apple-notes for this task and return concise actionable results.

@@ -1,0 +1,3 @@
+display_name: Knowledge Action Auditor
+short_description: Audits who-knows-what versus character behavior
+default_prompt: Use $knowledge-action-auditor to audit my manuscript for character knowledge leaks, implausible ignorance, and action/knowledge contradictions, then provide a chapter-level fix plan.

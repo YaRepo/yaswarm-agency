@@ -1,0 +1,3 @@
+display_name: Writing Sprint
+short_description: Timed writing prompts based on your current work. Use when you need motivation, want to...
+default_prompt: Use $yamind-writing-writing-sprint for this task when its specialization applies.

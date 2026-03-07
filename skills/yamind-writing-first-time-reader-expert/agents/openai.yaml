@@ -1,0 +1,3 @@
+display_name: First Time Reader Expert
+short_description: Use this skill to evaluate content from the perspective of first-time readers. Useful a...
+default_prompt: Use $yamind-writing-first-time-reader-expert for this task when its specialization applies.

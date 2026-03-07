@@ -1,0 +1,210 @@
+{
+  "root_dictionary": {
+    "metadata": {
+      "source": "Arabic Language Mastery SKILL.md",
+      "total_roots": 120,
+      "root_types": ["trilateral_sound", "trilateral_hollow", "trilateral_defective", "quadrilateral"]
+    },
+    
+    "roots": [
+      {
+        "root": "ك-ت-ب",
+        "transliteration": "k-t-b",
+        "core_meaning": "writing",
+        "type": "trilateral_sound",
+        "derivatives": [
+          {"word": "كَتَبَ", "form": "I", "meaning": "he wrote"},
+          {"word": "كِتَاب", "pattern": "فِعَال", "meaning": "book"},
+          {"word": "كَاتِب", "pattern": "فَاعِل", "meaning": "writer"},
+          {"word": "مَكْتُوب", "pattern": "مَفْعُول", "meaning": "written/letter"},
+          {"word": "مَكْتَب", "pattern": "مَفْعَل", "meaning": "office/desk"},
+          {"word": "مَكْتَبَة", "pattern": "مَفْعَلَة", "meaning": "library"},
+          {"word": "كُتُب", "pattern": "فُعُل", "meaning": "books (plural)"}
+        ]
+      },
+      {
+        "root": "ذ-ه-ب",
+        "transliteration": "dh-h-b",
+        "core_meaning": "going",
+        "type": "trilateral_sound",
+        "derivatives": [
+          {"word": "ذَهَبَ", "form": "I", "meaning": "he went"},
+          {"word": "ذَهَاب", "pattern": "فَعَال", "meaning": "going/departure"},
+          {"word": "ذَاهِب", "pattern": "فَاعِل", "meaning": "going (active participle)"},
+          {"word": "مَذْهَب", "pattern": "مَفْعَل", "meaning": "doctrine/school of thought"}
+        ]
+      },
+      {
+        "root": "ع-ل-م",
+        "transliteration": "ʿ-l-m",
+        "core_meaning": "knowing",
+        "type": "trilateral_sound",
+        "derivatives": [
+          {"word": "عَلِمَ", "form": "I", "meaning": "he knew"},
+          {"word": "عِلْم", "pattern": "فِعْل", "meaning": "knowledge/science"},
+          {"word": "عَالِم", "pattern": "فَاعِل", "meaning": "scholar"},
+          {"word": "مُعَلِّم", "pattern": "مُفَعِّل", "meaning": "teacher"},
+          {"word": "تَعْلِيم", "pattern": "تَفْعِيل", "meaning": "education"},
+          {"word": "عَلَّمَ", "form": "II", "meaning": "he taught"}
+        ]
+      },
+      {
+        "root": "ق-ر-أ",
+        "transliteration": "q-r-ʾ",
+        "core_meaning": "reading/reciting",
+        "type": "trilateral_sound",
+        "derivatives": [
+          {"word": "قَرَأَ", "form": "I", "meaning": "he read"},
+          {"word": "قُرْآن", "pattern": "فُعْلَان", "meaning": "Quran/recitation"},
+          {"word": "قَارِئ", "pattern": "فَاعِل", "meaning": "reader"},
+          {"word": "قِرَاءَة", "pattern": "فِعَالَة", "meaning": "reading"},
+          {"word": "مَقْرُوء", "pattern": "مَفْعُول", "meaning": "read/readable"}
+        ]
+      },
+      {
+        "root": "ف-ع-ل",
+        "transliteration": "f-ʿ-l",
+        "core_meaning": "doing/acting",
+        "type": "trilateral_sound",
+        "derivatives": [
+          {"word": "فَعَلَ", "form": "I", "meaning": "he did"},
+          {"word": "فِعْل", "pattern": "فِعْل", "meaning": "action/verb"},
+          {"word": "فَاعِل", "pattern": "فَاعِل", "meaning": "doer/agent"},
+          {"word": "فَعَّال", "pattern": "فَعَّال", "meaning": "very active"},
+          {"word": "مَفْعُول", "pattern": "مَفْعُول", "meaning": "done/object"},
+          {"word": "فَعَّلَ", "form": "II", "meaning": "he activated"}
+        ]
+      },
+      {
+        "root": "د-ر-س",
+        "transliteration": "d-r-s",
+        "core_meaning": "studying",
+        "type": "trilateral_sound",
+        "derivatives": [
+          {"word": "دَرَسَ", "form": "I", "meaning": "he studied"},
+          {"word": "دَرْس", "pattern": "فَعْل", "meaning": "lesson"},
+          {"word": "دِرَاسَة", "pattern": "فِعَالَة", "meaning": "study"},
+          {"word": "مَدْرَسَة", "pattern": "مَفْعَلَة", "meaning": "school"},
+          {"word": "مُدَرِّس", "pattern": "مُفَعِّل", "meaning": "teacher"}
+        ]
+      },
+      {
+        "root": "ع-م-ل",
+        "transliteration": "ʿ-m-l",
+        "core_meaning": "working/doing",
+        "type": "trilateral_sound",
+        "derivatives": [
+          {"word": "عَمِلَ", "form": "I", "meaning": "he worked"},
+          {"word": "عَمَل", "pattern": "فَعَل", "meaning": "work/deed"},
+          {"word": "عَامِل", "pattern": "فَاعِل", "meaning": "worker"},
+          {"word": "مَعْمَل", "pattern": "مَفْعَل", "meaning": "factory"},
+          {"word": "عَمَلِيَّة", "pattern": "فَعَلِيَّة", "meaning": "operation/process"}
+        ]
+      },
+      {
+        "root": "ق-و-ل",
+        "transliteration": "q-w-l",
+        "core_meaning": "saying/speaking",
+        "type": "trilateral_hollow",
+        "weak_letter": "و",
+        "derivatives": [
+          {"word": "قَالَ", "form": "I", "meaning": "he said"},
+          {"word": "قَوْل", "pattern": "فَعْل", "meaning": "saying/statement"},
+          {"word": "قَائِل", "pattern": "فَاعِل", "meaning": "speaker"},
+          {"word": "مَقَال", "pattern": "مَفْعَل", "meaning": "article/saying"},
+          {"word": "مَقُول", "pattern": "مَفْعُول", "meaning": "said"}
+        ]
+      },
+      {
+        "root": "ك-و-ن",
+        "transliteration": "k-w-n",
+        "core_meaning": "being/existing",
+        "type": "trilateral_hollow",
+        "weak_letter": "و",
+        "derivatives": [
+          {"word": "كَانَ", "form": "I", "meaning": "he was/existed"},
+          {"word": "كَوْن", "pattern": "فَعْل", "meaning": "universe/existence"},
+          {"word": "كَائِن", "pattern": "فَاعِل", "meaning": "being/creature"},
+          {"word": "مَكَان", "pattern": "مَفْعَل", "meaning": "place"},
+          {"word": "تَكْوِين", "pattern": "تَفْعِيل", "meaning": "formation"}
+        ]
+      },
+      {
+        "root": "ج-ي-أ",
+        "transliteration": "j-y-ʾ",
+        "core_meaning": "coming",
+        "type": "trilateral_defective",
+        "weak_letter": "ي",
+        "derivatives": [
+          {"word": "جَاءَ", "form": "I", "meaning": "he came"},
+          {"word": "مَجِيء", "pattern": "مَفْعِل", "meaning": "coming/arrival"},
+          {"word": "جَائِي", "pattern": "فَاعِل", "meaning": "coming (active)"}
+        ]
+      },
+      {
+        "root": "ب-د-أ",
+        "transliteration": "b-d-ʾ",
+        "core_meaning": "beginning",
+        "type": "trilateral_sound",
+        "derivatives": [
+          {"word": "بَدَأَ", "form": "I", "meaning": "he began"},
+          {"word": "بِدَايَة", "pattern": "فِعَالَة", "meaning": "beginning"},
+          {"word": "مَبْدَأ", "pattern": "مَفْعَل", "meaning": "principle/start"}
+        ]
+      }
+    ],
+    
+    "verb_forms_patterns": {
+      "form_I": {
+        "pattern": "فَعَلَ",
+        "description": "Basic verb form",
+        "example": {"root": "ك-ت-ب", "verb": "كَتَبَ", "meaning": "he wrote"}
+      },
+      "form_II": {
+        "pattern": "فَعَّلَ",
+        "description": "Intensified/causative",
+        "example": {"root": "ع-ل-م", "verb": "عَلَّمَ", "meaning": "he taught (caused to know)"}
+      },
+      "form_III": {
+        "pattern": "فَاعَلَ",
+        "description": "Reciprocal/effort toward",
+        "example": {"root": "ك-ت-ب", "verb": "كَاتَبَ", "meaning": "he corresponded"}
+      },
+      "form_IV": {
+        "pattern": "أَفْعَلَ",
+        "description": "Causative",
+        "example": {"root": "خ-ر-ج", "verb": "أَخْرَجَ", "meaning": "he brought out"}
+      },
+      "form_V": {
+        "pattern": "تَفَعَّلَ",
+        "description": "Reflexive of Form II",
+        "example": {"root": "ع-ل-م", "verb": "تَعَلَّمَ", "meaning": "he learned (taught himself)"}
+      },
+      "form_VI": {
+        "pattern": "تَفَاعَلَ",
+        "description": "Mutual action",
+        "example": {"root": "ك-ت-ب", "verb": "تَكَاتَبَ", "meaning": "they corresponded (with each other)"}
+      },
+      "form_VII": {
+        "pattern": "انْفَعَلَ",
+        "description": "Passive/reflexive",
+        "example": {"root": "ك-س-ر", "verb": "انْكَسَرَ", "meaning": "it broke (was broken)"}
+      },
+      "form_VIII": {
+        "pattern": "افْتَعَلَ",
+        "description": "Reflexive",
+        "example": {"root": "ع-م-ل", "verb": "اعْتَمَلَ", "meaning": "he occupied himself"}
+      },
+      "form_IX": {
+        "pattern": "افْعَلَّ",
+        "description": "Colors/defects",
+        "example": {"root": "ح-م-ر", "verb": "احْمَرَّ", "meaning": "it became red"}
+      },
+      "form_X": {
+        "pattern": "اسْتَفْعَلَ",
+        "description": "Seeking/requesting",
+        "example": {"root": "ع-ل-م", "verb": "اسْتَعْلَمَ", "meaning": "he inquired (sought knowledge)"}
+      }
+    }
+  }
+}

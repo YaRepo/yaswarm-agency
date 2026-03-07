@@ -1,0 +1,3 @@
+display_name: YaSwarm Songsee
+short_description: Generate spectrograms and feature-panel visualizations from a...
+default_prompt: Use $yaswarm-songsee for this task and return concise actionable results.

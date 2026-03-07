@@ -1,0 +1,3 @@
+display_name: YaSwarm Slack
+short_description: Use when you need to control Slack from YaSwarm via the slac...
+default_prompt: Use $yaswarm-slack for this task and return concise actionable results.

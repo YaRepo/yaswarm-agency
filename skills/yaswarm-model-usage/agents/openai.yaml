@@ -1,0 +1,3 @@
+display_name: YaSwarm Model Usage
+short_description: Use CodexBar CLI local cost usage to summarize per-model usag...
+default_prompt: Use $yaswarm-model-usage for this task and return concise actionable results.

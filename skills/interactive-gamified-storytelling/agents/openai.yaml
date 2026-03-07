@@ -1,0 +1,3 @@
+display_name: Interactive Storytelling Dev
+short_description: Build branching gamified narrative scripts
+default_prompt: Use $interactive-gamified-storytelling to design my branching story script with player choices, state variables, and multiple endings.

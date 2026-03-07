@@ -1,0 +1,3 @@
+display_name: YaSwarm Coding Agent
+short_description: Delegate coding tasks to Codex, Claude Code, or Pi agents via...
+default_prompt: Use $yaswarm-coding-agent for this task and return concise actionable results.

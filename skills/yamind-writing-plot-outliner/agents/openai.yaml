@@ -1,0 +1,3 @@
+display_name: Plot Outliner
+short_description: Structure story arcs using proven plot frameworks. Use when outlining a new story, deve...
+default_prompt: Use $yamind-writing-plot-outliner for this task when its specialization applies.

@@ -1,0 +1,102 @@
+{
+  "dialect_name": "Egyptian Arabic",
+  "native_name": "مصري",
+  "iso_code": "arz",
+  "regions": ["Egypt", "Sudan (partial)", "Libya (eastern)"],
+  "speakers": "~100 million",
+  
+  "phonological_features": {
+    "g_sound": "hard /g/ (ج = g, not j)",
+    "q_sound": "glottal stop /ʔ/ (ق = ʔ)",
+    "th_sounds": "merged to /s/, /z/, /t/, /d/",
+    "stress": "penultimate syllable typically stressed"
+  },
+  
+  "grammatical_markers": {
+    "negation": {
+      "primary": "مش",
+      "alternatives": ["ماش"],
+      "pattern": "مش + verb/adjective",
+      "examples": [
+        {"arabic": "مش عارف", "transliteration": "mish ʿārif", "english": "I don't know"},
+        {"arabic": "مش فاهم", "transliteration": "mish fāhim", "english": "I don't understand"}
+      ]
+    },
+    
+    "present_tense": {
+      "marker": "ب",
+      "pattern": "ب + imperfect verb",
+      "conjugation": {
+        "1s": "بـ...",
+        "2s_m": "بتـ...",
+        "2s_f": "بتـ...ي",
+        "3s_m": "بيـ...",
+        "3s_f": "بتـ...",
+        "1pl": "بنـ...",
+        "2pl": "بتـ...و",
+        "3pl": "بيـ...و"
+      },
+      "examples": [
+        {"arabic": "بكتب", "transliteration": "baktib", "english": "I write"},
+        {"arabic": "بيروح", "transliteration": "birūḥ", "english": "he goes"}
+      ]
+    },
+    
+    "future_tense": {
+      "marker": "ح",
+      "pattern": "ح + present verb",
+      "examples": [
+        {"arabic": "حروح", "transliteration": "ḥarūḥ", "english": "I will go"},
+        {"arabic": "حكتب", "transliteration": "ḥaktib", "english": "I will write"}
+      ]
+    }
+  },
+  
+  "vocabulary": {
+    "question_words": [
+      {"word": "ايه", "transliteration": "ēh", "meaning": "what", "weight": 5},
+      {"word": "ازاي", "transliteration": "izzayy", "meaning": "how", "weight": 5},
+      {"word": "امتى", "transliteration": "imta", "meaning": "when", "weight": 4},
+      {"word": "فين", "transliteration": "fēn", "meaning": "where", "weight": 5},
+      {"word": "ليه", "transliteration": "lēh", "meaning": "why", "weight": 4},
+      {"word": "مين", "transliteration": "mīn", "meaning": "who", "weight": 3}
+    ],
+    
+    "verbs": [
+      {"word": "عايز", "transliteration": "ʿāyiz", "meaning": "want (m.)", "weight": 5},
+      {"word": "عايزة", "transliteration": "ʿāyza", "meaning": "want (f.)", "weight": 5},
+      {"word": "رايح", "transliteration": "rāyiḥ", "meaning": "going (m.)", "weight": 4},
+      {"word": "راحت", "transliteration": "rāḥit", "meaning": "going (f.)", "weight": 4},
+      {"word": "جاي", "transliteration": "gāy", "meaning": "coming (m.)", "weight": 4},
+      {"word": "جاية", "transliteration": "gayya", "meaning": "coming (f.)", "weight": 4},
+      {"word": "قاعد", "transliteration": "ʾāʿid", "meaning": "sitting", "weight": 3}
+    ],
+    
+    "particles": [
+      {"word": "ده", "transliteration": "da", "meaning": "this (m.)", "weight": 5},
+      {"word": "دي", "transliteration": "di", "meaning": "this (f.)", "weight": 5},
+      {"word": "دول", "transliteration": "dōl", "meaning": "these", "weight": 5},
+      {"word": "اهو", "transliteration": "ahū", "meaning": "here it is", "weight": 4},
+      {"word": "برضو", "transliteration": "barḍu", "meaning": "also", "weight": 3}
+    ],
+    
+    "pronouns": [
+      {"word": "انا", "transliteration": "ana", "meaning": "I", "weight": 2},
+      {"word": "احنا", "transliteration": "iḥna", "meaning": "we", "weight": 4},
+      {"word": "انت", "transliteration": "inta", "meaning": "you (m.)", "weight": 2},
+      {"word": "انتي", "transliteration": "inti", "meaning": "you (f.)", "weight": 2},
+      {"word": "انتو", "transliteration": "intu", "meaning": "you (pl.)", "weight": 4},
+      {"word": "هو", "transliteration": "huwwa", "meaning": "he", "weight": 2},
+      {"word": "هي", "transliteration": "hiyya", "meaning": "she", "weight": 2},
+      {"word": "هما", "transliteration": "humma", "meaning": "they", "weight": 4}
+    ],
+    
+    "common_expressions": [
+      {"phrase": "ازيك", "transliteration": "izzayyak", "meaning": "how are you?"},
+      {"phrase": "تمام", "transliteration": "tamām", "meaning": "fine/perfect"},
+      {"phrase": "يلا", "transliteration": "yalla", "meaning": "let's go/come on"},
+      {"phrase": "خلاص", "transliteration": "khalāṣ", "meaning": "enough/finished"},
+      {"phrase": "ماشي", "transliteration": "māshī", "meaning": "okay/fine"}
+    ]
+  }
+}

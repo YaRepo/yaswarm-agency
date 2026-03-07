@@ -1,0 +1,3 @@
+display_name: YaSwarm Blucli
+short_description: BluOS CLI (blu) for discovery, playback, grouping, and volume.
+default_prompt: Use $yaswarm-blucli for this task and return concise actionable results.

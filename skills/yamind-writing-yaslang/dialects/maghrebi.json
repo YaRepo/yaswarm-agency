@@ -1,0 +1,104 @@
+{
+  "dialect_name": "Maghrebi Arabic",
+  "native_name": "مغربي / دارجة",
+  "iso_code": "ary/arq/aeb",
+  "sub_dialects": ["Moroccan (Darija)", "Algerian", "Tunisian", "Libyan"],
+  "regions": ["Morocco", "Algeria", "Tunisia", "Libya", "Mauritania"],
+  "speakers": "~75 million",
+  
+  "phonological_features": {
+    "vowel_reduction": "extreme short vowel deletion",
+    "berber_influence": "substrate influence on phonology",
+    "french_influence": "heavy code-switching with French",
+    "consonant_clusters": "complex clusters common"
+  },
+  
+  "grammatical_markers": {
+    "negation": {
+      "primary": "ما...ش",
+      "alternatives": ["ماشي"],
+      "pattern": "ما + verb + ش (circumfix)",
+      "examples": [
+        {"arabic": "ما نعرفش", "transliteration": "ma nʿrafsh", "english": "I don't know"},
+        {"arabic": "ماشي مشكل", "transliteration": "māshi mushkil", "english": "no problem"}
+      ]
+    },
+    
+    "present_tense": {
+      "marker": "كا/تا/دا prefixes",
+      "pattern": "كا/تا + verb",
+      "conjugation": {
+        "1s": "كان/تان...",
+        "2s": "كات/تات...",
+        "3s_m": "كاي/تاي...",
+        "3s_f": "كات/تات...",
+        "1pl": "كان/تان...و",
+        "2pl": "كات/تات...و",
+        "3pl": "كاي/تاي...و"
+      },
+      "examples": [
+        {"arabic": "كانكتب", "transliteration": "kankteb", "meaning": "I write (Moroccan)"},
+        {"arabic": "نكتب", "transliteration": "nekteb", "meaning": "I write (Algerian)"}
+      ]
+    },
+    
+    "future_tense": {
+      "marker": "غادي/راح",
+      "pattern": "غادي + verb (Moroccan) OR راح + verb (Algerian/Tunisian)",
+      "examples": [
+        {"arabic": "غادي نمشي", "transliteration": "ghādi nemshi", "english": "I will go (Moroccan)"},
+        {"arabic": "راح نروح", "transliteration": "rāḥ nrūḥ", "english": "I will go (Algerian)"}
+      ]
+    }
+  },
+  
+  "vocabulary": {
+    "question_words": [
+      {"word": "شنو", "transliteration": "shnū", "meaning": "what (Algerian)", "weight": 5},
+      {"word": "اش", "transliteration": "āsh", "meaning": "what (Moroccan)", "weight": 5},
+      {"word": "شنوا", "transliteration": "shnuwwa", "meaning": "what (Tunisian)", "weight": 5},
+      {"word": "كيفاش", "transliteration": "kīfāsh", "meaning": "how", "weight": 5},
+      {"word": "فين", "transliteration": "fīn", "meaning": "where", "weight": 5},
+      {"word": "علاش", "transliteration": "ʿlāsh", "meaning": "why", "weight": 5},
+      {"word": "شكون", "transliteration": "shkūn", "meaning": "who", "weight": 5}
+    ],
+    
+    "verbs": [
+      {"word": "بغيت", "transliteration": "bghīt", "meaning": "I want (Moroccan)", "weight": 5},
+      {"word": "كنبغي", "transliteration": "kanbghī", "meaning": "I want (Moroccan pres.)", "weight": 5},
+      {"word": "نبغي", "transliteration": "nbghī", "meaning": "I want (Algerian)", "weight": 5},
+      {"word": "نحب", "transliteration": "nḥibb", "meaning": "I want/like (Tunisian)", "weight": 5}
+    ],
+    
+    "particles": [
+      {"word": "هاد", "transliteration": "hād", "meaning": "this (m.)", "weight": 5},
+      {"word": "هادي", "transliteration": "hādī", "meaning": "this (f.)", "weight": 5},
+      {"word": "هادو", "transliteration": "hādu", "meaning": "these", "weight": 5},
+      {"word": "ديال", "transliteration": "dyāl", "meaning": "of/belonging to", "weight": 5}
+    ],
+    
+    "pronouns": [
+      {"word": "انا", "transliteration": "ana", "meaning": "I", "weight": 2},
+      {"word": "حنا", "transliteration": "ḥna", "meaning": "we (Moroccan)", "weight": 4},
+      {"word": "راني", "transliteration": "rānī", "meaning": "I am (Algerian)", "weight": 4},
+      {"word": "نتوما", "transliteration": "ntūma", "meaning": "you (pl.)", "weight": 4},
+      {"word": "هوما", "transliteration": "hūma", "meaning": "they", "weight": 4}
+    ],
+    
+    "unique_words": [
+      {"word": "بزاف", "transliteration": "bezzāf", "meaning": "a lot/very", "weight": 5},
+      {"word": "وخا", "transliteration": "wkha", "meaning": "okay/even if", "weight": 5},
+      {"word": "لاباس", "transliteration": "lābās", "meaning": "fine/no problem", "weight": 4},
+      {"word": "عافاك", "transliteration": "ʿāfāk", "meaning": "please (Moroccan)", "weight": 4},
+      {"word": "ديال", "transliteration": "dyāl", "meaning": "of/belonging to", "weight": 5}
+    ],
+    
+    "common_expressions": [
+      {"phrase": "لاباس عليك", "transliteration": "lābās ʿlīk", "meaning": "how are you? (Moroccan)"},
+      {"phrase": "بخير الحمد لله", "transliteration": "b-khīr alḥamdu lillāh", "meaning": "fine praise God"},
+      {"phrase": "بزاف", "transliteration": "bezzāf", "meaning": "a lot/very"},
+      {"phrase": "وخا", "transliteration": "wkha", "meaning": "okay/fine"},
+      {"phrase": "الله يحفظك", "transliteration": "Allah yḥafḍak", "meaning": "God protect you"}
+    ]
+  }
+}

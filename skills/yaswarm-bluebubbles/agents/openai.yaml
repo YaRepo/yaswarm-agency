@@ -1,0 +1,3 @@
+display_name: YaSwarm Bluebubbles
+short_description: Use when you need to send or manage iMessages via BlueBubbles...
+default_prompt: Use $yaswarm-bluebubbles for this task and return concise actionable results.

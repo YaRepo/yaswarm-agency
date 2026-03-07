@@ -15,12 +15,14 @@ prompt_default() {
   if [[ -z "${v:-}" ]]; then echo "$d"; else echo "$v"; fi
 }
 
-echo "== YaMind Swarm First-Time Onboarding =="
+echo "== YaSwarm First-Time Onboarding =="
 owner="$(prompt_default 'GitHub owner/org for repos' "${GITHUB_OWNER:-YaRepo}")"
 read -r -p "GitHub token (leave empty to keep current gh auth): " token || true
 
 providers="$(prompt_default 'LLM providers (comma-separated: openai,anthropic,google,openrouter)' 'openai,google')"
 agency_type="$(prompt_default 'Agency type (software-agency, media-studio, research-lab, custom)' 'software-agency')"
+reference_agency="$(prompt_default 'Reference real-world company/agency to mimic (optional)' 'none')"
+operating_model="$(prompt_default 'Operating model (functional,pod,matrix)' 'functional')"
 telegram_mode="$(prompt_default 'Enable Telegram department thread mapping? (yes/no)' 'yes')"
 
 if [[ -n "${token:-}" ]]; then
@@ -37,9 +39,9 @@ if [[ -f "$ENV_FILE" ]]; then
 fi
 echo "GITHUB_OWNER=$owner" >> "$ENV_FILE"
 
-python3 - "$ONBOARD_JSON" "$owner" "$providers" "$agency_type" "$telegram_mode" << 'PY'
+python3 - "$ONBOARD_JSON" "$owner" "$providers" "$agency_type" "$reference_agency" "$operating_model" "$telegram_mode" << 'PY'
 import json,sys,datetime
-out,owner,providers,atype,tmode=sys.argv[1:]
+out,owner,providers,atype,reference,op_model,tmode=sys.argv[1:]
 now=datetime.datetime.now(datetime.UTC).replace(microsecond=0).isoformat().replace("+00:00","Z")
 obj={
   "version":"1.0.0",
@@ -47,6 +49,8 @@ obj={
   "github_owner":owner,
   "providers":[p.strip() for p in providers.split(',') if p.strip()],
   "agency_type":atype,
+  "reference_agency": None if reference.strip().lower() in ("", "none", "n/a") else reference.strip(),
+  "operating_model": op_model.strip().lower(),
   "telegram_threads_enabled":tmode.lower() in ("yes","y","true","1")
 }
 with open(out,'w',encoding='utf-8') as f:
@@ -55,11 +59,16 @@ print(out)
 PY
 
 # Generate starter agency structure from template
-python3 - "$AGENCY_JSON" "$agency_type" "$telegram_mode" << 'PY'
+python3 - "$AGENCY_JSON" "$agency_type" "$reference_agency" "$operating_model" "$telegram_mode" << 'PY'
 import json,sys,datetime
-out,atype,tmode=sys.argv[1:]
+out,atype,reference,op_model,tmode=sys.argv[1:]
 now=datetime.datetime.now(datetime.UTC).replace(microsecond=0).isoformat().replace("+00:00","Z")
-base={
+reference_norm=(reference or "").strip().lower()
+op_model=(op_model or "functional").strip().lower()
+if op_model not in {"functional","pod","matrix"}:
+  op_model="functional"
+
+default_by_type={
   "software-agency":{
     "departments":["engineering","product","design","qa","operations","marketing"]
   },
@@ -70,18 +79,41 @@ base={
     "departments":["research","engineering","evaluation","ops","publishing"]
   },
 }
-deps=base.get(atype,{"departments":["operations","execution","research"]})["departments"]
+
+def infer_departments(atype: str, ref: str):
+  # Override defaults if the user gave a known real-world reference.
+  if any(k in ref for k in ("mckinsey","bain","bcg","deloitte","accenture")):
+    return ["strategy","delivery","research","client-success","operations","growth"]
+  if any(k in ref for k in ("pixar","disney","dreamworks","studio","a24")):
+    return ["writing","story","production","post","distribution","marketing"]
+  if any(k in ref for k in ("wpp","ogilvy","publicis","dentsu","agency")):
+    return ["strategy","creative","media","accounts","operations","growth"]
+  if any(k in ref for k in ("openai","anthropic","deepmind","ai lab")):
+    return ["research","platform","product","safety","evaluation","operations"]
+  return default_by_type.get(atype,{"departments":["operations","execution","research"]})["departments"]
+
+def subagent_triplet(dept: str, model: str):
+  dept=dept.replace("_","-")
+  if model=="pod":
+    return [f"{dept}-lead", f"{dept}-builder", f"{dept}-analyst"]
+  if model=="matrix":
+    return [f"{dept}-specialist", f"{dept}-integrator", f"{dept}-qa"]
+  return [f"{dept}-planner", f"{dept}-executor", f"{dept}-reviewer"]
+
+deps=infer_departments(atype, reference_norm)
 obj={
   "version":"1.0.0",
   "updated_at":now,
-  "ceo":"yamind",
+  "ceo":"yaswarm",
   "agency_type":atype,
+  "reference_agency": None if reference_norm in ("", "none", "n/a") else reference.strip(),
+  "operating_model": op_model,
   "telegram_threads_enabled":tmode.lower() in ("yes","y","true","1"),
   "departments":[
     {
       "name":d,
       "head":f"head-{d}",
-      "subagents":[f"{d}-planner",f"{d}-executor",f"{d}-reviewer"]
+      "subagents":subagent_triplet(d, op_model)
     } for d in deps
   ]
 }
@@ -94,3 +126,7 @@ echo "Onboarding complete."
 echo "- State: $ONBOARD_JSON"
 echo "- Agency structure: $AGENCY_JSON"
 echo "- Env updated: $ENV_FILE"
+
+# Best-effort alignment so department config and agent registration stay in sync.
+"$ROOT/scripts/sync-agency-config.sh" >/dev/null 2>&1 || true
+"$ROOT/scripts/bots-manage.sh" reconcile >/dev/null 2>&1 || true

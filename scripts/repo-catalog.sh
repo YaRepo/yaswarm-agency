@@ -5,6 +5,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 CATALOG="$ROOT/catalog/repo-catalog.json"
 PROJECTS_DIR="$ROOT/projects"
 mkdir -p "$PROJECTS_DIR" "$ROOT/catalog"
+SYNC_STAGE_MODE="${YASWARM_SYNC_STAGE_MODE:-tracked}" # tracked|all
 
 ensure_catalog() {
   if [[ ! -f "$CATALOG" ]]; then
@@ -91,7 +92,7 @@ create_new() {
   mkdir -p "$local_path"
 
   if ! gh repo view "$repo" >/dev/null 2>&1; then
-    gh repo create "$repo" "--$visibility" --description "YaMind Swarm project: $project_name"
+    gh repo create "$repo" "--$visibility" --description "YaSwarm project: $project_name"
   fi
 
   if [[ ! -d "$local_path/.git" ]]; then
@@ -102,10 +103,10 @@ create_new() {
     cat > "$local_path/README.md" << MARKDOWN
 # $project_name
 
-Managed by YaMind Swarm.
+Managed by YaSwarm.
 MARKDOWN
     git -C "$local_path" add .
-    git -C "$local_path" commit -m "Initialize project via YaMind Swarm" || true
+    git -C "$local_path" commit -m "Initialize project via YaSwarm" || true
     git -C "$local_path" push -u origin main || true
   fi
 
@@ -136,19 +137,29 @@ link_existing() {
 
 sync_project() {
   local project_name="$1"
-  local info
-  info="$(py_update_catalog get "$project_name" || true)"
-  if [[ -z "$info" ]]; then
+  if ! py_update_catalog get "$project_name" >/dev/null 2>&1; then
     echo "Project not found in catalog: $project_name" >&2
     return 1
   fi
 
   local local_path
-  local_path="$(python3 - << PY
-import json
-print(json.loads('''$info''')['local_path'])
+  local_path="$(
+    python3 - "$CATALOG" "$project_name" << 'PY'
+import json,sys
+catalog_path, project_name = sys.argv[1], sys.argv[2]
+with open(catalog_path,'r',encoding='utf-8') as f:
+    d=json.load(f)
+for p in d.get('projects',[]):
+    if p.get('name')==project_name:
+        print(p.get('local_path',''))
+        raise SystemExit(0)
+raise SystemExit(1)
 PY
-)"
+  )"
+  if [[ -z "$local_path" ]]; then
+    echo "Missing local_path for project: $project_name" >&2
+    return 1
+  fi
 
   if [[ ! -d "$local_path/.git" ]]; then
     echo "Not a git repo: $local_path" >&2
@@ -161,14 +172,29 @@ PY
     git -C "$local_path" checkout -B main || true
   fi
 
-  git -C "$local_path" add .
+  case "$SYNC_STAGE_MODE" in
+    tracked)
+      git -C "$local_path" add -u
+      ;;
+    all)
+      git -C "$local_path" add -A
+      ;;
+    *)
+      echo "Invalid YASWARM_SYNC_STAGE_MODE: $SYNC_STAGE_MODE (expected tracked|all)" >&2
+      return 1
+      ;;
+  esac
+
   if git -C "$local_path" diff --cached --quiet; then
     echo "No changes to sync: $project_name"
     return 0
   fi
 
-  git -C "$local_path" commit -m "YaMind Swarm sync $(date -u +%Y-%m-%dT%H:%M:%SZ)"
-  git -C "$local_path" push -u origin "$(git -C "$local_path" rev-parse --abbrev-ref HEAD)" || true
+  git -C "$local_path" commit -m "YaSwarm sync $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+  if ! git -C "$local_path" push -u origin "$(git -C "$local_path" rev-parse --abbrev-ref HEAD)"; then
+    echo "Push failed for project: $project_name" >&2
+    return 1
+  fi
   echo "Synced: $project_name"
 }
 

@@ -1,0 +1,3 @@
+display_name: YaSwarm Summarize
+short_description: Summarize or extract text/transcripts from URLs, podcasts, an...
+default_prompt: Use $yaswarm-summarize for this task and return concise actionable results.

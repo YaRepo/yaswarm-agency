@@ -1,0 +1,3 @@
+display_name: Content Research Writer (Imported)
+short_description: Research, draft, and refine citation-ready content
+default_prompt: Use $yamind-writing-content-research-writer to produce a researched draft with clear structure and verifiable evidence.

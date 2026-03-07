@@ -1,0 +1,3 @@
+display_name: Line Editor
+short_description: This skill provides line-level prose editing and style refinement. Use when the user as...
+default_prompt: Use $yamind-writing-line-editor for this task when its specialization applies.

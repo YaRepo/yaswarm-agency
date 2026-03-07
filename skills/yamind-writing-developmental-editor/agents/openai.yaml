@@ -1,0 +1,3 @@
+display_name: Developmental Editor
+short_description: This skill provides comprehensive developmental editing for manuscripts. Use when the u...
+default_prompt: Use $yamind-writing-developmental-editor for this task when its specialization applies.

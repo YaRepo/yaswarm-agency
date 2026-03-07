@@ -1,0 +1,3 @@
+display_name: Skill Creator (Imported)
+short_description: Create or upgrade reusable skills across projects
+default_prompt: Use $yamind-dev-skill-creator to scaffold, validate, and package a high-quality skill.

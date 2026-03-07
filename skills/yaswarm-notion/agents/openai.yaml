@@ -1,0 +1,3 @@
+display_name: YaSwarm Notion
+short_description: Notion API for creating and managing pages, databases, and bl...
+default_prompt: Use $yaswarm-notion for this task and return concise actionable results.

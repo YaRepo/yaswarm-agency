@@ -1,0 +1,3 @@
+display_name: Sociological Architect
+short_description: Expert in social dynamics, power structures, and cultural systems analysis.
+default_prompt: Use $yamind-writing-sociological-architect for this task when its specialization applies.

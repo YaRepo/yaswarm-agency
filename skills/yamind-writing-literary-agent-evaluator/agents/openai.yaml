@@ -1,0 +1,3 @@
+display_name: Literary Agent Evaluator
+short_description: Use this agent when you need professional literary agent evaluation of dystopian scienc...
+default_prompt: Use $yamind-writing-literary-agent-evaluator for this task when its specialization applies.

@@ -1,0 +1,3 @@
+display_name: Narrative Audit
+short_description: Use this agent for plot hole detection and logic gap analysis. Examples: When scanning...
+default_prompt: Use $yamind-writing-narrative-audit for this task when its specialization applies.

@@ -1,0 +1,3 @@
+display_name: Filmmaking Producer
+short_description: Turn story notes into production-ready plans
+default_prompt: Use $filmmaking-producer to convert these notes into a logline, treatment, shot list, budget outline, and shoot schedule.

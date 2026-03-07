@@ -1,0 +1,3 @@
+display_name: YaSwarm Camsnap
+short_description: Capture frames or clips from RTSP/ONVIF cameras.
+default_prompt: Use $yaswarm-camsnap for this task and return concise actionable results.

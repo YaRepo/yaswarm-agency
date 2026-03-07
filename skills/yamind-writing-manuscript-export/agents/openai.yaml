@@ -1,0 +1,3 @@
+display_name: Manuscript Export
+short_description: Compile chapters into a single manuscript document. Use when preparing for beta readers...
+default_prompt: Use $yamind-writing-manuscript-export for this task when its specialization applies.

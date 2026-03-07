@@ -1,0 +1,3 @@
+display_name: Bilingual Note Normalizer
+short_description: Normalize Arabic-English notes for search and reuse
+default_prompt: Use $bilingual-note-normalizer to clean this mixed Arabic-English note, keep the original, and produce normalized title, summary, and tags.

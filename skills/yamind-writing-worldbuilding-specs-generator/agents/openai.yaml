@@ -1,0 +1,3 @@
+display_name: Worldbuilding Specs Generator
+short_description: Use this skill for converting narrative into technical specifications. Examples: when c...
+default_prompt: Use $yamind-writing-worldbuilding-specs-generator for this task when its specialization applies.

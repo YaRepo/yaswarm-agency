@@ -1,0 +1,3 @@
+display_name: Continuity Checker
+short_description: Scan for consistency issues in your universe and works. Use when checking for plot hole...
+default_prompt: Use $yamind-writing-continuity-checker for this task when its specialization applies.

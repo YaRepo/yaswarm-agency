@@ -1,0 +1,3 @@
+display_name: YaSwarm Openai Whisper
+short_description: Local speech-to-text with the Whisper CLI (no API key).
+default_prompt: Use $yaswarm-openai-whisper for this task and return concise actionable results.

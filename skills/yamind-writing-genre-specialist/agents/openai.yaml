@@ -1,0 +1,3 @@
+display_name: Genre Specialist
+short_description: This skill provides genre convention analysis and reader expectation expertise. Use whe...
+default_prompt: Use $yamind-writing-genre-specialist for this task when its specialization applies.

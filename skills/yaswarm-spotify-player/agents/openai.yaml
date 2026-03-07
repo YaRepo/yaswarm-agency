@@ -1,0 +1,3 @@
+display_name: YaSwarm Spotify Player
+short_description: Terminal Spotify playback/search via spogo (preferred) or spo...
+default_prompt: Use $yaswarm-spotify-player for this task and return concise actionable results.

@@ -1,0 +1,3 @@
+display_name: Technology Feasibility Analyzer
+short_description: Use this agent for scientific plausibility and canon accuracy checking. Examples: When...
+default_prompt: Use $yamind-writing-technology-feasibility-analyzer for this task when its specialization applies.

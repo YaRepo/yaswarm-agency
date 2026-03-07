@@ -1,0 +1,3 @@
+display_name: Notes Intake Router
+short_description: Classify and route messy notes quickly
+default_prompt: Use $notes-intake-router to classify this raw note, suggest a title and tags, route it to a folder, and flag duplicate candidates.

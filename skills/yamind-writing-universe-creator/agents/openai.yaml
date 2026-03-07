@@ -1,0 +1,3 @@
+display_name: Universe Creator
+short_description: Create a new fictional universe with complete folder structure and Universe Bible. Use...
+default_prompt: Use $yamind-writing-universe-creator for this task when its specialization applies.

@@ -1,0 +1,3 @@
+display_name: Legacy Simulator
+short_description: Use this agent for timelessness prediction and future-proofing. Examples: When predicti...
+default_prompt: Use $yamind-writing-legacy-simulator for this task when its specialization applies.

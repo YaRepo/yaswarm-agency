@@ -1,0 +1,3 @@
+display_name: YaSwarm Canvas
+short_description: Adapted from yaswarm skill canvas.
+default_prompt: Use $yaswarm-canvas for this task and return concise actionable results.

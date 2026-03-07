@@ -1,0 +1,18 @@
+{
+  "from": "1.0.0",
+  "to": "1.1.0",
+  "description": "Additive commercial baseline migration for reconfigure/upgrade.",
+  "files": [
+    "agency/config/agency-config.json",
+    "agency/config/department-sub-agents.json",
+    "agency/config/agent-registry.json",
+    "agency/config/model-providers.json",
+    "agency/config/model-catalog.json",
+    "agency/config/model-assignments.json"
+  ],
+  "rules": [
+    "add_missing_keys_only",
+    "backup_before_write",
+    "preserve_unknown_keys"
+  ]
+}

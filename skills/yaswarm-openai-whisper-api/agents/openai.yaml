@@ -1,0 +1,3 @@
+display_name: YaSwarm Whisper API
+short_description: Audio transcription via OpenAI
+default_prompt: Use $yaswarm-openai-whisper-api to transcribe the provided audio file.

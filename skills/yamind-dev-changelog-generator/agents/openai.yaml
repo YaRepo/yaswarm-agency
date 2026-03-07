@@ -1,0 +1,3 @@
+display_name: Changelog Generator
+short_description: Automatically creates user-facing changelogs from git commits by analyzing commit histo...
+default_prompt: Use $yamind-dev-changelog-generator for this task when its specialization applies.

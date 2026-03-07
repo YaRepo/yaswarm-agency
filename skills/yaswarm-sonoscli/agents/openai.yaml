@@ -1,0 +1,3 @@
+display_name: YaSwarm Sonoscli
+short_description: Control Sonos speakers (discover/status/play/volume/group).
+default_prompt: Use $yaswarm-sonoscli for this task and return concise actionable results.

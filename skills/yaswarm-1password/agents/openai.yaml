@@ -1,0 +1,3 @@
+display_name: YaSwarm 1password
+short_description: Set up and use 1Password CLI (op). Use when installing the CL...
+default_prompt: Use $yaswarm-1password for this task and return concise actionable results.

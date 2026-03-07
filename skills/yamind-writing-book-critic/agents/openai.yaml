@@ -1,0 +1,3 @@
+display_name: Book Critic
+short_description: This skill provides commercial viability and market positioning analysis. Use when the...
+default_prompt: Use $yamind-writing-book-critic for this task when its specialization applies.

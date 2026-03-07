@@ -1,0 +1,3 @@
+display_name: Representation Audit
+short_description: Use this agent for inclusivity analysis and bias detection. Examples: When auditing for...
+default_prompt: Use $yamind-writing-representation-audit for this task when its specialization applies.

@@ -1,0 +1,3 @@
+display_name: Project To Business Architect
+short_description: Converts projects into executable business systems with offers, GTM plans, and KPI loops.
+default_prompt: Use $project-to-business-architect to transform the project into a business strategy with evidence-backed offers, GTM steps, and measurable KPIs.

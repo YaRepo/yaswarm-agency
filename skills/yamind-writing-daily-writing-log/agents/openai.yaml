@@ -1,0 +1,3 @@
+display_name: Daily Writing Log
+short_description: Log writing sessions with word counts and notes. Use when starting or ending a writing...
+default_prompt: Use $yamind-writing-daily-writing-log for this task when its specialization applies.

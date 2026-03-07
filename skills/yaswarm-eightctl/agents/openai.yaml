@@ -1,0 +1,3 @@
+display_name: YaSwarm Eightctl
+short_description: Control Eight Sleep pods (status, temperature, alarms, schedu...
+default_prompt: Use $yaswarm-eightctl for this task and return concise actionable results.

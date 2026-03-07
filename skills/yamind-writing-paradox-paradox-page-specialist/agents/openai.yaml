@@ -1,0 +1,3 @@
+display_name: Paradox Page Specialist
+short_description: Use this skill for philosophical paradox page creation and analysis. Examples: when cra...
+default_prompt: Use $yamind-writing-paradox-paradox-page-specialist for this task when its specialization applies.

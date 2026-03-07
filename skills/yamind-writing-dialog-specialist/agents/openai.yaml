@@ -1,0 +1,3 @@
+display_name: Dialog Specialist
+short_description: This skill provides dialogue analysis and voice differentiation expertise. Use when the...
+default_prompt: Use $yamind-writing-dialog-specialist for this task when its specialization applies.

@@ -1,0 +1,3 @@
+display_name: Project Status Storyboard
+short_description: Build now-next-blockers project status board
+default_prompt: Use $project-status-storyboard to compile my project notes into a single now/next/blockers storyboard with risks and stale-item alerts.

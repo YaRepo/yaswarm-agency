@@ -1,0 +1,3 @@
+display_name: Scene Writer
+short_description: Write or outline a scene/chapter with proper structure. Use when drafting scenes, devel...
+default_prompt: Use $yamind-writing-scene-writer for this task when its specialization applies.

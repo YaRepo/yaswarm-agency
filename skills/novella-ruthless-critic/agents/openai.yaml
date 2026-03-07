@@ -1,0 +1,3 @@
+display_name: Novella Ruthless Critic
+short_description: Brutal manuscript critique with exact rewrite actions
+default_prompt: Use $novella-ruthless-critic to audit my manuscript and produce a structured report with severity-tagged findings and chapter-specific cut/add/rewrite fixes.

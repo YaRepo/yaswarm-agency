@@ -1,0 +1,3 @@
+display_name: Arabic English Translator
+short_description: Translate MSA/Egyptian Arabic and English variants
+default_prompt: Use $arabic-english-dialect-translator to translate this text with my chosen variant (MSA or Egyptian Arabic, and English US or UK).

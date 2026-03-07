@@ -1,0 +1,3 @@
+display_name: Cover Designer
+short_description: Use this agent for visual branding and cover concept development. Examples: When develo...
+default_prompt: Use $yamind-design-cover-designer for this task when its specialization applies.

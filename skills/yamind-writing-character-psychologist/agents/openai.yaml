@@ -1,0 +1,3 @@
+display_name: Character Psychologist
+short_description: This skill provides deep character psychology analysis and authenticity validation. Use...
+default_prompt: Use $yamind-writing-character-psychologist for this task when its specialization applies.

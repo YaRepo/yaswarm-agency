@@ -1,0 +1,107 @@
+{
+  "dialect_name": "Gulf Arabic",
+  "native_name": "خليجي",
+  "iso_code": "afb",
+  "regions": ["Saudi Arabia", "UAE", "Kuwait", "Bahrain", "Qatar", "Oman"],
+  "speakers": "~40 million",
+  
+  "phonological_features": {
+    "q_sound": "/g/ in most regions",
+    "k_sound": "sometimes /tʃ/ in Kuwait",
+    "j_sound": "/y/ in some regions (ج = y)",
+    "interdentals": "preserved in most regions"
+  },
+  
+  "grammatical_markers": {
+    "negation": {
+      "primary": "ما",
+      "alternatives": ["مو", "مب"],
+      "pattern": "ما/مو + verb",
+      "examples": [
+        {"arabic": "ما ادري", "transliteration": "mā adrī", "english": "I don't know"},
+        {"arabic": "مو صحيح", "transliteration": "mū ṣaḥīḥ", "english": "not correct"}
+      ]
+    },
+    
+    "present_tense": {
+      "marker": "ي/ت prefixes",
+      "pattern": "direct verb conjugation",
+      "conjugation": {
+        "1s": "اـ...",
+        "2s_m": "تـ...",
+        "2s_f": "تـ...ين",
+        "3s_m": "يـ...",
+        "3s_f": "تـ...",
+        "1pl": "نـ...",
+        "2pl": "تـ...ون",
+        "3pl": "يـ...ون"
+      },
+      "examples": [
+        {"arabic": "اكتب", "transliteration": "aktib", "english": "I write"},
+        {"arabic": "يروح", "transliteration": "yirūḥ", "english": "he goes"}
+      ]
+    },
+    
+    "future_tense": {
+      "marker": "بـ/راح",
+      "pattern": "بـ + verb OR راح + verb",
+      "examples": [
+        {"arabic": "براوح", "transliteration": "barāwiḥ", "english": "I will go"},
+        {"arabic": "راح اكتب", "transliteration": "rāḥ aktib", "english": "I will write"}
+      ]
+    }
+  },
+  
+  "vocabulary": {
+    "question_words": [
+      {"word": "شنو", "transliteration": "shnū", "meaning": "what", "weight": 5},
+      {"word": "وش", "transliteration": "wēsh", "meaning": "what (Saudi)", "weight": 5},
+      {"word": "شلون", "transliteration": "shlōn", "meaning": "how", "weight": 5},
+      {"word": "كيف", "transliteration": "kēf", "meaning": "how", "weight": 4},
+      {"word": "وين", "transliteration": "wēn", "meaning": "where", "weight": 5},
+      {"word": "ليش", "transliteration": "lēsh", "meaning": "why", "weight": 5},
+      {"word": "منو", "transliteration": "minū", "meaning": "who", "weight": 4}
+    ],
+    
+    "verbs": [
+      {"word": "أبي", "transliteration": "abī", "meaning": "I want", "weight": 5},
+      {"word": "أبغى", "transliteration": "abgha", "meaning": "I want", "weight": 5},
+      {"word": "ودي", "transliteration": "widdī", "meaning": "I wish/want", "weight": 4},
+      {"word": "أقدر", "transliteration": "agdar", "meaning": "I can", "weight": 4},
+      {"word": "ادري", "transliteration": "adrī", "meaning": "I know", "weight": 4}
+    ],
+    
+    "particles": [
+      {"word": "ذا", "transliteration": "dhā", "meaning": "this (m.)", "weight": 5},
+      {"word": "ذي", "transliteration": "dhī", "meaning": "this (f.)", "weight": 5},
+      {"word": "ذول", "transliteration": "dhōl", "meaning": "these", "weight": 5},
+      {"word": "زين", "transliteration": "zēn", "meaning": "good", "weight": 4},
+      {"word": "مرة", "transliteration": "marra", "meaning": "very", "weight": 3}
+    ],
+    
+    "pronouns": [
+      {"word": "انا", "transliteration": "ana", "meaning": "I", "weight": 2},
+      {"word": "احنا", "transliteration": "iḥna", "meaning": "we", "weight": 4},
+      {"word": "انت", "transliteration": "inta", "meaning": "you (m.)", "weight": 2},
+      {"word": "انتي", "transliteration": "inti", "meaning": "you (f.)", "weight": 2},
+      {"word": "انتو", "transliteration": "intu", "meaning": "you (pl.)", "weight": 4},
+      {"word": "هو", "transliteration": "hū", "meaning": "he", "weight": 2},
+      {"word": "هي", "transliteration": "hī", "meaning": "she", "weight": 2},
+      {"word": "هم", "transliteration": "hum", "meaning": "they", "weight": 4}
+    ],
+    
+    "unique_expressions": [
+      {"phrase": "يا هلا", "transliteration": "ya hala", "meaning": "welcome", "weight": 5},
+      {"phrase": "ان شاء الله", "transliteration": "in sha Allah", "meaning": "God willing", "weight": 4},
+      {"phrase": "ماشاء الله", "transliteration": "mā shā Allah", "meaning": "as God wills", "weight": 4}
+    ],
+    
+    "common_expressions": [
+      {"phrase": "شلونك", "transliteration": "shlōnak", "meaning": "how are you?"},
+      {"phrase": "زين الحمدلله", "transliteration": "zēn alḥamdulillah", "meaning": "good thanks be to God"},
+      {"phrase": "ان شاء الله", "transliteration": "in shā Allah", "meaning": "God willing"},
+      {"phrase": "يلا", "transliteration": "yalla", "meaning": "let's go"},
+      {"phrase": "عادي", "transliteration": "ʿādī", "meaning": "it's okay/normal"}
+    ]
+  }
+}

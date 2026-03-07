@@ -1,0 +1,3 @@
+display_name: YaSwarm Himalaya
+short_description: CLI to manage emails via IMAP/SMTP. Use `himalaya` to list, r...
+default_prompt: Use $yaswarm-himalaya for this task and return concise actionable results.

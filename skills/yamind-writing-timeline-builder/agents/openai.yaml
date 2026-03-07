@@ -1,0 +1,3 @@
+display_name: Timeline Builder
+short_description: Create chronological event timelines for stories and universes. Use when organizing sto...
+default_prompt: Use $yamind-writing-timeline-builder for this task when its specialization applies.

@@ -9,6 +9,8 @@ build/
 # runtime state
 catalog/*.json
 !catalog/*.example.json
+catalog/*.lock
+catalog/*.pid
 projects/
 
 # python cache

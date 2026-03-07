@@ -1,0 +1,3 @@
+display_name: File Organizer
+short_description: Intelligently organizes your files and folders across your computer by understanding co...
+default_prompt: Use $yamind-dev-file-organizer for this task when its specialization applies.

@@ -1,0 +1,3 @@
+display_name: Neuro Pacing Analyst
+short_description: Use this agent for rhythm engineering and attention flow optimization. Examples: When m...
+default_prompt: Use $yamind-writing-neuro-pacing-analyst for this task when its specialization applies.

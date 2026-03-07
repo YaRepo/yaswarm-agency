@@ -1,0 +1,3 @@
+display_name: Idea Capture
+short_description: Quickly capture story ideas to the Idea Vault. Use when you have a story concept, premi...
+default_prompt: Use $yamind-writing-idea-capture for this task when its specialization applies.

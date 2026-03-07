@@ -1,0 +1,3 @@
+display_name: Competitive Ads Extractor
+short_description: Extracts and analyzes competitors' ads from ad libraries (Facebook, LinkedIn, etc.) to...
+default_prompt: Use $yamind-writing-competitive-ads-extractor for this task when its specialization applies.

@@ -1,0 +1,3 @@
+display_name: Mystery Plot Consultant
+short_description: Use this agent for mystery plot validation and structure analysis. Examples: When check...
+default_prompt: Use $yamind-writing-mystery-plot-consultant for this task when its specialization applies.

@@ -1,0 +1,3 @@
+display_name: Magic Consultant
+short_description: Use this agent for magic system validation and worldbuilding logic. Examples: When chec...
+default_prompt: Use $yamind-writing-magic-consultant for this task when its specialization applies.

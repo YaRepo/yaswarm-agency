@@ -1,0 +1,3 @@
+display_name: YaSwarm Gog
+short_description: Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sh...
+default_prompt: Use $yaswarm-gog for this task and return concise actionable results.

@@ -1,64 +1,147 @@
-# YaMind Swarm (Clean Core)
+# YaSwarm Core CLI
 
-Clean distributable base for YaMind Swarm with no personal data baked in.
+`yaswarm-core` is the clean, commercial-safe control layer for running an agentic agency system from terminal + UI.
 
-## Implemented
-- CLI: `yaswarm`
-- Onboarding flow: `yaswarm onboard`
-- Repo catalog automation:
-  - `yaswarm repo init`
-  - `yaswarm repo create-new <project_name> [private|public]`
-  - `yaswarm repo link-existing <project_name> <repo_url>`
-  - `yaswarm repo sync <project_name>`
-  - `yaswarm repo sync-all`
-  - `yaswarm repo list`
-- Auto-sync policy engine:
-  - `yaswarm sync start [interval_sec]`
-  - `yaswarm sync stop`
-  - `yaswarm sync status`
-  - `yaswarm sync run-once`
-- Swarm runtime:
-  - `yaswarm swarm init`
-  - `yaswarm swarm status`
-  - `yaswarm swarm dispatch <department> <title>`
-  - `yaswarm swarm complete <task_id>`
-- MCP management:
-  - `yaswarm mcp list`
-  - `yaswarm mcp inspect [server-command...]`
-  - `yaswarm mcp health`
-- Dashboard bridge:
-  - `yaswarm dashboard refresh`
-  - writes `projects/dashboard-agency/data/overview.json`
-- Dockerized runtime (`Dockerfile`, `docker-compose.yml`)
+It gives users a structured way to:
+- bootstrap required repos/workspace,
+- define departments and subagents,
+- route model usage (pi-mono CLI backend or direct provider fallback),
+- register bots/agents,
+- and keep state synchronized over time.
 
-## First Run
+No personal user data is included by default.
+
+## What Problem It Solves
+
+Most multi-agent setups fail on operations, not model quality. Teams usually hit:
+- fragmented setup across repos, env files, and local folders,
+- unclear ownership between CEO agent and department agents,
+- painful reconfiguration when changing machine,
+- no single health check for runtime readiness,
+- weak sync between CLI state and dashboard state.
+
+YaSwarm CLI solves this by making system initialization, registration, runtime checks, and sync explicit commands.
+
+## Core Concepts
+
+- `yaswarm` CLI: entry point for all lifecycle actions.
+- Workspace-first design: user agency files live in one workspace directory.
+- Department architecture: CEO -> departments -> subagents.
+- Runtime model routing:
+  - default: `pi-mono` CLI backend,
+  - fallback: direct provider assignment via config.
+- Non-destructive updates: migration + reconfigure paths preserve user data.
+
+## Main Commands
+
+### Bootstrap and Lifecycle
+- `yaswarm init --github-owner <owner> [--new-workspace <path>] [--force-clean]`
+- `yaswarm reconfigure --github-owner <owner> [--workspace <path>] [--dry-run]`
+- `yaswarm upgrade [--workspace <path>] [--dry-run]`
+- `yaswarm doctor [workspace_path]`
+
+### Agency Runtime
+- `yaswarm onboard`
+- `yaswarm register`
+- `yaswarm swarm init`
+- `yaswarm swarm status`
+- `yaswarm swarm dispatch <department> <title>`
+- `yaswarm swarm complete <task_id>`
+
+### Model Backend
+- `yaswarm pi status`
+- `yaswarm pi verify`
+- `yaswarm pi verify-runtime`
+- `yaswarm pi setup [--command <binary>] [--llm <id>] [--vlm <id>] [--tts <id>]`
+
+`verify-runtime` passes when either:
+1. pi-mono CLI backend is configured and binary exists on PATH, or
+2. direct fallback provider is configured in:
+   - `agency/config/model-providers.json`
+   - `agency/config/model-assignments.json`
+
+### Repo / Sync / MCP / Dashboard
+- `yaswarm repo init`
+- `yaswarm repo create-new <project_name> [private|public]`
+- `yaswarm repo link-existing <project_name> <repo_url>`
+- `yaswarm repo sync <project_name>`
+- `yaswarm repo sync-all`
+- `yaswarm repo list`
+- `yaswarm sync start [interval_sec]`
+- `yaswarm sync stop`
+- `yaswarm sync status`
+- `yaswarm sync run-once`
+- `yaswarm mcp list`
+- `yaswarm mcp inspect [server-command...]`
+- `yaswarm mcp health`
+- `yaswarm dashboard refresh`
+
+## Quick Start (New User)
+
 ```bash
+cd /path/to/yaswarm-core
 cp .env.example .env
 chmod +x cli/yaswarm scripts/*.sh
+
+./cli/yaswarm init --github-owner <YOUR_GITHUB_OWNER> --new-workspace <WORKSPACE_PATH> --force-clean
 ./cli/yaswarm onboard
-./cli/yaswarm repo init
+./cli/yaswarm pi setup --command pi-mono
+./cli/yaswarm register
 ./cli/yaswarm swarm init
 ./cli/yaswarm dashboard refresh
 ```
 
-## Auto-sync Policy
-- Sync daemon interval from `YASWARM_SYNC_INTERVAL_SEC` (default 180 sec).
-- Swarm event hooks can trigger sync:
-  - `SWARM_AUTO_SYNC=1` => sync-all on swarm dispatch/complete/init
-  - `SWARM_AUTO_SYNC_DAEMON=1` => ensure daemon is running
+## Quick Start (Returning User / New Machine)
 
-## MCP Inspector UI
 ```bash
-./cli/yaswarm mcp inspect
-# http://localhost:6274
+cd /path/to/yaswarm-core
+chmod +x cli/yaswarm scripts/*.sh
+
+./cli/yaswarm reconfigure --github-owner <YOUR_GITHUB_OWNER> --workspace <WORKSPACE_PATH> --dry-run --skip-pull
+./cli/yaswarm reconfigure --github-owner <YOUR_GITHUB_OWNER> --workspace <WORKSPACE_PATH>
+./cli/yaswarm doctor <WORKSPACE_PATH>
 ```
 
-## Docker
-```bash
-docker compose up -d --build
-```
+## Why This Matters For Commercial Use
 
-## Data Files
+- Predictable onboarding for first-time customers.
+- Safe reconfiguration path for existing customers.
+- Standardized repo/workspace topology.
+- Runtime guardrails before production actions (`register`, `swarm init`).
+- Extensible backend strategy (pi-mono default + provider fallback).
+
+## Commercial Packaging Checklist
+
+- Licensing:
+  - confirm licenses for all bundled code, scripts, and dependencies,
+  - include `LICENSE` and third-party notices before distribution.
+- Secrets and configuration:
+  - never ship real API keys/tokens in repo,
+  - keep only examples/templates in source control,
+  - document secure key injection paths (UI and `.env`).
+- Upgrade safety:
+  - keep migrations additive and non-destructive,
+  - support `--dry-run` for reconfigure/upgrade flows,
+  - backup config files before mutation.
+- Reliability and operations:
+  - define runtime health checks (`yaswarm doctor`, provider verify),
+  - provide fallback path when default backend is unavailable,
+  - document recovery steps for broken sync/registration.
+- Observability:
+  - decide what telemetry/logs are collected,
+  - add opt-in/out controls for analytics,
+  - avoid collecting sensitive prompt/user data by default.
+- Security:
+  - validate user-provided URLs/commands in UI and CLI inputs,
+  - minimize execution privileges for automation scripts,
+  - run dependency/security scans in CI.
+- Commercial support readiness:
+  - publish supported platforms and minimum versions,
+  - define SLA/SLO boundaries (support hours, incident severity, response times),
+  - provide a reproducible support bundle process (doctor output + config snapshot without secrets).
+
+## Useful Paths
+
 - `catalog/onboarding.json`
 - `catalog/agency-structure.json`
 - `catalog/repo-catalog.json`
@@ -68,6 +151,13 @@ docker compose up -d --build
 - `catalog/auto-sync.log`
 - `projects/dashboard-agency/data/overview.json`
 
+## Docker
+
+```bash
+docker compose up -d --build
+```
+
 ## Notes
-- This repo is clean by default (no user skills/MCPs/sessions included).
-- User project repos are created/linked through the repo-catalog commands.
+
+- Clean baseline by default: no user sessions/skills/MCP secrets shipped.
+- Agency config can be aligned from structure with `scripts/sync-agency-config.sh`.

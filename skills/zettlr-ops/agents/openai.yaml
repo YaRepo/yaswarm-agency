@@ -1,0 +1,3 @@
+display_name: Zettlr Ops
+short_description: Structure and optimize Zettlr writing workspaces
+default_prompt: Use $zettlr-ops to organize my Zettlr project, standardize markdown/frontmatter, and prepare citation-ready manuscript files.

@@ -4,13 +4,18 @@ set -euo pipefail
 SCRIPT_PATH="$(readlink -f "${BASH_SOURCE[0]}")"
 ROOT="$(cd "$(dirname "$SCRIPT_PATH")/.." && pwd)"
 MCP_CONFIG="$ROOT/mcp/mcp-config.json"
+WORKSPACE_DEFAULT="${YASWARM_WORKSPACE:-$ROOT/projects/yaswarm-desk-workspace}"
 
 help() {
   cat << 'HELP'
-YaMind Swarm CLI
+YaSwarm CLI
 
 Usage:
   yaswarm help
+  yaswarm init --github-owner <owner> [--private|--public] [--new-workspace <path>] [--force-clean]
+  yaswarm reconfigure --github-owner <owner> [--workspace <path>] [--private|--public] [--dry-run] [--skip-pull] [--no-create-missing]
+  yaswarm upgrade [--workspace <path>] [--dry-run]
+  yaswarm doctor [workspace_path]
   yaswarm onboard
 
   yaswarm skill list
@@ -18,6 +23,10 @@ Usage:
   yaswarm mcp list
   yaswarm mcp inspect [server-command...]
   yaswarm mcp health
+  yaswarm pi status [--workspace <path>]
+  yaswarm pi verify [--workspace <path>]
+  yaswarm pi verify-runtime [--workspace <path>]
+  yaswarm pi setup [--command <binary>] [--llm <id>] [--vlm <id>] [--tts <id>] [--workspace <path>]
 
   yaswarm repo init
   yaswarm repo create-new <project_name> [private|public]
@@ -30,11 +39,16 @@ Usage:
   yaswarm sync stop
   yaswarm sync status
   yaswarm sync run-once
+  yaswarm sync run-forever [interval_sec]
 
   yaswarm swarm init
   yaswarm swarm status
   yaswarm swarm dispatch <department> <title>
   yaswarm swarm complete <task_id>
+
+  yaswarm bots list
+  yaswarm bots reconcile
+  yaswarm register
 
   yaswarm dashboard refresh
 HELP
@@ -47,8 +61,26 @@ case "$cmd" in
   help|-h|--help)
     help
     ;;
+  init)
+    shift || true
+    "$ROOT/scripts/init.sh" "$@"
+    ;;
+  reconfigure)
+    shift || true
+    "$ROOT/scripts/reconfigure.sh" "$@"
+    ;;
+  upgrade)
+    shift || true
+    "$ROOT/scripts/migrate-configs.sh" "$@"
+    ;;
+  doctor)
+    shift || true
+    "$ROOT/scripts/doctor.sh" "$@"
+    ;;
   onboard)
     "$ROOT/scripts/onboarding.sh"
+    "$ROOT/scripts/sync-agency-config.sh" >/dev/null 2>&1 || true
+    "$ROOT/scripts/bots-manage.sh" reconcile >/dev/null 2>&1 || true
     ;;
   skill)
     [[ "$sub" == "list" ]] || { echo "Unknown skill subcommand: $sub" >&2; exit 1; }
@@ -75,6 +107,17 @@ case "$cmd" in
         ;;
     esac
     ;;
+  pi)
+    case "$sub" in
+      status|verify|verify-runtime|setup)
+        shift 2 || true
+        "$ROOT/scripts/pi-mono.sh" "$sub" "$@"
+        ;;
+      *)
+        echo "Unknown pi subcommand: $sub" >&2; exit 1
+        ;;
+    esac
+    ;;
   repo)
     case "$sub" in
       init)
@@ -91,7 +134,13 @@ case "$cmd" in
     ;;
   swarm)
     case "$sub" in
-      init|status)
+      init)
+        "$ROOT/scripts/pi-mono.sh" verify-runtime --workspace "$WORKSPACE_DEFAULT"
+        python3 "$ROOT/swarm/runtime.py" "$sub"
+        "$ROOT/scripts/sync-agency-config.sh" >/dev/null 2>&1 || true
+        "$ROOT/scripts/bots-manage.sh" reconcile >/dev/null 2>&1 || true
+        ;;
+      status)
         python3 "$ROOT/swarm/runtime.py" "$sub"
         ;;
       dispatch|complete)
@@ -103,9 +152,26 @@ case "$cmd" in
         ;;
     esac
     ;;
+  bots)
+    case "$sub" in
+      list|reconcile)
+        "$ROOT/scripts/bots-manage.sh" "$sub"
+        ;;
+      *)
+        echo "Unknown bots subcommand: $sub" >&2; exit 1
+        ;;
+    esac
+    ;;
+  register)
+    "$ROOT/scripts/pi-mono.sh" verify-runtime --workspace "$WORKSPACE_DEFAULT"
+    "$ROOT/scripts/sync-agency-config.sh"
+    "$ROOT/scripts/bots-manage.sh" reconcile
+    python3 "$ROOT/scripts/dashboard-bridge.py" >/dev/null 2>&1 || true
+    echo "YaSwarm registration complete"
+    ;;
   sync)
     case "$sub" in
-      start|stop|status|run-once)
+      start|stop|status|run-once|run-forever)
         shift 2 || true
         "$ROOT/scripts/auto-sync.sh" "$sub" "$@"
         ;;

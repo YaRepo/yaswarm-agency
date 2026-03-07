@@ -1,0 +1,3 @@
+display_name: YaSwarm Blogwatcher
+short_description: Monitor blogs and RSS/Atom feeds for updates using the blogwa...
+default_prompt: Use $yaswarm-blogwatcher for this task and return concise actionable results.

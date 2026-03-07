@@ -1,0 +1,3 @@
+display_name: Clue Placement Expert
+short_description: Use this agent for mystery pacing and clue revelation strategy. Examples: When determin...
+default_prompt: Use $yamind-writing-clue-placement-expert for this task when its specialization applies.

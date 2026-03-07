@@ -1,0 +1,3 @@
+display_name: General Purpose
+short_description: Use this agent for catch-all analysis and multi-purpose tasks. Examples: When no specia...
+default_prompt: Use $yamind-writing-general-purpose for this task when its specialization applies.

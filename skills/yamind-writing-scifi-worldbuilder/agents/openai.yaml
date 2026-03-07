@@ -1,0 +1,3 @@
+display_name: Scifi Worldbuilder
+short_description: Use this agent for hard science extrapolation and technological coherence. Examples: Wh...
+default_prompt: Use $yamind-writing-scifi-worldbuilder for this task when its specialization applies.

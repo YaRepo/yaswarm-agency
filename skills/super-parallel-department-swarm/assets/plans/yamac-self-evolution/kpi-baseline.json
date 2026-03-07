@@ -1,0 +1,30 @@
+{
+  "project": "yamac-self-evolution",
+  "cadence": "weekly",
+  "metrics": {
+    "skill_routing_accuracy": {
+      "baseline": 0.9,
+      "target": 0.98
+    },
+    "notebook_topic_routing_accuracy": {
+      "baseline": 0.88,
+      "target": 0.98
+    },
+    "first_pass_completion_rate": {
+      "baseline": 0.72,
+      "target": 0.9
+    },
+    "rework_rate_by_department": {
+      "baseline": 0.28,
+      "target": 0.15
+    },
+    "mttr_tool_failures_hours": {
+      "baseline": 6.0,
+      "target": 2.0
+    },
+    "restore_drill_pass_rate": {
+      "baseline": 0.85,
+      "target": 1.0
+    }
+  }
+}

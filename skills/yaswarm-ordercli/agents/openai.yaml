@@ -1,0 +1,3 @@
+display_name: YaSwarm Ordercli
+short_description: Foodora-only CLI for checking past orders and active order st...
+default_prompt: Use $yaswarm-ordercli for this task and return concise actionable results.

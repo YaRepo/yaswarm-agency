@@ -1,0 +1,3 @@
+display_name: YaSwarm Obsidian
+short_description: Work with Obsidian vaults (plain Markdown notes) and automate...
+default_prompt: Use $yaswarm-obsidian for this task and return concise actionable results.

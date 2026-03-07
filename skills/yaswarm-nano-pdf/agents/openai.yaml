@@ -1,0 +1,3 @@
+display_name: YaSwarm Nano Pdf
+short_description: Edit PDFs with natural-language instructions using the nano-p...
+default_prompt: Use $yaswarm-nano-pdf for this task and return concise actionable results.

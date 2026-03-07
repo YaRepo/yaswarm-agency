@@ -1,0 +1,3 @@
+display_name: Create Pull Request
+short_description: >-
+default_prompt: Use $yamind-dev-create-pull-request for this task when its specialization applies.

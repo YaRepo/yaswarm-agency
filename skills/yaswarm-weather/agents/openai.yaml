@@ -1,0 +1,3 @@
+display_name: YaSwarm Weather
+short_description: Weather lookup via wttr.in
+default_prompt: Use $yaswarm-weather to fetch current weather/forecast for the requested location.

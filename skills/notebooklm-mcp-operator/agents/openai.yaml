@@ -1,0 +1,3 @@
+display_name: NotebookLM MCP Operator
+short_description: Runs NotebookLM MCP workflows with auth-aware checks for listing, querying, and source operations.
+default_prompt: Use $notebooklm-mcp-operator to preflight NotebookLM auth/MCP health, execute notebook operations, and return concise, action-ready outputs.

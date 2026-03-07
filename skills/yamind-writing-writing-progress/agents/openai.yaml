@@ -1,0 +1,3 @@
+display_name: Writing Progress
+short_description: Track and report writing progress across all works. Use when checking word counts, proj...
+default_prompt: Use $yamind-writing-writing-progress for this task when its specialization applies.

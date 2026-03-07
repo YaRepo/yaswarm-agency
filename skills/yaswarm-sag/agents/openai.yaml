@@ -1,0 +1,3 @@
+display_name: YaSwarm Sag
+short_description: ElevenLabs text-to-speech with mac-style say UX.
+default_prompt: Use $yaswarm-sag for this task and return concise actionable results.

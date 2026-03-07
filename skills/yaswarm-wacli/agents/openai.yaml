@@ -1,0 +1,3 @@
+display_name: YaSwarm Wacli
+short_description: Send WhatsApp messages to other people or search/sync WhatsAp...
+default_prompt: Use $yaswarm-wacli for this task and return concise actionable results.

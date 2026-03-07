@@ -1,0 +1,3 @@
+display_name: Mcp Builder
+short_description: Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs t...
+default_prompt: Use $yamind-dev-mcp-builder for this task when its specialization applies.

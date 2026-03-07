@@ -1,0 +1,538 @@
+{
+  "meta": {
+    "name": "shapeshifter-surgical-revision-directives",
+    "version": 1,
+    "default_mode": "novella"
+  },
+  "chapters": [
+    {
+      "chapter": 1,
+      "priority": "P1",
+      "delta_novella": 120,
+      "delta_novel": 700,
+      "cut": [
+        "Trim 1-2 repeated abstract identity lines after first mirror declaration.",
+        "Reduce duplicated warning language around surveillance to one sharp beat."
+      ],
+      "add": [
+        "Insert a deliberate route-change loyalty test after the White Corolla warning.",
+        "Seed one explicit legacy note foreshadowing terminal-grade breakpoint consequences."
+      ],
+      "rewrite": [
+        "Differentiate celebrity mask voice (performative smoothness) from private operative cognition (forensic brevity).",
+        "Tighten chapter end into decision-pressure command rather than contemplation."
+      ],
+      "checks": [
+        "Dual-role tension is active in action, not only monologue.",
+        "No timeline ambiguity in opening night sequence."
+      ]
+    },
+    {
+      "chapter": 2,
+      "priority": "P1",
+      "delta_novella": 90,
+      "delta_novel": 650,
+      "cut": [
+        "Compress candidate-screening exposition by 10-15%.",
+        "Remove one redundant despair paragraph before clinic call."
+      ],
+      "add": [
+        "Add first proactive media poison-pill setup using rumor ecosystem.",
+        "Show protagonist assigning Alyga a tactical task, not only receiving intel."
+      ],
+      "rewrite": [
+        "Sharpen dating-failure beats into tactical motivation for continuity gamble.",
+        "Keep emotional wound but attach it to next concrete move."
+      ],
+      "checks": [
+        "Every emotional beat ends with a strategic choice.",
+        "Lead-in to clinic remains causally inevitable."
+      ]
+    },
+    {
+      "chapter": 3,
+      "priority": "P1",
+      "delta_novella": 160,
+      "delta_novel": 900,
+      "cut": [
+        "Condense repetitive custody-language reactions by 10%.",
+        "Trim one redundant 'rare' emphasis block."
+      ],
+      "add": [
+        "Insert legacy file mention of breakpoint/terminal shift risk in explicit terms.",
+        "Add Hartmann psychological chess opening where protagonist probes healer-vs-jailer identity."
+      ],
+      "rewrite": [
+        "Shift from passive dread to active evidence capture (labels, custody clause, chain integrity).",
+        "Emphasize consent coercion with concrete legal consequence."
+      ],
+      "checks": [
+        "Breakpoint foreshadowing exists before Ch. 16 use.",
+        "Clinic predation is structural, not cartoonish."
+      ]
+    },
+    {
+      "chapter": 4,
+      "priority": "P0",
+      "delta_novella": -60,
+      "delta_novel": 500,
+      "cut": [
+        "Remove one duplicated lock explanation.",
+        "Trim repetitive PR scenario card listing after first strong sample."
+      ],
+      "add": [
+        "Add one proactive command move showing lockdown-era operational leadership.",
+        "Insert one scene beat where celebrity-facing obligations create tactical contradiction."
+      ],
+      "rewrite": [
+        "Repair internal chronology: reorder post-23:48 beats so timestamps progress forward.",
+        "Strengthen lock consequence as identity burial, not only schedule disruption."
+      ],
+      "checks": [
+        "Timestamps are strictly increasing.",
+        "Shift lock consequence is irreversible in practical terms."
+      ]
+    },
+    {
+      "chapter": 5,
+      "priority": "P0",
+      "delta_novella": 220,
+      "delta_novel": 1200,
+      "cut": [
+        "Delete passive social-scroll blocks that do not trigger action.",
+        "Cut 30-40% of repeated rumor-summary phrasing."
+      ],
+      "add": [
+        "Add explicit war-from-the-sofa operations board with counter-moves per threat.",
+        "Turn shower micro-shift into a near-terminal warning tied to unborn-child protection.",
+        "Deploy first strategic leak against clinic ecosystem."
+      ],
+      "rewrite": [
+        "Reframe confinement from waiting room to command bunker.",
+        "Ensure each threat intake results in an immediate tactical decision."
+      ],
+      "checks": [
+        "No screen event appears without counter-action.",
+        "Claustrophobia and command coexist."
+      ]
+    },
+    {
+      "chapter": 6,
+      "priority": "P0",
+      "delta_novella": 140,
+      "delta_novel": 900,
+      "cut": [
+        "Trim staircase-architecture explanation by 15%.",
+        "Remove one repeated metadata tracing beat."
+      ],
+      "add": [
+        "Show protagonist launching a deliberate narrative counter-operation, not just enduring attacks.",
+        "Add one consequence beat from dating-ghost resurfacing that forces tactical adaptation."
+      ],
+      "rewrite": [
+        "Keep political amplification as active threat mechanics, not commentary.",
+        "Sharpen transition into capture-pipeline framing at chapter close."
+      ],
+      "checks": [
+        "Chapter ends with an active plan change.",
+        "Cairo context changes risk profile in-scene."
+      ]
+    },
+    {
+      "chapter": 7,
+      "priority": "P0",
+      "delta_novella": 180,
+      "delta_novel": 950,
+      "cut": [
+        "Cut one redundant legal triage list.",
+        "Reduce dashboard metric recitation by ~20%."
+      ],
+      "add": [
+        "Replace modern deepfake framing with 2011-plausible stitched audio manipulation.",
+        "Add direct protagonist command to plant defensive misinformation route."
+      ],
+      "rewrite": [
+        "Elevate protagonist from interview subject to campaign director.",
+        "Anchor legal threat escalation in period-accurate media tooling."
+      ],
+      "checks": [
+        "No anachronistic AI shorthand.",
+        "Agency remains protagonist-centered."
+      ]
+    },
+    {
+      "chapter": 8,
+      "priority": "P1",
+      "delta_novella": 80,
+      "delta_novel": 850,
+      "cut": [
+        "Trim document-stack narration by 15-20%.",
+        "Remove one duplicated deniability summary."
+      ],
+      "add": [
+        "Make protagonist direct forensic accountant target priorities (manifest-first strategy).",
+        "Add one failed verification step before breakthrough to reduce convenience."
+      ],
+      "rewrite": [
+        "Keep exposition tied to decision pressure every 1-2 paragraphs.",
+        "Strengthen Hartmann moral conflict seed using patient-vs-material language."
+      ],
+      "checks": [
+        "Evidence gains have visible cost.",
+        "No pure info-dump run exceeds tactical relevance."
+      ]
+    },
+    {
+      "chapter": 9,
+      "priority": "P0",
+      "delta_novella": 210,
+      "delta_novel": 1100,
+      "cut": [
+        "Compress repetitive symptom logging blocks by 10-15%.",
+        "Trim one duplicated conservatorship warning beat."
+      ],
+      "add": [
+        "Add active counter-custody prep operations led by protagonist.",
+        "Deepen lockdown claustrophobia via failed private ritual tied to lost identity."
+      ],
+      "rewrite": [
+        "Ensure midpoint vow is operational commitment, not only emotional oath.",
+        "Attach every medical threat to legal/media countermeasures."
+      ],
+      "checks": [
+        "Protagonist remains command lead under late-term constraint.",
+        "No passive waiting-room drift."
+      ]
+    },
+    {
+      "chapter": 10,
+      "priority": "P1",
+      "delta_novella": -80,
+      "delta_novel": 700,
+      "cut": [
+        "Trim protocol matrix repetition after first full explanation.",
+        "Reduce duplicate confirmation beats in drill sequence."
+      ],
+      "add": [
+        "Add one vulnerability beat proving trust cost after truth reveal.",
+        "Insert one concrete leak-surface mitigation command immediately after onboarding Alyga."
+      ],
+      "rewrite": [
+        "Keep reveal scene emotional but tactical in consequence.",
+        "Clarify what Alyga can/cannot know under compartment rules."
+      ],
+      "checks": [
+        "Trust expansion equals exposure expansion on-page.",
+        "No contradiction with later guardian role."
+      ]
+    },
+    {
+      "chapter": 11,
+      "priority": "P1",
+      "delta_novella": -200,
+      "delta_novel": 500,
+      "cut": [
+        "Remove at least 80% of low-impact notification lines.",
+        "Compress contract clause recitation after core trap is clear."
+      ],
+      "add": [
+        "Replace paperwork-heavy sections with visceral legal-erasure panic scenes.",
+        "Add one immediate operational consequence when insurance pressure hits."
+      ],
+      "rewrite": [
+        "Turn legal escalation into thriller movement, not inbox montage.",
+        "Make refusal decision physically and politically costly in real time."
+      ],
+      "checks": [
+        "Every legal beat changes route, resources, or risk posture.",
+        "Reader can track stakes without document overload."
+      ]
+    },
+    {
+      "chapter": 12,
+      "priority": "P0",
+      "delta_novella": 120,
+      "delta_novel": 950,
+      "cut": [
+        "Remove one repeated route simulation detail.",
+        "Trim duplicate urgency lines near labor climax."
+      ],
+      "add": [
+        "Synchronize macro-history and micro-survival with concrete clerk/process beat.",
+        "Add explicit spatial map cues for corridor and back stair before breach."
+      ],
+      "rewrite": [
+        "Repair chronology so 12:05 dilation check appears before later timestamps.",
+        "Keep delivery and abduction chain temporally continuous and visually trackable."
+      ],
+      "checks": [
+        "No backward time jumps.",
+        "Revolution context actively changes survival probability."
+      ]
+    },
+    {
+      "chapter": 13,
+      "priority": "P1",
+      "delta_novella": 90,
+      "delta_novel": 850,
+      "cut": [
+        "Trim one repeated emotional thesis line after abduction event.",
+        "Reduce duplicate urgency declarations."
+      ],
+      "add": [
+        "Add one tactical evidence-preservation move during immediate chaos.",
+        "Clarify physical geometry of corridor-to-stair-to-alley transition."
+      ],
+      "rewrite": [
+        "Balance maternal grief with command authority under injury.",
+        "Keep post-birth physiology constraints present during pursuit launch."
+      ],
+      "checks": [
+        "Abduction sequence remains visceral and logistically coherent.",
+        "Command handoff to Alyga is explicit, not assumed."
+      ]
+    },
+    {
+      "chapter": 14,
+      "priority": "P1",
+      "delta_novella": -120,
+      "delta_novel": 700,
+      "cut": [
+        "Compress metadata/token validation exposition by 20-25%.",
+        "Trim duplicate route-web explanation blocks."
+      ],
+      "add": [
+        "Insert one failed lead with consequence to reduce convenience.",
+        "Add Cairo-specific friction event that forces route recalculation."
+      ],
+      "rewrite": [
+        "Keep investigation kinetic and scene-based, not spreadsheet-heavy.",
+        "Sharpen node decision logic into simple actionable chain."
+      ],
+      "checks": [
+        "Each intel gain has cost, delay, or exposure.",
+        "Reader can follow chain without technical fatigue."
+      ]
+    },
+    {
+      "chapter": 15,
+      "priority": "P1",
+      "delta_novella": -90,
+      "delta_novel": 750,
+      "cut": [
+        "Reduce category-board exposition and repeated market taxonomy.",
+        "Trim one duplicate decision-gate beat before breach."
+      ],
+      "add": [
+        "Seed Karim credibility earlier via callback line so competence feels earned.",
+        "Add one micro-failure in breach prep before launch."
+      ],
+      "rewrite": [
+        "Preserve dread while clarifying decoy-vs-primary logic in real time.",
+        "Strengthen sensory brutality without drifting into abstraction."
+      ],
+      "checks": [
+        "Child-identification logic is explicit and verifiable.",
+        "No confusion over real cargo at extraction point."
+      ]
+    },
+    {
+      "chapter": 16,
+      "priority": "P0",
+      "delta_novella": 80,
+      "delta_novel": 850,
+      "cut": [
+        "Trim one duplicate action description during alley escape.",
+        "Reduce repeated heartbeat-skip phrasing."
+      ],
+      "add": [
+        "Move breakpoint foreshadow callback into first third of chapter.",
+        "Add precise neuropathy onset markers tied to future handoff failure."
+      ],
+      "rewrite": [
+        "Reorder or integrate 'Forty minutes earlier' block for linear clarity.",
+        "Make breakpoint use feel like a deliberate suicide-grade decision."
+      ],
+      "checks": [
+        "Action chronology remains continuous under pressure.",
+        "Permanent cost is undeniable by chapter end."
+      ]
+    },
+    {
+      "chapter": 17,
+      "priority": "P0",
+      "delta_novella": 170,
+      "delta_novel": 1000,
+      "cut": [
+        "Cut generic market-language dialogue from Vogel.",
+        "Trim one repeated tactical geometry paragraph."
+      ],
+      "add": [
+        "Rewrite Vogel ideology as evolutionary-salvage doctrine with specimen reverence.",
+        "Add one line clarifying Hartmann's operational doctrine continuity with Vogel."
+      ],
+      "rewrite": [
+        "Shift antagonist rhetoric from shareholder logic to biopolitical crusade.",
+        "Strengthen confrontation stakes beyond personal revenge."
+      ],
+      "checks": [
+        "Antagonist worldview is coherent and chilling.",
+        "No cardboard-villain signals remain."
+      ]
+    },
+    {
+      "chapter": 18,
+      "priority": "P1",
+      "delta_novella": 110,
+      "delta_novel": 800,
+      "cut": [
+        "Trim one repeated arrhythmia severity explanation.",
+        "Compress duplicate warning exchanges by 10-15%."
+      ],
+      "add": [
+        "Tie breakpoint aftermath directly to specific motor deficits needed in Ch. 19-21.",
+        "Add one impossible choice where saving child safety worsens her own prognosis."
+      ],
+      "rewrite": [
+        "Keep triage tense without turning into medical report prose.",
+        "Balance legal logistics with visible bodily collapse."
+      ],
+      "checks": [
+        "Physical decline trajectory matches handoff and stage-finale capacity.",
+        "Legacy prep feels urgent, not procedural."
+      ]
+    },
+    {
+      "chapter": 19,
+      "priority": "P0",
+      "delta_novella": 150,
+      "delta_novel": 900,
+      "cut": [
+        "Trim 1-2 repeated legal clause clarifications.",
+        "Compress duplicate extraction-risk narration."
+      ],
+      "add": [
+        "Insert catastrophic motor failure beat where she nearly drops the child during handoff.",
+        "Add one explicit irreversible emotional consequence from guardian clause activation."
+      ],
+      "rewrite": [
+        "Drive handoff scene through physical cost, not only legal ritual.",
+        "Sharpen decoy-vs-signal strategy readability."
+      ],
+      "checks": [
+        "Handoff pays off breakpoint debt physically.",
+        "Guardian transition is emotionally and operationally final."
+      ]
+    },
+    {
+      "chapter": 20,
+      "priority": "P0",
+      "delta_novella": 60,
+      "delta_novel": 850,
+      "cut": [
+        "Trim one repeated narrative-war thesis paragraph.",
+        "Reduce excessive channel-headline sequencing."
+      ],
+      "add": [
+        "Resolve unknown-sender reliability (inside leak, psy-op, or double-feed) with concrete evidence.",
+        "Add one failed publication consequence before legal delay win."
+      ],
+      "rewrite": [
+        "Keep media war legible as strategy map, not noise log.",
+        "Ensure protagonist remains architect of escalation decisions."
+      ],
+      "checks": [
+        "Unknown-sender arc has clear status by end of chapter.",
+        "Narrative war materially protects child routes."
+      ]
+    },
+    {
+      "chapter": 21,
+      "priority": "P1",
+      "delta_novella": -40,
+      "delta_novel": 700,
+      "cut": [
+        "Trim one duplicated philosophical exchange.",
+        "Reduce minor protocol restatements."
+      ],
+      "add": [
+        "Insert one behavioral trauma marker in child-handling routine foreshadowing epilogue.",
+        "Add one sharp political-to-personal line linking revolution debt to parental sacrifice."
+      ],
+      "rewrite": [
+        "Maintain emotional intimacy while preserving tactical urgency.",
+        "Keep dialogue voice-differentiated between both leads."
+      ],
+      "checks": [
+        "Conversation advances operation, not only closure.",
+        "No sentimentality drift."
+      ]
+    },
+    {
+      "chapter": 22,
+      "priority": "P0",
+      "delta_novella": 130,
+      "delta_novel": 900,
+      "cut": [
+        "Trim one repeated speech-beat before confrontation peak.",
+        "Reduce explanatory comms lines once upload state is clear."
+      ],
+      "add": [
+        "Replace neat crowd-protection tone with hostile freak-show escalation and mixed mob dynamics.",
+        "Add extraction danger beats where public attention is both shield and threat."
+      ],
+      "rewrite": [
+        "Keep stage confession raw but tactically grounded.",
+        "Ensure collapse aftermath remains contested, not theatrically resolved."
+      ],
+      "checks": [
+        "No clean applause resolution.",
+        "Event materially increases separation safety for child route."
+      ]
+    },
+    {
+      "chapter": 23,
+      "priority": "P1",
+      "delta_novella": 100,
+      "delta_novel": 850,
+      "cut": [
+        "Trim high-density tactical summary passages by ~15%.",
+        "Remove one repeated doctrine explanation from Vogel playbook section."
+      ],
+      "add": [
+        "Add scene-level consequence of stage detonation on street behavior and legal posture.",
+        "Insert one concrete near-failure in narrative-shield operations."
+      ],
+      "rewrite": [
+        "Favor dramatized aftermath over report-style recap.",
+        "Keep agency in pattern warfare while preserving medical fragility."
+      ],
+      "checks": [
+        "Aftermath feels lived, not summarized.",
+        "Role shift to narrative shield is credible and costly."
+      ]
+    },
+    {
+      "chapter": 24,
+      "priority": "P0",
+      "delta_novella": 160,
+      "delta_novel": 1000,
+      "cut": [
+        "Cut resume-style transitions across long years.",
+        "Trim explanatory hindsight where scene behavior can carry meaning."
+      ],
+      "add": [
+        "Center epilogue on balcony scene with inherited trauma markers (reflection-checking, route-scanning habits).",
+        "Keep Vogel long-tail closure dramatized in one concrete remembered beat, not dossier summary."
+      ],
+      "rewrite": [
+        "Replace informational summary tone with embodied present-tense memory texture.",
+        "Land final line on hard-won, uneasy continuity rather than clean hope."
+      ],
+      "checks": [
+        "Epilogue is scene-first and behavior-driven.",
+        "Theme closes without over-explaining metaphor."
+      ]
+    }
+  ]
+}

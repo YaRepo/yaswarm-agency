@@ -1,0 +1,3 @@
+display_name: Creator Finance Ops
+short_description: Track invoices, cashflow, and monthly close
+default_prompt: Use $creator-finance-ops to organize my creator finances, summarize cashflow, and produce an invoice follow-up queue.

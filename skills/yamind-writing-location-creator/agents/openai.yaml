@@ -1,0 +1,3 @@
+display_name: Location Creator
+short_description: Create detailed location profiles for your universes. Use when adding settings, places,...
+default_prompt: Use $yamind-writing-location-creator for this task when its specialization applies.

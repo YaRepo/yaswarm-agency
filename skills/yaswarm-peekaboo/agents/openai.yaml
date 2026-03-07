@@ -1,0 +1,3 @@
+display_name: YaSwarm Peekaboo
+short_description: Capture and automate macOS UI with the Peekaboo CLI.
+default_prompt: Use $yaswarm-peekaboo for this task and return concise actionable results.

@@ -1,0 +1,3 @@
+display_name: Satire Specialist
+short_description: Use this agent for dark comedy and satirical subtext analysis. Examples: When evaluatin...
+default_prompt: Use $yamind-writing-satire-specialist for this task when its specialization applies.

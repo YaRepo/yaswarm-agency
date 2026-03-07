@@ -1,0 +1,3 @@
+display_name: Narrative Designer
+short_description: Perspective master and narrative technique specialist. Evaluates POV, tense, distance,...
+default_prompt: Use $yamind-writing-narrative-designer for this task when its specialization applies.

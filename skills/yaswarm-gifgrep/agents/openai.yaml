@@ -1,0 +1,3 @@
+display_name: YaSwarm Gifgrep
+short_description: Search GIF providers with CLI/TUI, download results, and extr...
+default_prompt: Use $yaswarm-gifgrep for this task and return concise actionable results.

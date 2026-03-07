@@ -1,0 +1,3 @@
+display_name: YaSwarm Openhue
+short_description: Control Philips Hue lights and scenes via the OpenHue CLI.
+default_prompt: Use $yaswarm-openhue for this task and return concise actionable results.

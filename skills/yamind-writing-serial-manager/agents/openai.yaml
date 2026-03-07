@@ -1,0 +1,3 @@
+display_name: Serial Manager
+short_description: Use this agent for episodic pacing and reader retention. Examples: When managing cliffh...
+default_prompt: Use $yamind-writing-serial-manager for this task when its specialization applies.

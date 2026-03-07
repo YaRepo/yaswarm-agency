@@ -1,0 +1,3 @@
+display_name: YaSwarm Sherpa Onnx Tts
+short_description: Local text-to-speech via sherpa-onnx (offline, no cloud)
+default_prompt: Use $yaswarm-sherpa-onnx-tts for this task and return concise actionable results.

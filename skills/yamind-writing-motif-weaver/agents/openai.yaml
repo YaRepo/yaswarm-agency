@@ -1,0 +1,3 @@
+display_name: Motif Weaver
+short_description: Use this agent for recurring symbol and thematic resonance analysis. Examples: When tra...
+default_prompt: Use $yamind-writing-motif-weaver for this task when its specialization applies.

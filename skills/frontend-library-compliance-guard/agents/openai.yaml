@@ -1,0 +1,3 @@
+display_name: Frontend Library Compliance Guard
+short_description: Detects active UI libraries and enforces primitive reuse to avoid redundant custom components and CSS drift.
+default_prompt: Use $frontend-library-compliance-guard to audit the project, detect active UI libraries, and enforce library-first primitive usage.

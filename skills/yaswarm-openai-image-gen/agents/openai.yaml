@@ -1,0 +1,3 @@
+display_name: YaSwarm Image Gen
+short_description: Generate images via OpenAI
+default_prompt: Use $yaswarm-openai-image-gen to generate requested images and report output paths.

@@ -1,0 +1,3 @@
+display_name: YaSwarm Imsg
+short_description: iMessage/SMS CLI for listing chats, history, and sending mess...
+default_prompt: Use $yaswarm-imsg for this task and return concise actionable results.

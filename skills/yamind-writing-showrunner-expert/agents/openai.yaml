@@ -1,0 +1,3 @@
+display_name: Showrunner Expert
+short_description: TV adaptation specialist focused on visual translation, serialization potential, and pr...
+default_prompt: Use $yamind-writing-showrunner-expert for this task when its specialization applies.

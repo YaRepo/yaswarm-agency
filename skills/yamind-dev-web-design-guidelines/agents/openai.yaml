@@ -1,0 +1,3 @@
+display_name: Web Design Guidelines
+short_description: Review UI code for Web Interface Guidelines compliance. Use when asked to \"review my U...
+default_prompt: Use $yamind-dev-web-design-guidelines for this task when its specialization applies.

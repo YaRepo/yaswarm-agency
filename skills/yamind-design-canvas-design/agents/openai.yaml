@@ -1,0 +1,3 @@
+display_name: Canvas Design
+short_description: Create beautiful visual art in .png and .pdf documents using design philosophy. You sho...
+default_prompt: Use $yamind-design-canvas-design for this task when its specialization applies.

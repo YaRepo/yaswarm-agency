@@ -1,0 +1,3 @@
+display_name: YaSwarm Voice Call
+short_description: Start voice calls via the YaSwarm voice-call plugin.
+default_prompt: Use $yaswarm-voice-call for this task and return concise actionable results.

@@ -1,0 +1,3 @@
+display_name: Arabic
+short_description: Comprehensive Arabic language enhancement system for Modern Standard Arabic (MSA), dial...
+default_prompt: Use $yamind-writing-yaslang for this task when its specialization applies.

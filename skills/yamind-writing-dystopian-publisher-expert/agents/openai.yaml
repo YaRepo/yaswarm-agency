@@ -1,0 +1,3 @@
+display_name: Dystopian Publisher Expert
+short_description: Use this agent when you need professional publishing industry evaluation of dystopian s...
+default_prompt: Use $yamind-writing-dystopian-publisher-expert for this task when its specialization applies.

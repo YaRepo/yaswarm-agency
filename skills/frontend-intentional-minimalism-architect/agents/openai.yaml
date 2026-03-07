@@ -1,0 +1,3 @@
+display_name: Frontend Intentional Minimalism Architect
+short_description: Frontend mode with NORMAL/ULTRATHINK protocols, bespoke intentional-minimalist design, and strict library-first implementation.
+default_prompt: Use $frontend-intentional-minimalism-architect. Determine mode from prompt (NORMAL unless ULTRATHINK is present), enforce intentional minimalism, and implement using active UI library primitives.

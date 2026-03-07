@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0",
+  "updated_at": "__NOW__",
+  "source": "__AGENCY_CONFIG__",
+  "agents": {
+    "main": {
+      "id": "main",
+      "workspace": "__AGENCY_ROOT__",
+      "managed_by": "yaswarm",
+      "status": "ready"
+    }
+  }
+}

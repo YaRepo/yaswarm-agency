@@ -1,0 +1,104 @@
+{
+  "dialect_name": "Iraqi Arabic",
+  "native_name": "عراقي",
+  "iso_code": "acm",
+  "regions": ["Iraq", "parts of Syria/Iran"],
+  "speakers": "~35 million",
+  
+  "phonological_features": {
+    "q_sound": "/g/ universally",
+    "k_sound": "/tʃ/ common (k → ch)",
+    "r_sound": "trilled /r/",
+    "emphasis": "strong pharyngealization"
+  },
+  
+  "grammatical_markers": {
+    "negation": {
+      "primary": "ما",
+      "alternatives": ["مو", "ماكو"],
+      "existential_negative": "ماكو",
+      "examples": [
+        {"arabic": "ما اعرف", "transliteration": "mā aʿrif", "english": "I don't know"},
+        {"arabic": "ماكو مشكلة", "transliteration": "māku mushkila", "english": "no problem"}
+      ]
+    },
+    
+    "present_tense": {
+      "marker": "د/دا prefixes (continuous)",
+      "pattern": "د + verb OR direct conjugation",
+      "conjugation": {
+        "1s": "اـ...",
+        "2s_m": "تـ...",
+        "2s_f": "تـ...ين",
+        "3s_m": "يـ...",
+        "3s_f": "تـ...",
+        "1pl": "نـ...",
+        "2pl": "تـ...ون",
+        "3pl": "يـ...ون"
+      },
+      "examples": [
+        {"arabic": "داكتب", "transliteration": "dāktib", "english": "I am writing"},
+        {"arabic": "يروح", "transliteration": "yirūḥ", "english": "he goes"}
+      ]
+    },
+    
+    "future_tense": {
+      "marker": "راح",
+      "pattern": "راح + verb",
+      "examples": [
+        {"arabic": "راح اروح", "transliteration": "rāḥ arūḥ", "english": "I will go"},
+        {"arabic": "راح اكتب", "transliteration": "rāḥ aktib", "english": "I will write"}
+      ]
+    }
+  },
+  
+  "vocabulary": {
+    "question_words": [
+      {"word": "شنو", "transliteration": "shnū", "meaning": "what", "weight": 5},
+      {"word": "شلون", "transliteration": "shlōn", "meaning": "how", "weight": 5},
+      {"word": "وين", "transliteration": "wēn", "meaning": "where", "weight": 5},
+      {"word": "ليش", "transliteration": "lēsh", "meaning": "why", "weight": 5},
+      {"word": "منو", "transliteration": "minū", "meaning": "who", "weight": 5}
+    ],
+    
+    "verbs": [
+      {"word": "اريد", "transliteration": "arīd", "meaning": "I want", "weight": 5},
+      {"word": "اعرف", "transliteration": "aʿrif", "meaning": "I know", "weight": 4},
+      {"word": "اگدر", "transliteration": "agdir", "meaning": "I can", "weight": 4},
+      {"word": "شايف", "transliteration": "shāyif", "meaning": "seeing", "weight": 3}
+    ],
+    
+    "particles": [
+      {"word": "هاي", "transliteration": "hāy", "meaning": "this (f.)", "weight": 5},
+      {"word": "هذا", "transliteration": "hādha", "meaning": "this (m.)", "weight": 4},
+      {"word": "هذي", "transliteration": "hadhī", "meaning": "this (f.)", "weight": 4},
+      {"word": "هذول", "transliteration": "hadhōl", "meaning": "these", "weight": 4}
+    ],
+    
+    "pronouns": [
+      {"word": "اني", "transliteration": "ānī", "meaning": "I", "weight": 4},
+      {"word": "احنا", "transliteration": "iḥna", "meaning": "we", "weight": 4},
+      {"word": "انت", "transliteration": "inta", "meaning": "you (m.)", "weight": 2},
+      {"word": "انتي", "transliteration": "inti", "meaning": "you (f.)", "weight": 2},
+      {"word": "انتو", "transliteration": "intu", "meaning": "you (pl.)", "weight": 4},
+      {"word": "هو", "transliteration": "hū", "meaning": "he", "weight": 2},
+      {"word": "هي", "transliteration": "hī", "meaning": "she", "weight": 2},
+      {"word": "هم", "transliteration": "hum", "meaning": "they", "weight": 4}
+    ],
+    
+    "unique_words": [
+      {"word": "زين", "transliteration": "zēn", "meaning": "good", "weight": 4},
+      {"word": "كلش", "transliteration": "kilish", "meaning": "very/a lot", "weight": 5},
+      {"word": "ماكو", "transliteration": "māku", "meaning": "there isn't", "weight": 5},
+      {"word": "اكو", "transliteration": "āku", "meaning": "there is", "weight": 5}
+    ],
+    
+    "common_expressions": [
+      {"phrase": "شلونك", "transliteration": "shlōnak", "meaning": "how are you?"},
+      {"phrase": "زين الحمدلله", "transliteration": "zēn alḥamdulillah", "meaning": "good praise God"},
+      {"phrase": "ماكو مشكلة", "transliteration": "māku mushkila", "meaning": "no problem"},
+      {"phrase": "يلا", "transliteration": "yalla", "meaning": "let's go"},
+      {"phrase": "صدك", "transliteration": "ṣidik", "meaning": "really?/are you serious?"}
+    ]
+  }
+}

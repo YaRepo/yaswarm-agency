@@ -1,0 +1,3 @@
+display_name: Plot Architect
+short_description: This skill provides plot structure and narrative engineering analysis. Use when the use...
+default_prompt: Use $yamind-writing-plot-architect for this task when its specialization applies.

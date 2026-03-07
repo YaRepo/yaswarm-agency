@@ -1,0 +1,3 @@
+display_name: Zeitgeist Scan
+short_description: Use this agent for cultural relevance and contemporary resonance analysis. Examples: Wh...
+default_prompt: Use $yamind-writing-zeitgeist-scan for this task when its specialization applies.

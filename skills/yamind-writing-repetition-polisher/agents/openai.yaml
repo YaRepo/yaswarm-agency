@@ -1,0 +1,3 @@
+display_name: Repetition Polisher
+short_description: Scan prose for repeated words, phrases, and sentence patterns, then suggest smart edits...
+default_prompt: Use $yamind-writing-repetition-polisher for this task when its specialization applies.

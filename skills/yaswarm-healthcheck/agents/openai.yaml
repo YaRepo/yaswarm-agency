@@ -1,0 +1,3 @@
+display_name: YaSwarm Healthcheck
+short_description: Host security hardening and risk-tolerance configuration for ...
+default_prompt: Use $yaswarm-healthcheck for this task and return concise actionable results.

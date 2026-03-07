@@ -1,0 +1,3 @@
+display_name: Langsmith Fetch
+short_description: Debug LangChain and LangGraph agents by fetching execution traces from LangSmith Studio...
+default_prompt: Use $yamind-dev-langsmith-fetch for this task when its specialization applies.

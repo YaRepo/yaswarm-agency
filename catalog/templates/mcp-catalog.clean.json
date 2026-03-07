@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "servers": {
+    "context7": {
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp@2.1.1"],
+      "env": {}
+    }
+  },
+  "clients": {
+    "codex": {
+      "servers": ["context7"],
+      "output_path": "~/.codex/config.toml"
+    }
+  }
+}

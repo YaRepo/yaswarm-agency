@@ -1,0 +1,3 @@
+display_name: Card Game IP Dev
+short_description: Build and balance card games from your IP worlds
+default_prompt: Use $card-game-ip-dev to turn my IP into a playable card game with core rules, a starter set, and a balance playtest plan.

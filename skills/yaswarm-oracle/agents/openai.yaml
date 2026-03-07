@@ -1,0 +1,3 @@
+display_name: YaSwarm Oracle
+short_description: Best practices for using the oracle CLI (prompt + file bundli...
+default_prompt: Use $yaswarm-oracle for this task and return concise actionable results.

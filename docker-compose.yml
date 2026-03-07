@@ -1,7 +1,7 @@
 services:
-  yamind-swarm:
+  yaswarm:
     build: .
-    container_name: yamind-swarm
+    container_name: yaswarm
     restart: unless-stopped
     env_file:
       - .env
@@ -13,4 +13,4 @@ services:
       - ./mcp:/app/mcp
       - ./skills:/app/skills
       - ./projects:/app/projects
-    command: ["help"]
+    command: ["sync", "run-forever"]

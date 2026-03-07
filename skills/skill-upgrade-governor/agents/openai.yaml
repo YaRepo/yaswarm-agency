@@ -1,0 +1,3 @@
+display_name: Skill Upgrade Governor
+short_description: Audit and upgrade skill quality across the system
+default_prompt: Use $skill-upgrade-governor to audit all installed skills, detect weaknesses, and propose prioritized upgrade patches.

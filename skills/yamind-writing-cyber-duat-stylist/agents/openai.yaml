@@ -1,0 +1,3 @@
+display_name: Cyber Duat Stylist
+short_description: Enforce Y.K.Y. Cyber-Duat voice and style. Use for rewrites, polish, and voice alignment.
+default_prompt: Use $yamind-writing-cyber-duat-stylist for this task when its specialization applies.

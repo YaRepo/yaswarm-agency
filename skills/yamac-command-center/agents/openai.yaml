@@ -1,0 +1,3 @@
+display_name: YaMac Command Center
+short_description: Run weekly planning and project control loops
+default_prompt: Use $yamac-command-center to review my YaMac notes, extract tasks, produce project statuses, and generate this week command-center brief.

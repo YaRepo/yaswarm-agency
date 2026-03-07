@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "updated_at": "__NOW__",
+  "main": {
+    "provider": null,
+    "llm": null,
+    "vlm": null,
+    "tts": null
+  },
+  "departments": {}
+}

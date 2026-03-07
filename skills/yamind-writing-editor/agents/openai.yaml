@@ -1,0 +1,3 @@
+display_name: Editor
+short_description: Line-level prose refinement and House Style enforcer. Optimizes clarity, flow, and elim...
+default_prompt: Use $yamind-writing-editor for this task when its specialization applies.

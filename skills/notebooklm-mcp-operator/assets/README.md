@@ -1,0 +1,1 @@
+No static assets required.

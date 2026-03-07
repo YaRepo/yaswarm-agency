@@ -1,0 +1,253 @@
+{
+  "project": "yamac-self-evolution",
+  "generated_at": "2026-02-20T01:30:41.709406+00:00",
+  "window_days": 7,
+  "metrics": {
+    "skill_routing_accuracy": {
+      "value": 1.0,
+      "sample_size": 12,
+      "source": "skill-routing-benchmark(top3-hit)",
+      "target": 0.98,
+      "gap": -0.02
+    },
+    "notebook_topic_routing_accuracy": {
+      "value": 1.0,
+      "sample_size": 9,
+      "source": "notebook-topic-routing-benchmark",
+      "target": 0.98,
+      "gap": -0.02
+    },
+    "first_pass_completion_rate": {
+      "value": 1.0,
+      "sample_size": 8,
+      "source": "swarm-execution-status",
+      "target": 0.9,
+      "gap": -0.1
+    },
+    "rework_rate_by_department": {
+      "value": 0.0,
+      "sample_size": 8,
+      "source": "swarm-execution-status",
+      "target": 0.15,
+      "gap": 0.15,
+      "note": "uses rework_count where available; defaults to 0"
+    },
+    "mttr_tool_failures_hours": {
+      "value": 0.0,
+      "sample_size": 0,
+      "source": "telemetry-events",
+      "target": 2.0,
+      "gap": 2.0,
+      "note": "no resolved incidents in window"
+    },
+    "restore_drill_pass_rate": {
+      "value": 1.0,
+      "sample_size": 1,
+      "source": "live-restore-drill",
+      "target": 1.0,
+      "gap": 0.0
+    }
+  },
+  "benchmarks": {
+    "skill_routing": {
+      "total": 12,
+      "passed": 12,
+      "details": [
+        {
+          "id": "dev-mcp-server",
+          "expected_skill": "yamind-dev-mcp-builder",
+          "top3": [
+            "yamind-dev-mcp-builder",
+            "notebooklm-mcp-operator",
+            "arabic-english-dialect-translator"
+          ],
+          "pass": true
+        },
+        {
+          "id": "frontend-architecture",
+          "expected_skill": "frontend-intentional-minimalism-architect",
+          "top3": [
+            "frontend-intentional-minimalism-architect",
+            "yamind-design-canvas-design",
+            "yamind-dev-web-design-guidelines"
+          ],
+          "pass": true
+        },
+        {
+          "id": "frontend-library-compliance",
+          "expected_skill": "frontend-library-compliance-guard",
+          "top3": [
+            "frontend-library-compliance-guard",
+            "frontend-intentional-minimalism-architect",
+            "yamind-writing-narrative-audit"
+          ],
+          "pass": true
+        },
+        {
+          "id": "fiction-scene",
+          "expected_skill": "yamind-writing-scene-writer",
+          "top3": [
+            "book-novel-storylab",
+            "yamind-writing-scene-writer",
+            "yamind-writing-character-creator"
+          ],
+          "pass": true
+        },
+        {
+          "id": "fiction-architecture",
+          "expected_skill": "yamind-writing-plot-architect",
+          "top3": [
+            "book-novel-storylab",
+            "yamind-writing-plot-architect",
+            "yamind-writing-manuscript-export"
+          ],
+          "pass": true
+        },
+        {
+          "id": "nonfiction-research",
+          "expected_skill": "yamind-writing-content-research-writer",
+          "top3": [
+            "book-novel-storylab",
+            "yamind-writing-content-research-writer",
+            "research-digest-builder"
+          ],
+          "pass": true
+        },
+        {
+          "id": "film-package",
+          "expected_skill": "filmmaking-producer",
+          "top3": [
+            "filmmaking-producer",
+            "yamind-dev-skill-creator",
+            "arabic-english-dialect-translator"
+          ],
+          "pass": true
+        },
+        {
+          "id": "business-model",
+          "expected_skill": "project-to-business-architect",
+          "top3": [
+            "project-to-business-architect",
+            "creator-finance-ops",
+            "bestseller-2027-orchestrator"
+          ],
+          "pass": true
+        },
+        {
+          "id": "notes-cleanup",
+          "expected_skill": "notes-doctor",
+          "top3": [
+            "calendar-reminders-ops",
+            "notes-doctor",
+            "assistant-core-architecture-governor"
+          ],
+          "pass": true
+        },
+        {
+          "id": "calendar-ops",
+          "expected_skill": "calendar-reminders-ops",
+          "top3": [
+            "calendar-reminders-ops",
+            "bilingual-note-normalizer",
+            "yamind-dev-create-pull-request"
+          ],
+          "pass": true
+        },
+        {
+          "id": "mac-diagnosis",
+          "expected_skill": "mac-doctor",
+          "top3": [
+            "calendar-reminders-ops",
+            "bilingual-note-normalizer",
+            "mac-doctor"
+          ],
+          "pass": true
+        },
+        {
+          "id": "notebooklm-ops",
+          "expected_skill": "notebooklm-mcp-operator",
+          "top3": [
+            "book-novel-storylab",
+            "calendar-reminders-ops",
+            "notebooklm-mcp-operator"
+          ],
+          "pass": true
+        }
+      ]
+    },
+    "notebook_routing": {
+      "total": 9,
+      "passed": 9,
+      "details": [
+        {
+          "id": "nb-coding",
+          "expected_topic": "coding-dev",
+          "predicted_topic": "coding-dev",
+          "pass": true
+        },
+        {
+          "id": "nb-backend",
+          "expected_topic": "backend",
+          "predicted_topic": "backend",
+          "pass": true
+        },
+        {
+          "id": "nb-fiction",
+          "expected_topic": "writing-fiction",
+          "predicted_topic": "writing-fiction",
+          "pass": true
+        },
+        {
+          "id": "nb-nonfiction",
+          "expected_topic": "writing-nonfiction",
+          "predicted_topic": "writing-nonfiction",
+          "pass": true
+        },
+        {
+          "id": "nb-art",
+          "expected_topic": "art-design",
+          "predicted_topic": "art-design",
+          "pass": true
+        },
+        {
+          "id": "nb-books",
+          "expected_topic": "books-publishing",
+          "predicted_topic": "books-publishing",
+          "pass": true
+        },
+        {
+          "id": "nb-film",
+          "expected_topic": "film-production",
+          "predicted_topic": "film-production",
+          "pass": true
+        },
+        {
+          "id": "nb-marketing",
+          "expected_topic": "marketing",
+          "predicted_topic": "marketing",
+          "pass": true
+        },
+        {
+          "id": "nb-business",
+          "expected_topic": "business",
+          "predicted_topic": "business",
+          "pass": true
+        }
+      ]
+    }
+  },
+  "restore_drill": {
+    "status": "pass",
+    "details": "restored /var/folders/kd/q_xdqfws1hl5fl65bg0q8hcm0000gp/T/yamac-restore-drill-_ap1otzr/memory/memory.sqlite"
+  },
+  "backup_integrity": {
+    "checked": 4,
+    "passed": 4
+  },
+  "incident_samples": 0,
+  "observability": {
+    "otlp_enabled": true,
+    "otlp_endpoint": "http://127.0.0.1:4318/v1/traces",
+    "warning": ""
+  }
+}

@@ -1,0 +1,3 @@
+display_name: Image Enhancer
+short_description: Improves the quality of images, especially screenshots, by enhancing resolution, sharpn...
+default_prompt: Use $yamind-design-image-enhancer for this task when its specialization applies.

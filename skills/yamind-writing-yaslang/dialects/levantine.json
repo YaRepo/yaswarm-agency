@@ -1,0 +1,108 @@
+{
+  "dialect_name": "Levantine Arabic",
+  "native_name": "شامي",
+  "iso_code": "apc/ajp",
+  "regions": ["Syria", "Lebanon", "Jordan", "Palestine", "parts of Turkey"],
+  "speakers": "~40 million",
+  
+  "phonological_features": {
+    "q_sound": "glottal stop /ʔ/ in urban, /q/ in rural",
+    "k_sound": "sometimes /tʃ/ (affricatized in some regions)",
+    "interdentals": "preserved in some rural areas, merged in urban"
+  },
+  
+  "grammatical_markers": {
+    "negation": {
+      "primary": "ما",
+      "circumfix": "ما...ش",
+      "alternatives": ["مو"],
+      "examples": [
+        {"arabic": "ما بعرف", "transliteration": "ma baʿrif", "english": "I don't know"},
+        {"arabic": "ما فيش", "transliteration": "ma fīsh", "english": "there isn't"}
+      ]
+    },
+    
+    "present_tense": {
+      "marker": "ب",
+      "pattern": "ب + imperfect verb",
+      "conjugation": {
+        "1s": "بـ...",
+        "2s_m": "بتـ...",
+        "2s_f": "بتـ...ي",
+        "3s_m": "بـ...",
+        "3s_f": "بتـ...",
+        "1pl": "منـ...",
+        "2pl": "بتـ...و",
+        "3pl": "بـ...و"
+      },
+      "examples": [
+        {"arabic": "بكتب", "transliteration": "baktub", "english": "I write"},
+        {"arabic": "بيكتب", "transliteration": "byiktub", "english": "he writes"}
+      ]
+    },
+    
+    "future_tense": {
+      "marker": "رح",
+      "alternatives": ["ح"],
+      "pattern": "رح + imperfect verb",
+      "examples": [
+        {"arabic": "رح روح", "transliteration": "raḥ rūḥ", "english": "I will go"},
+        {"arabic": "رح اكتب", "transliteration": "raḥ aktub", "english": "I will write"}
+      ]
+    }
+  },
+  
+  "vocabulary": {
+    "question_words": [
+      {"word": "شو", "transliteration": "shū", "meaning": "what", "weight": 5},
+      {"word": "كيف", "transliteration": "kīf", "meaning": "how", "weight": 5},
+      {"word": "وين", "transliteration": "wēn", "meaning": "where", "weight": 5},
+      {"word": "ليش", "transliteration": "lēsh", "meaning": "why", "weight": 5},
+      {"word": "مين", "transliteration": "mīn", "meaning": "who", "weight": 4},
+      {"word": "ايمت", "transliteration": "ēmat", "meaning": "when", "weight": 4}
+    ],
+    
+    "verbs": [
+      {"word": "بدي", "transliteration": "biddi", "meaning": "I want", "weight": 5},
+      {"word": "بده", "transliteration": "biddu", "meaning": "he wants", "weight": 5},
+      {"word": "بدها", "transliteration": "bidha", "meaning": "she wants", "weight": 5},
+      {"word": "بدنا", "transliteration": "bidna", "meaning": "we want", "weight": 5},
+      {"word": "بدكن", "transliteration": "biddkon", "meaning": "you want", "weight": 5},
+      {"word": "بعرف", "transliteration": "baʿrif", "meaning": "I know", "weight": 4}
+    ],
+    
+    "particles": [
+      {"word": "هاد", "transliteration": "hād", "meaning": "this (m.)", "weight": 5},
+      {"word": "هاي", "transliteration": "hāy", "meaning": "this (f.)", "weight": 5},
+      {"word": "هدول", "transliteration": "hadōl", "meaning": "these", "weight": 5},
+      {"word": "هيك", "transliteration": "hēk", "meaning": "like this", "weight": 4},
+      {"word": "هون", "transliteration": "hōn", "meaning": "here", "weight": 4},
+      {"word": "هونيك", "transliteration": "hōnīk", "meaning": "there", "weight": 4}
+    ],
+    
+    "pronouns": [
+      {"word": "انا", "transliteration": "ana", "meaning": "I", "weight": 2},
+      {"word": "نحنا", "transliteration": "niḥna", "meaning": "we", "weight": 4},
+      {"word": "انت", "transliteration": "inte", "meaning": "you (m.)", "weight": 2},
+      {"word": "انتي", "transliteration": "inti", "meaning": "you (f.)", "weight": 2},
+      {"word": "انتو", "transliteration": "intu", "meaning": "you (pl.)", "weight": 4},
+      {"word": "هو", "transliteration": "huwwe", "meaning": "he", "weight": 2},
+      {"word": "هي", "transliteration": "hiyye", "meaning": "she", "weight": 2},
+      {"word": "هنن", "transliteration": "hinne", "meaning": "they", "weight": 4}
+    ],
+    
+    "conjunctions": [
+      {"word": "بس", "transliteration": "bass", "meaning": "but/only", "weight": 4},
+      {"word": "لإنو", "transliteration": "laʾinno", "meaning": "because", "weight": 4},
+      {"word": "يلي", "transliteration": "yalli", "meaning": "that/who", "weight": 3}
+    ],
+    
+    "common_expressions": [
+      {"phrase": "كيفك", "transliteration": "kīfak", "meaning": "how are you?"},
+      {"phrase": "منيح", "transliteration": "mnīḥ", "meaning": "good/fine"},
+      {"phrase": "يلا", "transliteration": "yalla", "meaning": "let's go"},
+      {"phrase": "تفضل", "transliteration": "tfaḍḍal", "meaning": "please/go ahead"},
+      {"phrase": "ولا يهمك", "transliteration": "wala yhimmak", "meaning": "don't worry"}
+    ]
+  }
+}

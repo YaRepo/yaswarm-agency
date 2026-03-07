@@ -1,0 +1,3 @@
+display_name: Work Creator
+short_description: Create a new writing project (novel, short story, article). Use when starting a new boo...
+default_prompt: Use $yamind-writing-work-creator for this task when its specialization applies.

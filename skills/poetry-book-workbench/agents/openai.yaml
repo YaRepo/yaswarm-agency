@@ -1,0 +1,3 @@
+display_name: Poetry Book Workbench
+short_description: Turn poem drafts into a cohesive poetry book
+default_prompt: Use $poetry-book-workbench to revise my poems, design a section arc, and compile a manuscript draft for a poetry book.

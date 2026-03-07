@@ -1,0 +1,3 @@
+display_name: YaSwarm Goplaces
+short_description: Query Google Places API (New) via the goplaces CLI for text s...
+default_prompt: Use $yaswarm-goplaces for this task and return concise actionable results.
