@@ -92,6 +92,7 @@ YaSwarm CLI solves this by making system initialization, registration, runtime c
 - `yaswarm mcp inspect [server-command...]`
 - `yaswarm mcp health`
 - `yaswarm agency skills-list`
+- `yaswarm agency status`
 - `yaswarm agency skills-routing`
 - `yaswarm agency skill-get <name>`
 - `yaswarm agency mcp-servers`

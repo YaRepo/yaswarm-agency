@@ -24,6 +24,7 @@ All notable changes to `yaswarm-core` are documented in this file.
   - polls bot updates and routes topic messages through YaSwarm chat orchestration.
 - Agency API CLI bridge:
   - new `yaswarm agency ...` namespace for backend-governed operations (department backend/model updates, governor, permissions, approvals, terminal exec).
+  - new `yaswarm agency status` command for one-shot health/auth/catalog source checks.
   - new MCP/skills commands: `skills-list`, `skills-routing`, `skill-get`, `mcp-servers`, `mcp-tools`, `mcp-registry`, `mcp-config`, `mcp-env-list`, `mcp-env-set`.
 - Chat CLI integration commands:
   - `/skills`, `/skill <name>`, `/skills-routing`,

@@ -57,6 +57,7 @@ Usage:
 
   yaswarm dashboard refresh
 
+  yaswarm agency status
   yaswarm agency backend-capabilities <backend>
   yaswarm agency department-update <departmentId> [--backend <name>] [--model <id>] [--modelTier <tier>] [--providerIds <csv>] [--fallbackModels <csv>] [--backendUrl <url>] [--autoInstallBackend]
   yaswarm agency governor-status

@@ -185,6 +185,52 @@ def cmd_terminal_exec(args: argparse.Namespace) -> int:
     return 0 if r["ok"] else 1
 
 
+def cmd_status(_: argparse.Namespace) -> int:
+    base = get_api_base()
+    token = get_token()
+    status: Dict[str, Any] = {
+        "apiBase": base,
+        "tokenConfigured": bool(token),
+    }
+
+    checks = {
+        "health": call_api("GET", "/health"),
+        "skills": call_api("GET", "/api/skills"),
+        "mcpServers": call_api("GET", "/api/mcp/servers"),
+        "permissions": call_api("GET", "/api/cli-permissions"),
+        "governor": call_api("GET", "/api/resource/governor"),
+    }
+    status["checks"] = {
+        key: {
+            "ok": value.get("ok", False),
+            "status": value.get("status", 0),
+            "error": value.get("error", ""),
+        }
+        for key, value in checks.items()
+    }
+
+    if checks["skills"].get("ok"):
+        data = checks["skills"].get("data", {})
+        status["skills"] = {
+            "count": len(data.get("skills", [])) if isinstance(data.get("skills"), list) else None,
+            "sourcePath": data.get("sourcePath"),
+        }
+    if checks["mcpServers"].get("ok"):
+        data = checks["mcpServers"].get("data", {})
+        servers = data.get("servers", {})
+        registry = data.get("registry", [])
+        status["mcp"] = {
+            "serverCount": len(servers) if isinstance(servers, dict) else None,
+            "registryCount": len(registry) if isinstance(registry, list) else None,
+            "configPath": data.get("configPath"),
+        }
+
+    ok = all(v.get("ok") for v in checks.values())
+    status["ok"] = ok
+    print_json(status)
+    return 0 if ok else 1
+
+
 def cmd_skills_list(_: argparse.Namespace) -> int:
     r = call_api("GET", "/api/skills")
     print_json(r["data"] if r["ok"] else r)
@@ -243,6 +289,9 @@ def cmd_mcp_env_set(args: argparse.Namespace) -> int:
 def main() -> int:
     ap = argparse.ArgumentParser(description="YaSwarm agency API helper")
     sub = ap.add_subparsers(dest="cmd", required=True)
+
+    p = sub.add_parser("status")
+    p.set_defaults(fn=cmd_status)
 
     p = sub.add_parser("backend-capabilities")
     p.add_argument("backend")
