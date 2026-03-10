@@ -22,9 +22,6 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Setup GH CLI
-        uses: cli/cli-action@v2
-
       - name: Install tooling
         run: |
           sudo apt-get update
@@ -47,3 +44,6 @@ jobs:
 
       - name: Compose render (full profile)
         run: YASWARM_WORKSPACE=/tmp/yaswarm-agency-ci docker compose --profile full config >/tmp/compose.full.yaml
+
+      - name: Build UI image
+        run: docker compose --profile full build yaswarm-ui

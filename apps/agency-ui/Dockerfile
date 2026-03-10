@@ -9,7 +9,10 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 COPY package.json package-lock.json* ./
-RUN npm install
+RUN npm config set fetch-retries 5 && \
+    npm config set fetch-retry-mintimeout 20000 && \
+    npm config set fetch-retry-maxtimeout 120000 && \
+    npm ci
 
 COPY . .
 RUN npx vite build
@@ -25,7 +28,11 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 COPY package.json package-lock.json* ./
-RUN npm install --omit=dev && npm install tsx node-pty
+RUN npm config set fetch-retries 5 && \
+    npm config set fetch-retry-mintimeout 20000 && \
+    npm config set fetch-retry-maxtimeout 120000 && \
+    npm ci --omit=dev --omit=optional && \
+    npm install tsx node-pty --omit=optional
 
 # Shim onnxruntime-node → onnxruntime-web (native ONNX crashes on Alpine/musl)
 RUN rm -rf node_modules/onnxruntime-node && \
