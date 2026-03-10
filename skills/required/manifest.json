@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "required": [
+    "assistant-core-architecture-governor",
+    "telegram-debugging",
+    "yamind-memory-sql",
+    "yamind-dev-mcp-builder",
+    "yaswarm-skill-creator"
+  ]
+}

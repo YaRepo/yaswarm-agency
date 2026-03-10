@@ -127,15 +127,12 @@ register_repo() {
   echo "registered: $name -> $url"
 }
 
-CORE_LOCAL="$ROOT"
-if [[ "$(basename "$ROOT")" != "yaswarm-core" ]]; then
-  CORE_LOCAL="$PROJECTS_DIR/yaswarm-core"
+AGENCY_LOCAL="$ROOT"
+if [[ "$(basename "$ROOT")" != "yaswarm-agency" ]]; then
+  AGENCY_LOCAL="$PROJECTS_DIR/yaswarm-agency"
 fi
 
-register_repo "yaswarm-core" "yaswarm-core" "$CORE_LOCAL"
-register_repo "yaswarm-agency-ui" "yaswarm-agency-ui" "$PROJECTS_DIR/yaswarm-agency-ui"
-register_repo "yaswarm-desk-workspace" "yaswarm-desk-workspace" "$PROJECTS_DIR/yaswarm-desk-workspace"
-register_repo "yaswarm-skills-cataloge" "yaswarm-skills-cataloge" "$PROJECTS_DIR/yaswarm-skills-cataloge"
-register_repo "yaswarm-mcps-cataloge" "yaswarm-mcps-cataloge" "$PROJECTS_DIR/yaswarm-mcps-cataloge"
+register_repo "yaswarm-agency" "yaswarm-agency" "$AGENCY_LOCAL"
+register_repo "yaswarm-project-template" "yaswarm-project-template" "$PROJECTS_DIR/yaswarm-project-template"
 
 echo "Repo init complete"

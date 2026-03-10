@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "hive": {
+    "enabled": true,
+    "db_path": "agency/logs/hive_memory.sqlite"
+  },
+  "rag": {
+    "enabled": true,
+    "provider": "chroma",
+    "host": "http://localhost:8000"
+  }
+}

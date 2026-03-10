@@ -5,6 +5,7 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y --no-install-recommends \
     bash \
     git \
+    jq \
     python3 \
     ripgrep \
     ca-certificates \

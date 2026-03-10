@@ -1,16 +1,71 @@
 services:
-  yaswarm:
+  yaswarm-core:
     build: .
-    container_name: yaswarm
+    container_name: yaswarm-core
     restart: unless-stopped
     env_file:
       - .env
-    ports:
-      - "6274:6274"
-      - "6277:6277"
+    environment:
+      - YASWARM_WORKSPACE=${YASWARM_WORKSPACE:-/workspace}
     volumes:
       - ./catalog:/app/catalog
       - ./mcp:/app/mcp
       - ./skills:/app/skills
-      - ./projects:/app/projects
+      - ${YASWARM_WORKSPACE:-./projects}:${YASWARM_WORKSPACE:-/workspace}
     command: ["sync", "run-forever"]
+    profiles: ["full", "core"]
+
+  yaswarm-bridge:
+    build: .
+    container_name: yaswarm-bridge
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - YASWARM_WORKSPACE=${YASWARM_WORKSPACE:-/workspace}
+    volumes:
+      - ./catalog:/app/catalog
+      - ./mcp:/app/mcp
+      - ./skills:/app/skills
+      - ${YASWARM_WORKSPACE:-./projects}:${YASWARM_WORKSPACE:-/workspace}
+    command: ["telegram", "bridge-loop", "3"]
+    depends_on:
+      - yaswarm-core
+    profiles: ["full", "bridge"]
+
+  yaswarm-rag:
+    image: chromadb/chroma:latest
+    container_name: yaswarm-rag
+    restart: unless-stopped
+    environment:
+      - IS_PERSISTENT=TRUE
+      - ANONYMIZED_TELEMETRY=FALSE
+    volumes:
+      - yaswarm_chroma:/chroma/chroma
+    ports:
+      - "8000:8000"
+    profiles: ["full", "rag"]
+
+  yaswarm-ui:
+    build:
+      context: ./apps/agency-ui
+    container_name: yaswarm-ui
+    restart: unless-stopped
+    depends_on:
+      - yaswarm-rag
+    environment:
+      - YASWARM_PORT=3002
+      - AGENCY_ROOT=${YASWARM_WORKSPACE:-/workspace}/agency
+      - YASWARM_TOKEN=${YASWARM_TOKEN:-yaswarm-dev-token}
+      - CHROMA_URL=http://yaswarm-rag:8000
+    volumes:
+      - ${YASWARM_WORKSPACE:-./projects}:${YASWARM_WORKSPACE:-/workspace}
+      - ./catalog:/workspace/catalog:ro
+      - ./mcp:/workspace/mcp:ro
+      - ./skills:/workspace/skills:ro
+    ports:
+      - "3002:3002"
+    profiles: ["full", "ui"]
+
+volumes:
+  yaswarm_chroma:

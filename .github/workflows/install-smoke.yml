@@ -1,0 +1,49 @@
+name: Install Smoke
+
+on:
+  pull_request:
+  push:
+    branches: [main, master]
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Setup GH CLI
+        uses: cli/cli-action@v2
+
+      - name: Install tooling
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq ripgrep
+
+      - name: Syntax checks
+        run: bash -n cli/yaswarm scripts/*.sh install.sh
+
+      - name: CLI help
+        run: ./cli/yaswarm help
+
+      - name: Setup (non-interactive)
+        run: ./cli/yaswarm setup --non-interactive --owner ci-owner --workspace /tmp/yaswarm-agency-ci
+
+      - name: Doctor (expected non-ready runtime)
+        run: ./cli/yaswarm doctor /tmp/yaswarm-agency-ci || true
+
+      - name: Release info
+        run: ./cli/yaswarm release-info
+
+      - name: Compose render (full profile)
+        run: YASWARM_WORKSPACE=/tmp/yaswarm-agency-ci docker compose --profile full config >/tmp/compose.full.yaml

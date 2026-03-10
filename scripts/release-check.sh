@@ -34,48 +34,63 @@ syntax_check() {
   fi
 }
 
-echo "== YaSwarm Release Check =="
+echo "== YaSwarm Agency Release Check =="
 
 require_file "README.md"
 require_file "LICENSE"
 require_file ".env.example"
+require_file "VERSION"
+require_file "RELEASES.md"
+require_file "docker-compose.yml"
+require_file "install.sh"
 require_file "cli/yaswarm"
-require_file "scripts/init.sh"
-require_file "scripts/reconfigure.sh"
-require_file "scripts/migrate-configs.sh"
-require_file "scripts/doctor.sh"
-require_file "scripts/pi-mono.sh"
-require_file "scripts/chat-cli.py"
-require_file "scripts/telegram-bridge-worker.py"
+require_file "scripts/install.sh"
+require_file "scripts/setup.sh"
+require_file "scripts/up.sh"
+require_file "scripts/down.sh"
+require_file "scripts/init-project.sh"
+require_file "scripts/upgrade.sh"
+require_file "scripts/release-info.sh"
+require_file "catalog/templates/mcp-config.default.json"
+require_file "catalog/templates/project-repo-defaults.json"
+require_file "catalog/templates/data-services.json"
+require_file "skills/required/manifest.json"
+require_file "apps/agency-ui/Dockerfile"
 
+require_executable "install.sh"
 require_executable "cli/yaswarm"
-require_executable "scripts/init.sh"
-require_executable "scripts/reconfigure.sh"
-require_executable "scripts/migrate-configs.sh"
-require_executable "scripts/doctor.sh"
-require_executable "scripts/pi-mono.sh"
-require_executable "scripts/chat-cli.py"
-require_executable "scripts/telegram-bridge-worker.py"
+require_executable "scripts/install.sh"
+require_executable "scripts/setup.sh"
+require_executable "scripts/up.sh"
+require_executable "scripts/down.sh"
+require_executable "scripts/init-project.sh"
+require_executable "scripts/upgrade.sh"
+require_executable "scripts/release-info.sh"
 
+syntax_check "install.sh"
 syntax_check "cli/yaswarm"
-syntax_check "scripts/init.sh"
-syntax_check "scripts/reconfigure.sh"
-syntax_check "scripts/migrate-configs.sh"
-syntax_check "scripts/doctor.sh"
-syntax_check "scripts/pi-mono.sh"
-if python3 -m py_compile scripts/chat-cli.py scripts/telegram-bridge-worker.py >/dev/null 2>&1; then
-  pass "python syntax: chat/telegram bridge scripts"
+syntax_check "scripts/install.sh"
+syntax_check "scripts/setup.sh"
+syntax_check "scripts/up.sh"
+syntax_check "scripts/down.sh"
+syntax_check "scripts/init-project.sh"
+syntax_check "scripts/upgrade.sh"
+syntax_check "scripts/release-info.sh"
+syntax_check "scripts/release-check.sh"
+
+if rg -n "YaSwarm Agency" README.md >/dev/null; then
+  pass "README branding validated"
 else
-  fail_check "python syntax error: chat/telegram bridge scripts"
+  fail_check "README missing YaSwarm Agency branding"
 fi
 
-if rg -n "## Commercial Packaging Checklist" README.md >/dev/null; then
-  pass "README includes Commercial Packaging Checklist"
+if rg -n "Dedicated GitHub Account/Org|Dedicated GitHub Owner/Org Policy" README.md docs/installation/github-owner-policy.md >/dev/null; then
+  pass "dedicated GitHub owner policy documented"
 else
-  fail_check "README missing Commercial Packaging Checklist section"
+  fail_check "missing dedicated GitHub owner policy docs"
 fi
 
-if rg -n "^\\.env$" .gitignore >/dev/null; then
+if rg -n "^\.env$" .gitignore >/dev/null; then
   pass ".env is gitignored"
 else
   fail_check ".env is not gitignored"
@@ -87,10 +102,9 @@ else
   pass ".env is not tracked"
 fi
 
-# High-signal secret scan on core paths only, excluding examples/templates likely to contain placeholders.
-mapfile -t CORE_FILES < <(git ls-files README.md cli scripts swarm mcp catalog 2>/dev/null | rg -v '\.example(\.|$)|env\.example$|catalog/templates/|skills/')
+mapfile -t CORE_FILES < <(git ls-files README.md RELEASES.md VERSION cli scripts swarm mcp catalog docker-compose.yml install.sh 2>/dev/null | rg -v '\.example(\.|$)|env\.example$|catalog/templates/')
 if ((${#CORE_FILES[@]} > 0)); then
-  if rg -n --pcre2 "(?i)(api[_-]?key|token|secret)[\"']?\\s*[:=]\\s*[\"'][A-Za-z0-9_\\-]{16,}[\"']" "${CORE_FILES[@]}" >/tmp/yaswarm_release_secret_hits.txt; then
+  if rg -n --pcre2 "(?i)(api[_-]?key|token|secret)[\"']?\s*[:=]\s*[\"'][A-Za-z0-9_\-]{16,}[\"']" "${CORE_FILES[@]}" >/tmp/yaswarm_release_secret_hits.txt; then
     fail_check "possible hardcoded secrets found in core files"
     sed -n '1,20p' /tmp/yaswarm_release_secret_hits.txt
   else
