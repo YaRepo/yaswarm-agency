@@ -42,6 +42,13 @@ All notable changes to `yaswarm-agency` are documented in this file.
 - `.env.example` expanded for public install requirements and key placeholders.
 - Agency UI Docker defaults updated to workspace-local paths and local RAG endpoint.
 
+### Fixed
+- Agency UI Docker build resilience for production rollout:
+  - keep optional dependencies during builder stage (restores Rollup binary resolution),
+  - omit optional dependencies only in runtime stage (avoids flaky `sharp` binary download),
+  - add retry tuning for npm fetch in both stages.
+- Install smoke CI now includes `docker compose --profile full build yaswarm-ui` to catch UI image regressions before merge.
+
 ## 2026-03-07
 
 ### Added
