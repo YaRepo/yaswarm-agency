@@ -22,9 +22,6 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Setup GH CLI
-        uses: cli/cli-action@v2
-
       - name: Install tooling
         run: |
           sudo apt-get update
