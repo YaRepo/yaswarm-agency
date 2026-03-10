@@ -100,6 +100,8 @@ mkdir -p \
   "$AGENCY_ROOT/desk/wip" \
   "$AGENCY_ROOT/desk/review" \
   "$AGENCY_ROOT/desk/done" \
+  "$AGENCY_ROOT/desk/rejected" \
+  "$AGENCY_ROOT/desk/tickets" \
   "$AGENCY_ROOT/logs" \
   "$AGENCY_ROOT/memory" \
   "$AGENCY_ROOT/skill-system/registry" \

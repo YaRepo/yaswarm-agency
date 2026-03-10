@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #2a2a3a #0a0a0f;
+  }
+
+  *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #0a0a0f;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: #2a2a3a;
+    border-radius: 3px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: #3a3a4a;
+  }
+
+  ::selection {
+    background-color: rgba(212, 168, 67, 0.3);
+    color: #e8e8f0;
+  }
+}
+
+@layer components {
+  .yaswarm-card {
+    @apply bg-yaswarm-card border border-yaswarm-border rounded-lg p-4;
+  }
+
+  .yaswarm-btn {
+    @apply px-4 py-2 rounded-md font-medium text-sm transition-colors duration-150;
+  }
+
+  .yaswarm-btn-primary {
+    @apply yaswarm-btn bg-yaswarm-accent text-yaswarm-bg hover:bg-yaswarm-accent-glow;
+  }
+
+  .yaswarm-btn-ghost {
+    @apply yaswarm-btn text-yaswarm-muted hover:text-yaswarm-text hover:bg-yaswarm-hover;
+  }
+
+  .yaswarm-input {
+    @apply bg-yaswarm-surface border border-yaswarm-border rounded-md px-3 py-2
+           text-yaswarm-text placeholder-yaswarm-muted text-sm
+           focus:outline-none focus:border-yaswarm-accent focus:ring-1 focus:ring-yaswarm-accent/30
+           transition-colors duration-150;
+  }
+
+  .yaswarm-badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .yaswarm-badge-success {
+    @apply yaswarm-badge bg-yaswarm-success/15 text-yaswarm-success;
+  }
+
+  .yaswarm-badge-warning {
+    @apply yaswarm-badge bg-yaswarm-warning/15 text-yaswarm-warning;
+  }
+
+  .yaswarm-badge-error {
+    @apply yaswarm-badge bg-yaswarm-error/15 text-yaswarm-error;
+  }
+
+  .yaswarm-badge-info {
+    @apply yaswarm-badge bg-yaswarm-info/15 text-yaswarm-info;
+  }
+
+  .yaswarm-badge-accent {
+    @apply yaswarm-badge bg-yaswarm-accent/15 text-yaswarm-accent;
+  }
+}

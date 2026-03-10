@@ -1,0 +1,97 @@
+services:
+  yaswarm-chromadb:
+    image: chromadb/chroma:latest
+    container_name: yaswarm-chromadb
+    restart: unless-stopped
+    environment:
+      - IS_PERSISTENT=TRUE
+      - ANONYMIZED_TELEMETRY=FALSE
+    volumes:
+      - /docker/chromadb/data:/chroma/chroma
+    networks:
+      - agency_bridge
+
+  obsidian:
+    image: linuxserver/obsidian:latest
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TIMEZONE:-UTC}
+      - SELKIES_USE_CSS_SCALING=true
+      - SELKIES_USE_BROWSER_CURSORS=true
+      - TITLE=YaSwarm Obsidian
+      - SELKIES_UI_SIDEBAR_SHOW_TRACKPAD=false
+      - SELKIES_UI_SIDEBAR_SHOW_KEYBOARD_BUTTON=true
+    volumes:
+      - yaswarm-obsidian-config:/config
+      - /root/yaswarm-swarm/projects/yaswarm-desk-workspace:/config/Obsidian Vault
+    shm_size: 1gb
+    networks:
+      agency_bridge:
+        aliases:
+          - yaswarm-obsidian
+      nginx-proxy:
+        aliases:
+          - yaswarm-obsidian
+
+  obsidian-api-relay:
+    image: alpine/socat:latest
+    command: "TCP-LISTEN:27125,fork,reuseaddr,bind=0.0.0.0 TCP:127.0.0.1:27124"
+    network_mode: "service:obsidian"
+    depends_on:
+      - obsidian
+    restart: unless-stopped
+
+  dashboard:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      - yaswarm-chromadb
+    environment:
+      - YASWARM_PORT=${YASWARM_PORT:-3002}
+      - AGENCY_ROOT=/root/yaswarm-swarm/projects/yaswarm-desk-workspace/agency
+      - YASWARM_ROOT=/root/yaswarm-swarm
+      - YASWARM_TOKEN=${YASWARM_TOKEN:-yaswarm-token-agency}
+      - NPM_CONFIG_PREFIX=/root/.npm-global
+      - PATH=/root/.npm-global/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      - YASWARM_CEO_BOT_TOKEN=${YASWARM_CEO_BOT_TOKEN:-}
+      - CHROMA_URL=${CHROMA_URL:-http://yaswarm-chromadb:8000}
+      - YASWARM_MCP_CATALOG_PATH=/root/yaswarm-swarm/projects/yaswarm-mcps-cataloge/imports/agency/mcp-catalog.json
+      - YASWARM_OBSIDIAN_WEB_URL=${YASWARM_OBSIDIAN_WEB_URL:-https://note.yascene.com}
+      - YASWARM_OBSIDIAN_CONFIG_PATH=/root/yaswarm-swarm/projects/yaswarm-desk-workspace/obsidian-config
+      - YASWARM_BOOKS_PATH=/root/yaswarm-swarm/projects/yaswarm-desk-workspace/books
+    volumes:
+      # Shared YaSwarm agency workspace volume
+      - /root/yaswarm-swarm/projects/yaswarm-desk-workspace/agency:/root/yaswarm-swarm/projects/yaswarm-desk-workspace/agency
+      - /root/yaswarm-swarm/projects/yaswarm-desk-workspace:/root/yaswarm-swarm/projects/yaswarm-desk-workspace
+      - yaswarm-cli-tools:/root/.npm-global
+      - /root/.codex:/root/.codex
+      - /root/.claude:/root/.claude
+      - /root/.claude.json:/root/.claude.json
+      - /root/.gemini:/root/.gemini
+      - /root/agency.env:/root/agency.env:ro
+      - /root/yaswarm-swarm/projects/yaswarm-desk-workspace/.cli-home/opencode/config:/root/.config/opencode
+      - /root/yaswarm-swarm/projects/yaswarm-desk-workspace/.cli-home/opencode/share:/root/.local/share/opencode
+      - /root/yaswarm-swarm/projects/yaswarm-desk-workspace/.cli-home/opencode/state:/root/.local/state/opencode
+      - /root/yaswarm-swarm/projects/yaswarm-desk-workspace/.cli-home/opencode/cache:/root/.cache/opencode
+      - /root/yaswarm-swarm:/root/yaswarm-swarm
+      - /root/yaswarm-swarm/projects/yaswarm-mcps-cataloge:/root/yaswarm-swarm/projects/yaswarm-mcps-cataloge:ro
+      - /root/yaswarm-swarm/projects/yaswarm-desk-workspace/tremcp-ssh:/root/yaswarm-swarm/projects/yaswarm-desk-workspace/tremcp-ssh:ro
+    networks:
+      agency_bridge:
+        aliases:
+          - agency-dashboard-dashboard-1
+      nginx-proxy:
+        aliases:
+          - agency-dashboard-dashboard-1
+
+networks:
+  agency_bridge:
+    external: true
+  nginx-proxy:
+    external: true
+
+volumes:
+  yaswarm-obsidian-config:
+  yaswarm-cli-tools:

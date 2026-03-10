@@ -14,10 +14,15 @@ YaSwarm CLI
 
 Usage:
   yaswarm help
+  yaswarm install
+  yaswarm setup [--workspace <path>] [--owner <github_owner>] [--non-interactive]
+  yaswarm up [--workspace <path>] [--profile <name>]...
+  yaswarm down [--workspace <path>] [--remove-volumes]
   yaswarm init --github-owner <owner> [--private|--public] [--new-workspace <path>] [--force-clean]
   yaswarm reconfigure --github-owner <owner> [--workspace <path>] [--private|--public] [--dry-run] [--skip-pull] [--no-create-missing]
   yaswarm upgrade [--workspace <path>] [--dry-run]
   yaswarm doctor [workspace_path]
+  yaswarm release-info
   yaswarm onboard
   yaswarm chat [--message "text"]
 
@@ -37,6 +42,7 @@ Usage:
   yaswarm repo sync <project_name>
   yaswarm repo sync-all
   yaswarm repo list
+  yaswarm init-project <project_name> [--public|--private]
 
   yaswarm sync start [interval_sec]
   yaswarm sync stop
@@ -87,6 +93,22 @@ case "$cmd" in
   help|-h|--help)
     help
     ;;
+  install)
+    shift || true
+    "$ROOT/scripts/install.sh" "$@"
+    ;;
+  setup)
+    shift || true
+    "$ROOT/scripts/setup.sh" "$@"
+    ;;
+  up)
+    shift || true
+    "$ROOT/scripts/up.sh" "$@"
+    ;;
+  down)
+    shift || true
+    "$ROOT/scripts/down.sh" "$@"
+    ;;
   init)
     shift || true
     "$ROOT/scripts/init.sh" "$@"
@@ -97,11 +119,15 @@ case "$cmd" in
     ;;
   upgrade)
     shift || true
-    "$ROOT/scripts/migrate-configs.sh" "$@"
+    "$ROOT/scripts/upgrade.sh" "$@"
     ;;
   doctor)
     shift || true
     "$ROOT/scripts/doctor.sh" "$@"
+    ;;
+  release-info)
+    shift || true
+    "$ROOT/scripts/release-info.sh" "$@"
     ;;
   onboard)
     "$ROOT/scripts/onboarding.sh"
@@ -171,6 +197,10 @@ case "$cmd" in
         echo "Unknown repo subcommand: $sub" >&2; exit 1
         ;;
     esac
+    ;;
+  init-project)
+    shift || true
+    "$ROOT/scripts/init-project.sh" "$@"
     ;;
   swarm)
     case "$sub" in
