@@ -1,5 +1,7 @@
 # YaSwarm Agency
 
+> Local workspace note: this repo is checked out as `yaswarm-public-monorepo` to distinguish the **public product source repo** from the active/private YaSwarm runtime and workspace used by the operator.
+
 `yaswarm-agency` is the public unified monorepo for running the YaSwarm system end-to-end:
 - Core CLI/runtime
 - Telegram bridge
@@ -78,6 +80,15 @@ Shipped disabled template:
 - `yaswarm-bridge`
 - `yaswarm-ui`
 - `yaswarm-rag` (Chroma)
+
+## Agency UI Highlights
+
+The embedded Agency UI includes:
+- Unified Threads for grouping related work across chat, Telegram, and supported coding-agent surfaces.
+- Reviewable continuation previews before launching or sending handoffs.
+- Shared thread memory backed by markdown + Hive + local vector search.
+- Cross-panel continuity visibility in Chat, Terminal, Telegram, and Memory views.
+- Direct navigation into focused thread-memory recall search.
 
 ## Release + Upgrades
 

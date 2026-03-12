@@ -2,6 +2,41 @@
 
 All notable changes to `yaswarm-agency` are documented in this file.
 
+## 2026-03-12
+
+### Added
+- Unified Threads workflow in Agency UI for cross-surface continuity:
+  - groups related work across Agency Chat, Telegram, Codex, and OpenCode into canonical threads,
+  - supports continuation actions for Codex, OpenCode, Claude, KiloCode, Pi, Telegram, and UI chat,
+  - adds reviewable preview/edit/send/launch flow so handoff text can be inspected before execution.
+- Shared thread-memory pipeline:
+  - canonical thread context is written to markdown + Hive memory,
+  - semantic `thread_memory` retrieval is available for recall-aware continuation and inspection,
+  - related-memory recalls are visible directly inside Threads.
+- Cross-panel continuity visibility:
+  - Chat, Terminal, Telegram, and Memory surfaces now show canonical thread linkage,
+  - terminal continuations retain thread provenance,
+  - related memory and thread-memory navigation can jump back into Threads.
+- Continuity-focused navigation shortcuts:
+  - Header and Sidebar show thread/thread-memory status,
+  - direct deep-links to focused thread-memory search,
+  - Threads panel shortcut to open semantic thread-memory exploration for the selected thread.
+- Terminal session cleanup for user-created sessions in Agency UI.
+
+### Changed
+- Agency UI now treats Threads and thread memory as first-class operational surfaces instead of isolated session views.
+- Memory panel supports shareable URL state for semantic recall focus:
+  - `/memory?mode=semantic&source=thread_memory[&q=...]`.
+- Vector stats now recover per-source counts from the live Chroma collection after restart, so thread-memory status survives dashboard/container restarts more reliably.
+
+### Validated End-to-End
+- Production-style dashboard container rebuild + authenticated API smoke validation completed.
+- Verified live continuity endpoints and state propagation for:
+  - threads list/detail/preview/context packet,
+  - chat thread metadata,
+  - terminal provenance metadata,
+  - thread-memory indexing and vector status recovery.
+
 ## 2026-03-10
 
 ### Added
